@@ -84,8 +84,8 @@ var app4 = new Vue({
     tecnologias:
     [
       {
-        titulo: 'Gianfranco Soriano',
-        imagen: 'client.png'
+        title: 'WordPress',
+        imag: 'client.png'
       }
     ]
   },
