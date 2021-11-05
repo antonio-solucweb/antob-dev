@@ -9,7 +9,10 @@ html, body {
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
-
+.brand-blue
+{
+  color: #28bbff;
+}
 h1,
 h2,
 h3,
@@ -47,8 +50,17 @@ img {
 .bg-grey {
   background-color: #f7f8f9; }
 
+.fs30 {
+  font-size: 30px; }
+
 .fs-40 {
   font-size: 40px; }
+
+.fs-50 {
+  font-size: 50px; }
+
+.fs-60 {
+  font-size: 60px; }
 
 section {
   position: relative; }
@@ -67,6 +79,7 @@ section {
 #header-navbar {
   position: fixed;
   background-color: white;
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 25%);
   top: 0;
   right: 0;
   left: 0;
@@ -743,11 +756,12 @@ section {
     top: 0;
     height: auto;
     width: 100%;
-    background: #28bbff;
-    /* fallback for old browsers */
+    background: #ffffff;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 25%);
+    /* fallback for old browsers 
     background: -webkit-linear-gradient(to right, #9470fe, #28bbff);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #9470fe, #28bbff);
+    /* Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, #9470fe, #28bbff); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: 11; }
   #header-navbar {
@@ -764,7 +778,7 @@ section {
 
 @media (max-width: 767px) {
   .jumbotron h1 {
-    font-size: 6rem; }
+    font-size: 3.1rem; }
   .grid-item {
     width: 100%; }
   .progress {
