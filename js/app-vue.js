@@ -77,7 +77,7 @@ var app2 = new Vue({
         categoria: 'wordpress',
         imagen: 'portfolio_luminotecnia',
         url: 'https://luminotecnia.cl/'
-      }
+      },
       {
         titulo: 'Alarmaspy',
         categoria: 'wordpress',
