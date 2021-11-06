@@ -39,7 +39,12 @@ button:focus {
 .btn:hover,
 a:hover {
   text-decoration: none;
-  color: #9470fe; }
+  color: #9470fe;
+}
+.progress {
+    height: 1.3rem;
+    font-size: 1.0rem;
+}
 
 img {
   max-width: 100%; }
@@ -782,7 +787,7 @@ section {
   .grid-item {
     width: 100%; }
   .progress {
-    height: 30px;
+    height: 25px;
     font-size: 16px; } }
 
 /*=====  End of RESPONSIVE  ======*/
