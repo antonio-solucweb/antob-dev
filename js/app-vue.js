@@ -37,11 +37,167 @@ var app2 = new Vue({
     portafolios:
     [
       {
-        titulo: 'Inicio',
+        titulo: 'Mall de los Andes',
         categoria: 'wordpress',
-        imagen: 'photo-1.jpg',
-        url: '#inicio'
+        imagen: 'portfolio_malldelosandes',
+        url: 'https://malldelosandes.com/'
       },
+      {
+        titulo: 'Multiplaza',
+        categoria: 'wordpress',
+        imagen: 'portfolio_multiplaza',
+        url: 'https://multiplaza.com.ec/'
+      },
+      {
+        titulo: 'Servivapor',
+        categoria: 'wordpress',
+        imagen: 'portfolio_servivapor',
+        url: 'https://www.servivapor.com/'
+      },
+      {
+        titulo: 'Folionet',
+        categoria: 'wordpress',
+        imagen: 'portfolio_folionet',
+        url: 'https://folionet.com/'
+      },
+      {
+        titulo: 'Pople Art Consulting',
+        categoria: 'wordpress',
+        imagen: 'portfolio_peopleartconsulting',
+        url: 'https://peopleartconsulting.com/'
+      },
+      {
+        titulo: 'Fit Fight Training',
+        categoria: 'wordpress',
+        imagen: 'portfolio_fitfighttraining',
+        url: 'http://fitfighttraining.com/'
+      },
+      {
+        titulo: 'Luminotecnia',
+        categoria: 'wordpress',
+        imagen: 'portfolio_luminotecnia',
+        url: 'https://luminotecnia.cl/'
+      }
+      {
+        titulo: 'Alarmaspy',
+        categoria: 'wordpress',
+        imagen: 'portfolio_alarmaspy',
+        url: 'http://alarmaspy.com'
+      },
+      {
+        titulo: 'Xtrons',
+        categoria: 'wordpress',
+        imagen: 'portfolio_xtrons',
+        url: 'https://xtrons.es/'
+      },
+      {
+        titulo: 'Uparts Zone',
+        categoria: 'wordpress',
+        imagen: 'portfolio_upartszone',
+        url: 'https://www.upartszone.com/'
+      },
+      {
+        titulo: 'Trenton5',
+        categoria: 'wordpress',
+        imagen: 'portfolio_trenton5',
+        url: 'https://www.trenton5.com/'
+      },
+      {
+        titulo: 'SA-Electronic',
+        categoria: 'wordpress',
+        imagen: 'portfolio_saelectronic',
+        url: 'http://sa-electronic.com/'
+      },
+      {
+        titulo: 'Taxi Rodríguez',
+        categoria: 'wordpress',
+        imagen: 'portfolio_taxirodriguez',
+        url: 'https://taxirodriguez.com/'
+      },
+      {
+        titulo: 'Veerielly',
+        categoria: 'wordpress',
+        imagen: 'portfolio_veerielly',
+        url: 'https://veerielly.com/'
+      },
+      {
+        titulo: 'Placer Escondido',
+        categoria: 'prestashop',
+        imagen: 'portfolio_placerescondido',
+        url: 'https://www.placerescondido.com/'
+      },
+      {
+        titulo: 'Promo Nada es Lejos',
+        categoria: 'wordpress',
+        imagen: 'portfolio_promonadaeslejos',
+        url: 'https://promonadaeslejos.com/'
+      },
+      {
+        titulo: 'Zapatos Jorge Enriquez',
+        categoria: 'prestashop',
+        imagen: 'portfolio_zapatosjorgenriquez',
+        url: 'http://zapatosjorgenriquez.com/'
+      },
+      {
+        titulo: 'LIVIRAME',
+        categoria: 'prestashop',
+        imagen: 'portfolio_livirame',
+        url: 'https://livirame.com/'
+      },
+      {
+        titulo: 'Lanzamiento del Renault Captur',
+        categoria: 'wordpress',
+        imagen: 'portfolio_nuevasperspectivas',
+        url: 'http://nuevasperspectivas.com/'
+      },
+      {
+        titulo: 'Alby Store',
+        categoria: 'prestashop',
+        imagen: 'portfolio_albystore',
+        url: 'http://albystore.com/'
+      },
+      {
+        titulo: 'Colors Denim',
+        categoria: 'prestashop',
+        imagen: 'portfolio_colorsdenim',
+        url: 'https://colorsdenim.com/es/'
+      },
+      {
+        titulo: 'Quimicblue',
+        categoria: 'wordpress',
+        imagen: 'portfolio_quimicblue',
+        url: 'https://quimicblue.com/'
+      },
+      {
+        titulo: 'Redskins.RS',
+        categoria: 'prestashop',
+        imagen: 'portfolio_redskins',
+        url: 'https://redskinsrs.com/'
+      },
+      {
+        titulo: 'American Truck',
+        categoria: 'prestashop',
+        imagen: 'portafolio_americantruck',
+        url: 'https://americantruckecuador.com/'
+      },
+      {
+        titulo: '69LiveCam',
+        categoria: 'wordpress',
+        imagen: 'portfolio_69livecam',
+        url: 'https://69livecam.com/'
+      },
+      {
+        titulo: 'Códigos Mágicos',
+        categoria: 'wordpress',
+        imagen: 'portfolio_codigosmagicos',
+        url: 'https://codigosmagicos.com/'
+      },
+      {
+        titulo: 'Gykormed',
+        categoria: 'wordpress',
+        imagen: 'portfolio_gykormed',
+        url: 'https://gykormed.com/'
+      }
     ]
   },
 });

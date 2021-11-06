@@ -234,7 +234,7 @@
                         </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
 
                         <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="flip-right">
-                            <img class="my-5" src="img/pic-antoniob.png" alt="">
+                            <img class="my-5" src="img/pic-antoniob.webp" alt="">
                         </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
                     </div><!--/ .featurettes-item -->
@@ -254,7 +254,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-md-4 offset-md-2 col-sm-6" data-aos="flip-left">
-                            <img class="my-5" src="img/pic-antoniob_2.png" alt="">
+                            <img class="my-5" src="img/pic-antoniob_2.webp" alt="">
                         </div><!--/ .col-md-4.col-md-offset-right-2.col-sm-6 -->
 
                         <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="fade-left">
@@ -301,7 +301,7 @@
                 <div class="col-md-12 portfolio-holder mt-3">
                     <!-- Filtros del portafolios -->
                     <div class="filter-button-group btn-filter d-flex justify-content-center">
-                        <a tabindex="0" class="is-checked" data-filter=".">Mostrar todo</a>
+                        <a tabindex="0" class="is-checked" data-filter="*">Mostrar todo</a>
                         <a tabindex="0" data-filter=".wordpress">WordPress</a>
                         <a tabindex="0" data-filter=".prestashop">PrestaShop</a>
                         <a tabindex="0" data-filter=".otros">Otros</a>
@@ -309,16 +309,16 @@
                     <!-- FIN de filtros del portafolios -->
 
                     <!-- Items del portafolios -->
-                    <div class="grid-portfolio" v-for="item in portafolios">
+                    <div class="grid-portfolio">
                         <div class="grid-sizer"></div>
                         <div class="gutter-sizer"></div>
                         <!-- Portfolio Item -->
-                        <div v-bind:class="'grid-item '+item.categoria" data-aos="fade-up">
+                        <div v-for="item in portafolios" v-bind:class="'grid-item '+item.categoria" data-aos="fade-up">
                             <div class="grid-item-wrapper">
-                                <img v-bind:src="'img/'+item.imagen" alt="portfolio-img" class="portfolio-item">
+                                <img v-bind:src="'img/portafolios/'+item.imagen+'.webp'" alt="portfolio-img" class="portfolio-item">
                                 <div class="grid-info">
                                     <div class="grid-link d-flex justify-content-center">
-                                        <a class="img-pop" data-rel="lightcase" v-bind:href="'img/'+item.imagen" v-bind:title="item.titulo">
+                                        <a class="img-pop" data-rel="lightcase" v-bind:href="'img/portafolios/'+item.imagen+'.webp'" v-bind:title="item.titulo">
                                             <span class="fas fa-search-plus fs-30"></span>
                                         </a>
                                         <a class="ext-link" v-bind:href="item.url" target="_blank">
