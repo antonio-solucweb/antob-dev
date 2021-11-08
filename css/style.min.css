@@ -13,6 +13,10 @@ body {
 {
   color: #28bbff;
 }
+body.static-layout
+{
+    overflow-y: hidden !important;
+}
 h1,
 h2,
 h3,
@@ -781,13 +785,18 @@ section {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 10px; } }
 
-@media (max-width: 767px) {
+@media (max-width: 767px)
+{
   .jumbotron h1 {
     font-size: 3.1rem; }
   .grid-item {
     width: 100%; }
   .progress {
     height: 25px;
-    font-size: 16px; } }
+    font-size: 16px; }
+  .filter-button-group a {
+      font-size: 0.7em;
+  }
+}
 
 /*=====  End of RESPONSIVE  ======*/
