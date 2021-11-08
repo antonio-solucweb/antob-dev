@@ -9,12 +9,10 @@ html, body {
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300; }
-.brand-blue
-{
+.brand-blue {
   color: #28bbff;
 }
-body.static-layout
-{
+body.static-layout {
     overflow-y: hidden !important;
 }
 h1,
@@ -795,7 +793,7 @@ section {
     height: 25px;
     font-size: 16px; }
   .filter-button-group a {
-      font-size: 0.7em;
+      font-size: 0.7em !important;
   }
 }
 
