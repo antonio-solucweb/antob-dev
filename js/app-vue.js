@@ -37,6 +37,12 @@ var app2 = new Vue({
     portafolios:
     [
       {
+        titulo: 'Petrocheck',
+        categoria: 'wordpress',
+        imagen: 'portfolio_petrocheck',
+        url: 'https://petrocheck.com.ec/'
+      },
+      {
         titulo: 'Mall de los Andes',
         categoria: 'wordpress',
         imagen: 'portfolio_malldelosandes',
