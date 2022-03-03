@@ -37,6 +37,12 @@ var app2 = new Vue({
     portafolios:
     [
       {
+        titulo: 'Greencheck',
+        categoria: 'wordpress',
+        imagen: 'portafolio_greencheck',
+        url: 'https://greencheck.ec/'
+      },
+      {
         titulo: 'Petrocheck',
         categoria: 'wordpress',
         imagen: 'portfolio_petrocheck',
