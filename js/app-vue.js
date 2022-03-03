@@ -253,7 +253,39 @@ var app4 = new Vue({
     [
       {
         title: 'WordPress',
-        imag: 'client.png'
+        imag: 'logo_wordpress'
+      },
+      {
+        title: 'Elementor',
+        imag: 'logo_elementor'
+      },
+      {
+        title: 'Advance Custom Fields',
+        imag: 'logo_acf'
+      },
+      {
+        title: 'Woocommerce',
+        imag: 'logo_woocommerce'
+      },
+      {
+        title: 'Bootstrap',
+        imag: 'logo_bootstrap'
+      },
+      {
+        title: 'PHP',
+        imag: 'logo_php'
+      },
+      {
+        title: 'HTML5',
+        imag: 'logo_html'
+      },
+      {
+        title: 'CSS3',
+        imag: 'logo_css'
+      },
+      {
+        title: 'CSS3',
+        imag: 'logo_javascript'
       }
     ]
   },
