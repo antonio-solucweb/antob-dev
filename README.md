@@ -12,28 +12,28 @@ Here you can view all my projects, my developer skills and my contact informatio
 <br>
 <li>BASE TEMPLATE: Roxy - Bootstrap 4 template built by GetTemplates.co</li>
 <br>
-<li>BASE TEMPLATE AUTHOR:DESIGNED &amp; DEVELOPED by GetTemplates.co and FreeHTML5.co</li>
+<li>BASE TEMPLATE AUTHOR: DESIGNED &amp; DEVELOPED by GetTemplates.co and FreeHTML5.co</li>
 <br>
 <br>
 <li>BASE TEMPLATE WEBSITE: https://gettemplates.co https://freehtml5.co/</li>
 <br>
 <br>
-<li>Bootstraphttp://getbootstrap.com/</li>
+<li>Bootstrap: http://getbootstrap.com/</li>
 <br>
 <br>
-<li>jQueryhttp://jquery.com/</li>
+<li>jQuery: http://jquery.com/</li>
 <br>
 <br>
-<li>OwlCarouselhttps://owlcarousel2.github.io/OwlCarousel2/</li>
+<li>OwlCarousel: https://owlcarousel2.github.io/OwlCarousel2/</li>
 <br>
 <br>
-<li>Isotopehttps://isotope.metafizzy.co</li>
+<li>Isotope: https://isotope.metafizzy.co</li>
 <br>
 <br>
-<li>Select2https://select2.org</li><br><br><li>Stellarhttp://markdalgleish.com/projects/stellar.js/</li>
+<li>Select2: https://select2.org</li><br><br><li>Stellarhttp://markdalgleish.com/projects/stellar.js/</li>
 <br>
 <br>
-<li>Lightcasehttps://cornel.bopp-art.com/lightcase/</li>
+<li>Lightcase: https://cornel.bopp-art.com/lightcase/</li>
 <br>
 <br>
-<li>Demo Images:http://unsplash.com</li>
+<li>Demo Images: http://unsplash.com</li>
