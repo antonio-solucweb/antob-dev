@@ -67,6 +67,12 @@ var app2 = new Vue({
         url: 'https://www.servivapor.com/'
       },
       {
+        titulo: 'Quimicblue',
+        categoria: 'wordpress',
+        imagen: 'portfolio_quimicblue',
+        url: 'https://quimicblue.com/'
+      },
+      {
         titulo: 'Folionet',
         categoria: 'wordpress',
         imagen: 'portfolio_folionet',
@@ -92,13 +98,13 @@ var app2 = new Vue({
       },
       {
         titulo: 'Alarmaspy',
-        categoria: 'wordpress',
+        categoria: 'prestashop',
         imagen: 'portfolio_alarmaspy',
         url: 'http://alarmaspy.com'
       },
       {
         titulo: 'Xtrons',
-        categoria: 'wordpress',
+        categoria: 'prestashop',
         imagen: 'portfolio_xtrons',
         url: 'https://xtrons.es/'
       },
@@ -131,12 +137,6 @@ var app2 = new Vue({
         categoria: 'wordpress',
         imagen: 'portfolio_veerielly',
         url: 'https://veerielly.com/'
-      },
-      {
-        titulo: 'Placer Escondido',
-        categoria: 'prestashop',
-        imagen: 'portfolio_placerescondido',
-        url: 'https://www.placerescondido.com/'
       },
       {
         titulo: 'Promo Nada es Lejos',
@@ -175,12 +175,6 @@ var app2 = new Vue({
         url: 'https://colorsdenim.com/es/'
       },
       {
-        titulo: 'Quimicblue',
-        categoria: 'wordpress',
-        imagen: 'portfolio_quimicblue',
-        url: 'https://quimicblue.com/'
-      },
-      {
         titulo: 'Redskins.RS',
         categoria: 'prestashop',
         imagen: 'portfolio_redskins',
@@ -191,6 +185,12 @@ var app2 = new Vue({
         categoria: 'prestashop',
         imagen: 'portafolio_americantruck',
         url: 'https://americantruckecuador.com/'
+      },
+      {
+        titulo: 'Placer Escondido',
+        categoria: 'prestashop',
+        imagen: 'portfolio_placerescondido',
+        url: 'https://www.placerescondido.com/'
       },
       {
         titulo: '69LiveCam',
