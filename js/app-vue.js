@@ -215,6 +215,13 @@ var app3 = new Vue({
     testimonios:
     [
       {
+        nombre: 'Juan Cifuentes',
+        mensaje: 'Llevo más de 2 años trabajando con Antonio de manera Freelance y es una persona responsable y totalmente profesional en su trabajo, no tengo queja alguna',
+        proyecto: 'CEO - Dejabu',
+        pais: 'Ecuador',
+        imagen: 'testi-1.jpg'
+      },
+      {
         nombre: 'Gianfranco Soriano',
         mensaje: 'Gli sviluppatori web migliori e più creativi comprendono davvero bene le istruzioni e danno il loro 110% per consegnare il lavoro in tempo. Ho avuto a che fare con molti sviluppatori web e nessuno come il tuo team. Li consiglio vivamente !!!',
         proyecto: '69Livecam',
