@@ -35,18 +35,12 @@ var app2 = new Vue({
   el: '#portafolios',
   data:{
     portafolios:
-    [
+    [
       {
-        titulo: 'Greencheck',
-        categoria: 'wordpress',
-        imagen: 'portafolio_greencheck',
-        url: 'https://greencheck.ec/'
-      },
-      {
-        titulo: 'Petrocheck',
-        categoria: 'wordpress',
-        imagen: 'portfolio_petrocheck',
-        url: 'https://petrocheck.com.ec/'
+        titulo: 'Perlis Store',
+        categoria: 'prestashop',
+        imagen: 'portfolio_perlistore',
+        url: 'https://perfumesoriginales.ec'
       },
       {
         titulo: 'Mall de los Andes',
@@ -95,24 +89,6 @@ var app2 = new Vue({
         categoria: 'wordpress',
         imagen: 'portfolio_luminotecnia',
         url: 'https://luminotecnia.cl/'
-      },
-      {
-        titulo: 'Alarmaspy',
-        categoria: 'prestashop',
-        imagen: 'portfolio_alarmaspy',
-        url: 'http://alarmaspy.com'
-      },
-      {
-        titulo: 'Xtrons',
-        categoria: 'prestashop',
-        imagen: 'portfolio_xtrons',
-        url: 'https://xtrons.es/'
-      },
-      {
-        titulo: 'Uparts Zone',
-        categoria: 'wordpress',
-        imagen: 'portfolio_upartszone',
-        url: 'https://www.upartszone.com/'
       },
       {
         titulo: 'Trenton5',
@@ -209,6 +185,24 @@ var app2 = new Vue({
         categoria: 'wordpress',
         imagen: 'portfolio_gykormed',
         url: 'https://gykormed.com/'
+      },
+      {
+        titulo: 'Alarmaspy',
+        categoria: 'prestashop',
+        imagen: 'portfolio_alarmaspy',
+        url: 'http://alarmaspy.com'
+      },
+      {
+        titulo: 'Xtrons',
+        categoria: 'prestashop',
+        imagen: 'portfolio_xtrons',
+        url: 'https://xtrons.es/'
+      },
+      {
+        titulo: 'Uparts Zone',
+        categoria: 'wordpress',
+        imagen: 'portfolio_upartszone',
+        url: 'https://www.upartszone.com/'
       }
     ]
   },
