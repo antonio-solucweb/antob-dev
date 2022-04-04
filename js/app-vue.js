@@ -37,7 +37,7 @@ var app2 = new Vue({
     portafolios:
     [
       {
-        titulo: 'Perlis Store',
+        titulo: 'Perli´s Store',
         categoria: 'prestashop',
         imagen: 'portfolio_perlistore',
         url: 'https://perfumesoriginales.ec'
