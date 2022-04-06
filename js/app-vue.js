@@ -37,10 +37,10 @@ var app2 = new Vue({
     portafolios:
     [
       {
-        titulo: 'Tienda Fútbol Ecuador',
+        titulo: 'Tienda F&aucutetbol Ecuador',
         categoria: 'prestashop',
         imagen: 'portfolio_tiendafutbolecuador',
-        url: 'https://tiendafutbolecuador.com/'
+        url: 'https://tiendafutbolecuador.com'
       },
       {
         titulo: 'Perlis Store',
