@@ -71,22 +71,20 @@
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 			                <li class=" smooth-menu active"></li>
-								<li class=" smooth-menu"><a href="#about">About me</a></li>
-			                    <li class="smooth-menu"><a href="#skills">Skills</a></li>
-			                    <li class="smooth-menu"><a href="#experience">Experience</a></li>
-			                    <li class="smooth-menu"><a href="#profiles">Profile</a></li>
-			                    <li class="smooth-menu"><a href="#portfolio">Portfolio</a></li>
-			                    <li class="smooth-menu"><a href="#clients">Clients</a></li>
-			                    <li class="smooth-menu"><a href="#contact">Contact</a></li>
+								<li class=" smooth-menu"><a href="#about" data-i18n="nav_about">About me</a></li>
+			                    <li class="smooth-menu"><a href="#skills" data-i18n="nav_skills">My skills</a></li>
+								<li class="smooth-menu"><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
+			                    <li class="smooth-menu"><a href="#experience" data-i18n="nav_experience">Work experience</a></li>
+			                    <li class="smooth-menu"><a href="#contact" data-i18n="nav_contact">Get in touch</a></li>
+								<li class="smooth-menu">							<!-- Language selector -->
+									<div class="language-selector">
+										<select id="language-selector">
+											<option value="en">English</option>
+											<option value="es">Español</option>
+											<option value="pt">Português</option>
+										</select>
+									</div></li>
 			                </ul><!--/.nav -->
-							<!-- Language selector -->
-							<div class="language-selector">
-								<select id="language-selector">
-									<option value="en">English</option>
-									<option value="es">Español</option>
-									<option value="pt">Português</option>
-								</select>
-							</div>
 			            </div><!-- /.navbar-collapse -->
 			        </div><!--/.container-->
 			    </nav><!--/nav-->
@@ -130,7 +128,7 @@
 									<div class="col-sm-6">
 										<div class="single-about-add-info">
 											<h3>Whatsapp</h3>
-											<p><a href="https://wa.me/+5595984009715" target="_blank">+55 (95) 98400-9715</a></p>
+											<p><a href="https://wa.me/+5595984009715?text=Contact%20from%20portfolio" target="_blank">+55 (95) 98400-9715</a></p>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -139,12 +137,6 @@
 											<p><a href="mailto:solucwebs@gmail">solucwebs@gmail.com</a></p>
 										</div>
 									</div>
-									<!-- <div class="col-sm-4">
-										<div class="single-about-add-info">
-											<h3>website</h3>
-											<p>www.example.com</p>
-										</div>
-									</div> -->
 								</div>
 							</div>
 						</div>
@@ -154,30 +146,13 @@
 								<div class="about-list-icon">
 									<ul>
 										<li>
-											<a href="#">
-												<i  class="fa fa-facebook" aria-hidden="true"></i>
-											</a>
-										</li><!-- / li -->
-										<li>
-											<a href="#">
-												<i  class="fa fa-dribbble" aria-hidden="true"></i>
-											</a>
-											
-										</li><!-- / li -->
-										<li>
-											<a href="#">
-												<i  class="fa fa-twitter" aria-hidden="true"></i>
-											</a>
-											
-										</li><!-- / li -->
-										<li>
-											<a href="#">
+											<a href="https://www.linkedin.com/in/antonio-blanca/" target="_blank">
 												<i  class="fa fa-linkedin" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
 										<li>
-											<a href="#">
-												<i  class="fa fa-instagram" aria-hidden="true"></i>
+											<a href="https://github.com/antonio-solucweb" target="_blank">
+												<i  class="fa fa-github" aria-hidden="true"></i>
 											</a>
 										</li><!-- / li -->
 										
@@ -286,6 +261,37 @@
 							<div class="col-sm-3">
 								<div class="single-profile profile-no-border">
 									<div class="profile-txt">
+										<a href="" data-icon="tailwind"></a>
+										<div class="profile-icon-name">Tailwind CSS</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href="" data-icon="tailwind"></a>
+											<div class="profile-icon-name">Tailwind CSS</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="profile-border"></div>
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href="" data-icon="php"></a>
+										<div class="profile-icon-name">PHP</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href="" data-icon="php"></a>
+											<div class="profile-icon-name">PHP</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
 										<a href="" data-icon="css"></a>
 										<div class="profile-icon-name">CSS</div>
 									</div>
@@ -297,9 +303,20 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="profile-border"></div>
-						<div class="row">
+							<div class="col-sm-3">
+								<div class="single-profile">
+									<div class="profile-txt">
+										<a href="" data-icon="javascript"></a>
+										<div class="profile-icon-name">JavaScript</div>
+									</div>
+									<div class="single-profile-overlay">
+										<div class="profile-txt">
+											<a href="" data-icon="javascript"></a>
+											<div class="profile-icon-name">JavaScript</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="col-sm-3">
 								<div class="single-profile">
 									<div class="profile-txt">
@@ -310,48 +327,6 @@
 										<div class="profile-txt">
 											<a href="" data-icon="sass"></a>
 											<div class="profile-icon-name">SASS</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="fa fa-stack-overflow"></i></a>
-										<div class="profile-icon-name">smungMung</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="fa fa-stack-overflow"></i></a>
-											<div class="profile-icon-name">smungMung</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href=""><i class="fa fa-linkedin"></i></a>
-										<div class="profile-icon-name">squareSpace</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="fa fa-linkedin"></i></a>
-											<div class="profile-icon-name">squareSpace</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile profile-no-border">
-									<div class="profile-txt">
-										<a href=""><i class="fa fa-bitbucket"></i></a>
-										<div class="profile-icon-name">bitBucket</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href=""><i class="fa fa-bitbucket"></i></a>
-											<div class="profile-icon-name">bitBucket</div>
 										</div>
 									</div>
 								</div>
@@ -367,7 +342,8 @@
 		<section id="portfolio" class="portfolio">
 			<div class="portfolio-details">
 				<div class="section-heading text-center">
-					<h2>portfolio</h2>
+					<h2 data-i18n="portfolio_title" style="padding-bottom: 5px; border-bottom: 0px;">Some of my projets</h2>
+					<p data-i18n="portfolio_subtitle" style="padding-bottom: 50px; border-bottom: 1px solid #e5ebf2;">I can't show all my work for privacy policy reasons</p>
 				</div>
 				<div class="container">
 					<div class="portfolio-content">
@@ -376,52 +352,91 @@
 
 								<div class="col-sm-4">
 									<div class="item">
-										<img src="assets/images/portfolio/p1.jpg" alt="portfolio image"/>
+										<img src="assets/images/portfolio/portfolio_malldelosandes.webp" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#">
-												ui/ux design
+											<a href="https://malldelosandes.com/" target="_blank">
+												Mall de los Andes (WordPress)
 											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
+										</div>
+									</div>
+
 									<div class="item">
-										<img src="assets/images/portfolio/p2.jpg" alt="portfolio image"/>
+										<img src="assets/images/portfolio/portfolio_servivapor.webp" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#">
-												ui/ux design
+											<a href="https://www.servivapor.com/" target="_blank">
+												Servivapor
 											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
+										</div>
+									</div>
+
+									<div class="item">
+										<img src="assets/images/portfolio/portfolio_redskins.webp" alt="portfolio image"/>
+										<div class="isotope-overlay">
+											<a href="https://redskinsrs.com/" target="_blank">
+												Redskins (Prestashop)
+											</a>
+										</div>
+									</div>
+								</div>
 
 								<div class="col-sm-4">
 									<div class="item">
-										<img src="assets/images/portfolio/p3.jpg" alt="portfolio image"/>
+										<img src="assets/images/portfolio/portfolio_quimicblue.webp" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#">
-												web design
+											<a href="https://quimicblue.com/" target="_blank">
+												Quimicblue
 											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
+										</div>
+									</div>
+
+									<div class="item">
+										<img src="assets/images/portfolio/portfolio_peopleartconsulting.webp" alt="portfolio image"/>
+										<div class="isotope-overlay">
+											<a href="https://peopleartconsulting.com/" target="_blank">
+												People Art Consulting
+											</a>
+										</div>
+									</div>
+
+									<div class="item">
+										<img src="assets/images/portfolio/portfolio_livirame.webp" alt="portfolio image"/>
+										<div class="isotope-overlay">
+											<a href="https://livirame.com/" target="_blank">
+												LIVIRAME (Prestashop)
+											</a>
+										</div>
+									</div>
+								</div>
 
 								<div class="col-sm-4">
 									<div class="item">
-										<img src="assets/images/portfolio/p4.jpg" alt="portfolio image"/>
+										<img src="assets/images/portfolio/portfolio_multiplaza.webp" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#">
-												web development
+											<a href="https://multiplaza.com.ec/" target="_blank">
+												Multiplaza (WordPress)
 											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
+										</div>
+									</div>
+									
 									<div class="item">
-										<img src="assets/images/portfolio/p5.jpg" alt="portfolio image"/>
+										<img src="assets/images/portfolio/portfolio_folionet.webp" alt="portfolio image"/>
 										<div class="isotope-overlay">
-											<a href="#">
-												web development
+											<a href="https://folionet.com/" target="_blank">
+												Folionet (WordPress)
 											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item -->
-								</div><!-- /.col -->
+										</div>
+									</div>
+
+									<div class="item">
+										<img src="assets/images/portfolio/portfolio_albystore.webp" alt="portfolio image"/>
+										<div class="isotope-overlay">
+											<a href="https://albystore.com/" target="_blank">
+												Alby Store (Prestashop)
+											</a>
+										</div>
+									</div>
+								</div>
+
 							</div><!-- /.row -->
 						</div><!--/.isotope-->
 					</div><!--/.gallery-content-->
@@ -457,7 +472,7 @@
 															Math Group
 														</h4>
 														<h5>Brazil</h5>
-														<p class="description">
+														<p data-i18n="experience_description_math" class="description">
 															I am responsible for developing custom WordPress templates for single and multisite projects, leveraging code and advanced tools like ACF. I also manage the use of builders such as Elementor, tailored to the specific needs of each project. My role involves implementing new features, making enhancements, and maintaining projects while collaborating on project estimates, functional requirements, and development strategies. All of this is carried out under the agile SCRUM methodology, ensuring efficiency and quality at every stage of the process.
 														</p>
 													</div>
@@ -486,7 +501,7 @@
 															Dejabu
 														</h4>
 														<h5>Ecuador (Freelance)</h5>
-														<p class="description">
+														<p data-i18n="experience_description_dejabu" class="description">
 															Since February 2019, I have worked as a freelance Full-Stack Developer for Dejabu, where I have been responsible for making code-level modifications to templates using child themes when necessary. My role includes implementing new features, making improvements, and maintaining projects, as well as collaborating on project estimations and functional requirements, identifying the best strategies for their implementation. During this time, I have worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver efficient and high-quality solutions.
 														</p>
 													</div>
@@ -522,7 +537,7 @@
 															Socialh4ck
 														</h4>
 														<h5>España (Freelance)</h5>
-														<p class="description">
+														<p data-i18n="experience_description_socialh4ck" class="description">
 															In January 2016, I worked as a Full-Stack Developer at Socialh4ck, where I was responsible for making code-level modifications to templates using child themes when necessary. My responsibilities included implementing new features, making improvements, and maintaining existing projects, as well as collaborating on project estimations and functional requirements for each development. During this time, I worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver effective and high-quality solutions.
 														</p>
 													</div>
@@ -532,151 +547,48 @@
 									</div>
 								</li>
 							</ul>
+							<p class="more-information text-center"><span data-i18n="experience_more">You can see everything about my work experience on</span> <a href="https://www.linkedin.com/in/antonio-blanca/details/experience/" target="_blank">Linkedin</a></p>
 						</div>
 					</div>
 			</div>
 		</section>
 		<!--experience end -->
 
-		<!--clients start -->
-		<section id="clients" class="clients">
-			<div class="section-heading text-center">
-				<h2>clients</h2>
-			</div>
-			<div class="clients-area">
-				<div class="container">
-					<div class="owl-carousel owl-theme" id="client">
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c1.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c2.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c3.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c4.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c5.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c6.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-						<div class="item">
-							<a href="#">
-								<img src="assets/images/clients/c7.png" alt="brand-image" />
-							</a>
-						</div><!--/.item-->
-					</div><!--/.owl-carousel-->
-				</div><!--/.container-->
-			</div><!--/.clients-area-->
-
-		</section><!--/.clients-->
-
-		</section><!--/.clients-->
-		<!--clients end -->
-
 		<!--contact start -->
 		<section id="contact" class="contact">
 			<div class="section-heading text-center">
-				<h2>contact me</h2>
+				<h2 data-i18n="contact_title">Get in touch</h2>
 			</div>
 			<div class="container">
 				<div class="contact-content">
 					<div class="row">
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-form">
-									<form>
-										<div class="row">
-											<div class="col-sm-6 col-xs-12">
-												<div class="form-group">
-												  <input type="text" class="form-control" id="name" placeholder="Name*" name="name">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-											<div class="col-sm-6 col-xs-12">
-												<div class="form-group">
-													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="form-group">
-													<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="form-group">
-													<textarea class="form-control" rows="8" id="comment" placeholder="Message" ></textarea>
-												</div><!--/.form-group-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-										<div class="row">
-											<div class="col-sm-12">
-												<div class="single-contact-btn">
-													<a class="contact-btn" href="#" role="button">submit</a>
-												</div><!--/.single-single-contact-btn-->
-											</div><!--/.col-->
-										</div><!--/.row-->
-									</form><!--/form-->
-								</div><!--/.contact-form-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-adress">
-									<div class="contact-add-head">
-										<h3>browny star</h3>
-										<p>uI/uX designer</p>
-									</div>
-									<div class="contact-add-info">
-										<div class="single-contact-add-info">
-											<h3>phone</h3>
-											<p>987-123-6547</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>email</h3>
-											<p>browny@info.com</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>website</h3>
-											<p>www.brownsine.com</p>
-										</div>
-									</div>
-								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
+						<div class="col-12">
+							<div class="single-contact-box col-sm-12">
+								<div class="contact-list-icon">
 									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-dribbble"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
-										<li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.contact-content-->
-			</div><!--/.container-->
-
-		</section><!--/.contact-->
+										<li>
+											<a href="https://wa.me/+5595984009715?text=Contact%20from%20portfolio" target="_blank">
+												<i class="fa fa-whatsapp" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li>
+											<a href="mailto:solucwebs@gmail" target="_blank">
+												<i class="fa fa-envelope" aria-hidden="true"></i>
+											</a>
+										</li>
+										<li>
+											<a href="https://linkedin.com/in/antonio-blanca" target="_blank">
+												<i class="fa fa-linkedin" aria-hidden="true"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!--contact end -->
 
 		<!--footer-copyright start-->
@@ -684,7 +596,7 @@
 			<div class="container">
 				<div class="hm-footer-copyright text-center">
 					<p>
-						&copy; copyright yourname. design and developed by <a href="https://www.themesine.com/">themesine</a>
+						&copy; 2025 Antonio Blanca || Base template from: <a href="https://www.themesine.com/" target="_blank">themesine</a>
 					</p><!--/p-->
 				</div><!--/.text-center-->
 			</div><!--/.container-->

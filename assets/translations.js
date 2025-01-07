@@ -34,18 +34,26 @@ window.translations = {
         "skills_tools_perf": "Optimización de Rendimiento",
         "skills_tools_security": "Mejores Prácticas de Seguridad",
 
+        //Bloque "Portfolio"
+        "portfolio_title": "Algunos de mis proyectos desarrollados",
+        "portfolio_subtitle": "No puedo mostrar todos mis proyectos por motivos de  acuerdos de privacidad",
+
         //Bloque "Experiencia laboral"
-        "experience_title": "Experiencia laboral",
+        "experience_title": "Parte de mi experiencia laboral",
+        "experience_description_math": "Soy responsable del desarrollo de plantillas personalizadas de WordPress para proyectos individuales y multisite, utilizando código y herramientas avanzadas como ACF. También gestiono el uso de constructores como Elementor según las necesidades específicas de cada proyecto. Mi rol incluye la implementación de nuevas funcionalidades, mejoras y mantenimiento continuo de los proyectos, además de colaborar en la definición de estimaciones, requisitos funcionales y estrategias de desarrollo. Todo esto se realiza bajo la metodología ágil SCRUM, asegurando eficiencia y calidad en cada etapa del proceso.",
+        "experience_description_dejabu": "Desde febrero de 2019, he trabajado como Desarrollador Full-Stack freelance para Dejabu, donde he sido responsable de realizar modificaciones a nivel de código en plantillas utilizando temas hijos cuando es necesario. Mi labor incluye la implementación de nuevas funcionalidades, mejoras y el mantenimiento continuo de proyectos, además de colaborar en la definición de estimaciones y requisitos funcionales para cada desarrollo, identificando las mejores estrategias para su implementación. Durante este tiempo, he trabajado bajo la metodología ágil SCRUM y he utilizado herramientas como HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap y Elementor Pro para garantizar soluciones eficientes y de alta calidad.",
+        "experience_description_socialh4ck": "En enero de 2016, trabajé como Desarrollador Full-Stack en Socialh4ck, donde fui responsable de realizar modificaciones a nivel de código en plantillas utilizando temas hijos cuando era necesario. Mis responsabilidades incluyeron la implementación de nuevas funcionalidades, mejoras y el mantenimiento de proyectos existentes, además de colaborar en la definición de estimaciones y requisitos funcionales para cada desarrollo. Durante este tiempo, trabajé bajo la metodología ágil SCRUM y utilicé herramientas como HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap y Elementor Pro para garantizar la entrega de soluciones efectivas y de alta calidad.",
+        "experience_more": "Puedes ver todo sobre mi experiencia laboral en",
+
+        //Bloque "Contacto"
+        "contact_title": "Entre en contacto",
 
         //Bloque "Navegación"
-        "nav_home": "Inicio",
         "nav_about": "Sobre mí",
-        "nav_education": "Educación",
         "nav_skills": "Habilidades",
-        "nav_experience": "Experiencia",
-        "nav_portfolio": "Portafolio",
-        "nav_contact": "Contacto",
-        "contact_send": "Enviar mensaje",
+        "nav_portfolio": "Portafolios",
+        "nav_experience": "Experiencia laboral",
+        "nav_contact": "Contacto"
     },
     "pt": {
         //Bloque "Banner principal"
@@ -82,14 +90,25 @@ window.translations = {
         "skills_tools_perf": "Otimização de Performance",
         "skills_tools_security": "Boas Práticas de Segurança",
 
+        //Bloque "Portfolio"
+        "portfolio_title": "Alguns dos meus projetos desenvolvidos",
+        "portfolio_subtitle": "Não posso mostrar todos os meus projetos por motivos de acordos de privacidade",
+
+        //Bloque "Experiencia laboral"
+        "experience_title": "Parte da minha experiência laboral",
+        "experience_description_math": "Sou responsável pelo desenvolvimento de templates personalizados em WordPress para projetos individuais e multisite, utilizando código e ferramentas avançadas como ACF. Também gerencio o uso de construtores como Elementor, conforme as necessidades específicas de cada projeto. Meu papel inclui a implementação de novas funcionalidades, melhorias e manutenção contínua dos projetos, além de colaborar na definição de estimativas, requisitos funcionais e estratégias de desenvolvimento. Tudo isso é realizado sob a metodologia ágil SCRUM, garantindo eficiência e qualidade em todas as etapas do processo.",
+        "experience_description_dejabu": "Desde fevereiro de 2019, atuo como Desenvolvedor Full-Stack freelance para Dejabu, sendo responsável por realizar modificações em nível de código em templates utilizando temas filhos, quando necessário. Minhas responsabilidades incluem a implementação de novas funcionalidades, melhorias e manutenção de projetos, além de colaborar na definição de estimativas e requisitos funcionais, identificando as melhores estratégias para sua implementação. Durante este período, trabalhei sob a metodologia ágil SCRUM e utilizei ferramentas como HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap e Elementor Pro para oferecer soluções eficientes e de alta qualidade.",
+        "experience_description_socialh4ck": "Em janeiro de 2016, trabalhei como Desenvolvedor Full-Stack na Socialh4ck, sendo responsável por realizar modificações em nível de código em templates utilizando temas filhos, quando necessário. Minhas responsabilidades incluíram a implementação de novas funcionalidades, melhorias e manutenção de projetos existentes, além de colaborar na definição de estimativas e requisitos funcionais para cada desenvolvimento. Durante este período, trabalhei sob a metodologia ágil SCRUM e utilizei ferramentas como HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap e Elementor Pro para oferecer soluções eficazes e de alta qualidade.",
+        "experience_more": "Pode ver tudo sobre minha experiência de trabalho no",
+
+        //Bloque "Contacto"
+        "contact_title": "Entre em contato",
+
         //Bloque "Navegación"
-        "nav_home": "Início",
-        "nav_about": "Sobre",
-        "nav_education": "Educação",
+        "nav_about": "Sobre mim",
         "nav_skills": "Habilidades",
-        "nav_experience": "Experiência",
-        "nav_portfolio": "Portfólio",
-        "nav_contact": "Contato",
-        "contact_send": "Enviar mensagem",
+        "nav_portfolio": "Portafólio",
+        "nav_experience": "Experiência laboral",
+        "nav_contact": "Contato"
     }
 };
