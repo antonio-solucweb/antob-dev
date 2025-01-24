@@ -54,7 +54,7 @@ window.translations = {
         "nav_skills": "Habilidades",
         "nav_portfolio": "Portafolios",
         "nav_experience": "Experiencia laboral",
-        "nav_contact": "Contacto"
+        "nav_contact": "Contacto" 
     },
     "pt": {
         //Bloque "Banner principal"

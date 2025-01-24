@@ -5,7 +5,7 @@ const i18n = {
     
     init() {
         // Guardar los textos predeterminados del HTML
-        this.saveDefaultTexts();
+        this.saveDefaultTexts(); 
         
         // Detectar el idioma del navegador o usar el almacenado
         this.currentLang = localStorage.getItem('preferred-lang') || 
