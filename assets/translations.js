@@ -10,6 +10,7 @@ window.translations = {
         "about_welcome": "Apasionado por crear soluciones innovadoras y experiencias digitales únicas.",
         "about_description": "Con más de 6 años de experiencia en desarrollo web, me he especializado en WordPress, el CMS que domina mi portafolio con más del 95% de los proyectos realizados. A lo largo de mi carrera, he llevado mis conocimientos en WordPress más allá de lo básico, dominando características avanzadas como la creación de temas y plugins personalizados, la gestión de sitios multisite y la integración de herramientas dinámicas como ACF y JetEngine. Mi compromiso es transformar ideas en soluciones digitales efectivas y funcionales.",
         "about_email": "Correo electrónico",
+        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
         
         //Bloque "Skills"
         "skills_title": "Habilidades y Tecnologías",
@@ -25,8 +26,6 @@ window.translations = {
         "skills_fe_js": "JavaScript y jQuery",
         "skills_fe_responsive": "Diseño Responsivo",
         "skills_fe_bootstrap": "Framework Bootstrap",
-        "skills_fe_sass": "SASS/SCSS",
-        "skills_fe_laravel": "LARAVEL",
 
         "skills_tools_title": "Otras habilidades",
         "skills_tools_git": "Control de Versiones Git",
@@ -48,6 +47,7 @@ window.translations = {
 
         //Bloque "Contacto"
         "contact_title": "Entre en contacto",
+        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Navegación"
         "nav_about": "Sobre mí",
@@ -59,7 +59,7 @@ window.translations = {
     "pt": {
         //Bloque "Banner principal"
         "welcome_title": "Olá <span>,</span> eu sou Antonio Blanca.",
-        "welcome_description": "Sou engenheiro de computação com mais de 5 anos de experiência em desenvolvimento web, e sou apaixonado por WordPress CMS e seus recursos incríveis",
+        "welcome_description": "Sou engenheiro de computação com mais de 6 anos de experiência em desenvolvimento web, e sou apaixonado por WordPress CMS e seus recursos incríveis",
         "description": "Este é um site de exemplo para mostrar meu trabalho.",
 
         //Bloque "About Me"
@@ -67,6 +67,7 @@ window.translations = {
         "about_welcome": "Apaixonado por criar soluções inovadoras e experiências digitais únicas.",
         "about_description": "Com mais de 6 anos de experiência em desenvolvimento web, especializei-me no WordPress, o CMS que representa mais de 95% do meu portfólio. Ao longo da minha carreira, levei meu conhecimento sobre WordPress além do básico, dominando recursos avançados, como criação de temas e plugins personalizados, gestão de multisites e ferramentas dinâmicas como ACF e JetEngine. Meu compromisso é transformar ideias em soluções digitais eficazes e funcionais",
         "about_email": "E-mail",
+        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Skills"
         "skills_title": "Habilidades e Tecnologias",
@@ -82,8 +83,6 @@ window.translations = {
         "skills_fe_js": "JavaScript e jQuery",
         "skills_fe_responsive": "Design Responsivo",
         "skills_fe_bootstrap": "Framework Bootstrap",
-        "skills_fe_sass": "SASS/SCSS",
-        "skills_fe_laravel": "LARAVEL",
 
         "skills_tools_title": "Outras habilidades",
         "skills_tools_git": "Controle de Versão Git",
@@ -105,6 +104,7 @@ window.translations = {
 
         //Bloque "Contacto"
         "contact_title": "Entre em contato",
+        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Navegación"
         "nav_about": "Sobre mim",
