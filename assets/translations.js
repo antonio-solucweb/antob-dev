@@ -20,6 +20,7 @@ window.translations = {
         "skills_wp_woo": "Integración WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
         "skills_wp_multisite": "Gestión de redes Multisite",
+        "skills_wp_security": "Seguridad en WordPress",
 
         "skills_frontend_title": "Desarrollo Frontend",
         "skills_fe_html": "HTML5 y CSS3",
@@ -33,6 +34,7 @@ window.translations = {
         "skills_tools_api": "Integración REST API",
         "skills_tools_perf": "Optimización de Rendimiento",
         "skills_tools_security": "Mejores Prácticas de Seguridad",
+        "skills_tools_reverse_proxy": "Proxy inverso. Ejemplo: Cloudflare",
 
         //Bloque "Portfolio"
         "portfolio_title": "Algunos de mis proyectos desarrollados",
@@ -77,6 +79,7 @@ window.translations = {
         "skills_wp_woo": "Integração WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
         "skills_wp_multisite": "Gestão Multisite",
+        "skills_wp_security": "Segurança do WordPress",
 
         "skills_frontend_title": "Desenvolvimento Frontend",
         "skills_fe_html": "HTML5 e CSS3",
@@ -90,6 +93,7 @@ window.translations = {
         "skills_tools_api": "Integração REST API",
         "skills_tools_perf": "Otimização de Performance",
         "skills_tools_security": "Boas Práticas de Segurança",
+        "skills_tools_reverse_proxy": "Proxy inverso. Exemplo: Cloudflare",
 
         //Bloque "Portfolio"
         "portfolio_title": "Alguns dos meus projetos desenvolvidos",
