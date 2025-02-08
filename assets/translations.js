@@ -19,7 +19,7 @@ window.translations = {
         "skills_wp_plugins": "Desarrollo de Plugins",
         "skills_wp_woo": "Integración WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
-        "skills_wp_gutenberg": "Desarrollo de Bloques Gutenberg",
+        "skills_wp_gutenberg": "Desarrollo de bloques de Gutenberg",
         "skills_wp_multisite": "Gestión de redes Multisite",
         "skills_wp_security": "Seguridad en WordPress",
 
@@ -79,7 +79,7 @@ window.translations = {
         "skills_wp_plugins": "Desenvolvimento de Plugins",
         "skills_wp_woo": "Integração WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
-        "skills_wp_gutenberg": "Desenvolvimento de Bloques Gutenberg",
+        "skills_wp_gutenberg": "Desenvolvimento de blocos do Gutenberg",
         "skills_wp_multisite": "Gestão Multisite",
         "skills_wp_security": "Segurança do WordPress",
 
