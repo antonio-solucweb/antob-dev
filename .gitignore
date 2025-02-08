@@ -16,3 +16,6 @@
 .prettierignore
 
 img/*
+
+# windsurf rules
+.windsurfrules

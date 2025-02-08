@@ -19,6 +19,7 @@ window.translations = {
         "skills_wp_plugins": "Desarrollo de Plugins",
         "skills_wp_woo": "Integración WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
+        "skills_wp_gutenberg": "Desarrollo de Bloques Gutenberg",
         "skills_wp_multisite": "Gestión de redes Multisite",
         "skills_wp_security": "Seguridad en WordPress",
 
@@ -26,7 +27,7 @@ window.translations = {
         "skills_fe_html": "HTML5 y CSS3",
         "skills_fe_js": "JavaScript y jQuery",
         "skills_fe_responsive": "Diseño Responsivo",
-        "skills_fe_bootstrap": "Framework Bootstrap",
+        "skills_fe_bootstrap": "Bootstrap, Tailwind y similares",
 
         "skills_tools_title": "Otras habilidades",
         "skills_tools_git": "Control de Versiones Git",
@@ -78,6 +79,7 @@ window.translations = {
         "skills_wp_plugins": "Desenvolvimento de Plugins",
         "skills_wp_woo": "Integração WooCommerce",
         "skills_wp_acf": "Advanced Custom Fields",
+        "skills_wp_gutenberg": "Desenvolvimento de Bloques Gutenberg",
         "skills_wp_multisite": "Gestão Multisite",
         "skills_wp_security": "Segurança do WordPress",
 
@@ -85,7 +87,7 @@ window.translations = {
         "skills_fe_html": "HTML5 e CSS3",
         "skills_fe_js": "JavaScript e jQuery",
         "skills_fe_responsive": "Design Responsivo",
-        "skills_fe_bootstrap": "Framework Bootstrap",
+        "skills_fe_bootstrap": "Bootstrap, Tailwind e similares",
 
         "skills_tools_title": "Outras habilidades",
         "skills_tools_git": "Controle de Versão Git",
