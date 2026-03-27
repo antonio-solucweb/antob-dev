@@ -10,7 +10,7 @@ window.translations = {
         "about_welcome": "Apasionado por crear soluciones innovadoras y experiencias digitales únicas.",
         "about_description": "Con más de 6 años de experiencia en desarrollo web, me he especializado en WordPress, el CMS que domina mi portafolio con más del 95% de los proyectos realizados. A lo largo de mi carrera, he llevado mis conocimientos en WordPress más allá de lo básico, dominando características avanzadas como la creación de temas y plugins personalizados, la gestión de sitios multisite y la integración de herramientas dinámicas como ACF y JetEngine. Mi compromiso es transformar ideas en soluciones digitales efectivas y funcionales.",
         "about_email": "Correo electrónico",
-        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
+        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
         
         //Bloque "Skills"
         "skills_title": "Habilidades y Tecnologías",
@@ -50,7 +50,9 @@ window.translations = {
 
         //Bloque "Contacto"
         "contact_title": "Entre en contacto",
-        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
+        "contact_whatsapp": "<a href=\"https://wa.me/+5595984009715?text=Contacto%20desde%20el%20portafolios\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a>",
+        "contact_whatsapp_number": "<a href=\"https://wa.me/+5595984009715?text=Contacto%20desde%20el%20portafolios\" target=\"_blank\">+55 (95) 98400-9715</a>",
+        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Navegación"
         "nav_about": "Sobre mí",
@@ -70,7 +72,7 @@ window.translations = {
         "about_welcome": "Apaixonado por criar soluções inovadoras e experiências digitais únicas.",
         "about_description": "Com mais de 6 anos de experiência em desenvolvimento web, especializei-me no WordPress, o CMS que representa mais de 95% do meu portfólio. Ao longo da minha carreira, levei meu conhecimento sobre WordPress além do básico, dominando recursos avançados, como criação de temas e plugins personalizados, gestão de multisites e ferramentas dinâmicas como ACF e JetEngine. Meu compromisso é transformar ideias em soluções digitais eficazes e funcionais",
         "about_email": "E-mail",
-        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
+        "about_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Skills"
         "skills_title": "Habilidades e Tecnologias",
@@ -110,7 +112,9 @@ window.translations = {
 
         //Bloque "Contacto"
         "contact_title": "Entre em contato",
-        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/details/experience/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
+        "contact_whatsapp": "<a href=\"https://wa.me/+5595984009715?text=Contato%20desde%20o%20portfolio\" target=\"_blank\"><i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i></a>",
+        "contact_whatsapp_number": "<a href=\"https://wa.me/+5595984009715?text=Contato%20desde%20o%20portfolio\" target=\"_blank\">+55 (95) 98400-9715</a>",
+        "contact_linkedin": "<a href=\"https://www.linkedin.com/in/antonio-blanca/?locale=pt_BR\" target=\"_blank\"><i class=\"fa fa-linkedin\" aria-hidden=\"true\"></i></a>",
 
         //Bloque "Navegación"
         "nav_about": "Sobre mim",
