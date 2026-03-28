@@ -19,3 +19,5 @@ img/*
 
 # windsurf rules
 .windsurfrules
+
+/old_version/*

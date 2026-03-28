@@ -1,0 +1,676 @@
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHIT_LOGIC | Senior Computer Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                colors: {
+                  "on-background": "#d8e3fb",
+                  "surface-dim": "#081425",
+                  "primary": "#adc6ff",
+                  "inverse-primary": "#005ac2",
+                  "on-secondary-fixed": "#0b1c30",
+                  "on-tertiary-fixed-variant": "#723600",
+                  "on-secondary": "#213145",
+                  "error": "#ffb4ab",
+                  "secondary": "#b7c8e1",
+                  "on-tertiary-container": "#461f00",
+                  "secondary-container": "#3a4a5f",
+                  "surface-container-low": "#111c2d",
+                  "inverse-on-surface": "#263143",
+                  "tertiary-container": "#df7412",
+                  "tertiary": "#ffb786",
+                  "on-tertiary-fixed": "#311400",
+                  "on-surface-variant": "#c2c6d6",
+                  "on-primary-container": "#00285d",
+                  "secondary-fixed": "#d3e4fe",
+                  "primary-container": "#4d8eff",
+                  "on-error-container": "#ffdad6",
+                  "outline-variant": "#424754",
+                  "on-primary-fixed": "#001a42",
+                  "tertiary-fixed-dim": "#ffb786",
+                  "surface-container": "#152031",
+                  "primary-fixed-dim": "#adc6ff",
+                  "tertiary-fixed": "#ffdcc6",
+                  "on-primary": "#002e6a",
+                  "primary-fixed": "#d8e2ff",
+                  "surface-variant": "#2a3548",
+                  "surface-container-high": "#1f2a3c",
+                  "secondary-fixed-dim": "#b7c8e1",
+                  "surface-container-lowest": "#040e1f",
+                  "on-tertiary": "#502400",
+                  "inverse-surface": "#d8e3fb",
+                  "on-surface": "#d8e3fb",
+                  "on-error": "#690005",
+                  "error-container": "#93000a",
+                  "surface-tint": "#adc6ff",
+                  "outline": "#8c909f",
+                  "on-secondary-container": "#a9bad3",
+                  "surface-bright": "#2f3a4c",
+                  "surface": "#081425",
+                  "on-secondary-fixed-variant": "#38485d",
+                  "on-primary-fixed-variant": "#004395",
+                  "surface-container-highest": "#2a3548",
+                  "background": "#081425"
+                },
+                fontFamily: {
+                  "headline": ["Plus Jakarta Sans"],
+                  "body": ["Inter"],
+                  "label": ["Space Grotesk"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+              },
+            },
+          }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, #4d8eff 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+        .glass-panel {
+            background: rgba(42, 53, 72, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(173, 198, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(173, 198, 255, 0.3);
+        }
+        @keyframes border-glow {
+            0%, 100% { border-color: rgba(173, 198, 255, 0.1); }
+            50% { border-color: rgba(173, 198, 255, 0.5); }
+        }
+        .animate-border-glow {
+            animation: border-glow 4s ease-in-out infinite;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(173, 198, 255, 0.5), transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scan 8s linear infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+        .filter-btn-active {
+            background: #adc6ff;
+            color: #00285d;
+        }
+        .accessibility-toolbar {
+            transform: translateX(calc(100% - 48px));
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accessibility-toolbar:hover, .accessibility-toolbar:focus-within {
+            transform: translateX(0);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Accessibility Toolbar -->
+<div class="fixed right-0 top-1/3 z-[100] flex items-center accessibility-toolbar" id="a11y-toolbar">
+<div class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0">
+<span class="material-symbols-outlined text-2xl">settings_accessibility</span>
+</div>
+<div class="bg-surface-container-high border border-outline-variant/30 border-r-0 shadow-2xl p-4 rounded-l-xl flex flex-col gap-4">
+<button aria-label="Toggle Dark and Light Mode" class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" id="theme-toggle">
+<span class="material-symbols-outlined group-active:rotate-90 transition-transform">dark_mode</span>
+</button>
+<button aria-label="Listen to page content" class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" id="listen-toggle">
+<span class="material-symbols-outlined">text_to_speech</span>
+</button>
+<div class="h-px bg-outline-variant/30 w-full"></div>
+<button aria-label="Increase text size" class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors">
+<span class="material-symbols-outlined">text_increase</span>
+</button>
+</div>
+</div>
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-blue-100 uppercase font-headline">ARCHIT_LOGIC</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-blue-300 border-b-2 border-blue-400 pb-1 font-headline tracking-tight" href="#home">Home</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#about">About</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#skills">Tech Stack</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#projects">Projects</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#experience">Experience</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#certifications">Certifications</a>
+<a class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight" href="#contact">Contact</a>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30 ml-2">
+<button aria-label="Switch to English" class="text-[10px] font-bold font-label text-primary hover:text-white transition-colors">EN</button>
+<div class="w-px h-3 bg-outline-variant/50"></div>
+<button aria-label="Cambiar a Español" class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors">ES</button>
+</div>
+</div>
+<button aria-label="Download Resume" class="bg-primary text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform hover:bg-primary-container">Resume</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
+<div class="absolute inset-0 bg-grid-pattern"></div>
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary/5 rounded-full blur-[120px]"></div>
+<div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm tracking-widest uppercase">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Senior WordPress Developer
+                </div>
+<h1 class="text-6xl md:text-8xl font-extrabold font-headline leading-tight tracking-tighter text-glow">
+                    Digital <br/> <span class="text-primary">Logic.</span> <br/> Engineered.
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    Computer Engineer with 7+ years of expertise. I am passionate about creating innovative solutions and unique digital experiences.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-bold rounded-lg hover:shadow-[0_0_30px_rgba(173,198,255,0.4)] transition-all" href="#projects">Explore Projects</a>
+<a class="px-8 py-4 glass-panel text-primary font-bold rounded-lg hover:bg-surface-container-high transition-all" href="#contact">Get in Touch</a>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-xl"></div>
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden">
+<div class="flex items-center gap-2 mb-4 border-b border-outline-variant/30 pb-4">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="ml-4 font-label text-xs text-outline tracking-widest uppercase">Some_Details.tsx</span>
+</div>
+<pre class="font-label text-sm text-primary-fixed-dim/80 leading-relaxed"><span class="text-tertiary">const</span> <span class="text-on-surface">Engineer</span> = {
+  yearsExperience: <span class="text-tertiary">7+</span>,
+  specialization: <span class="text-on-surface">"Full-Stack Development"</span>,
+  mainStack: [<span class="text-on-surface">"WordPress"</span>, <span class="text-on-surface">"Astro"</span>, <span class="text-on-surface">"ReactJs"</span>],
+  focus: <span class="text-on-surface">"Performance &amp; Scalability"</span>
+};
+
+<span class="text-tertiary">function</span> <span class="text-on-surface">DeployProject</span>(id) {
+  <span class="text-outline-variant">// Logic for architectural excellence</span>
+  <span class="text-tertiary">return</span> <span class="text-on-surface">`Success`</span>;
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 bg-surface relative" id="about">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary/40"></div>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary/40"></div>
+<img alt="Computer Engineer working" class="rounded-lg shadow-2xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlIJPxTE_O3Cb6XvCm-uCPEZogu72G7XMLMVfl91gdq4HqDu3vKHTRC98hxKNzZcoIRfuUrid0rXxFgiPDf16RaHcgOaVjNL113mVBp0i7771iHzqBrfc2diwHto8NK4NeV7Sx37VxT4GLPs8kV3ptrWmke2kRIcDu-q8uw-TtFV5slvLeDs-Ahk7f74Uui8quqezE4dC2jTP37Zvc5slRMUdMnOCnsBqMcHRCnc-ECNdIQiC0_Nhip7wjFWxo7RVErow3PG9J_b4"/>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-4xl md:text-5xl font-bold font-headline tracking-tighter">The Architect's <span class="text-primary">Profile</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed font-body">
+                            With <span class="text-primary font-bold">over 7 years of rigorous experience</span> as a Computer Engineer, I have built a career on the principles of logic and efficiency. My transition from standard development to complex system architecture allows me to deliver <span class="text-primary font-bold">WordPress ecosystems that are modular, scalable, and lightning-fast</span>.
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-primary">Core Philosophy</h4>
+<p class="text-sm text-outline tracking-wide uppercase font-label">Modular &amp; Scalable</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-primary">Technical Niche</h4>
+<p class="text-sm text-outline tracking-wide uppercase font-label">Modern CMS &amp; Automation</p>
+</div>
+</div>
+<div class="pt-4 border-l-2 border-primary/20 pl-6 space-y-4">
+<p class="italic text-on-secondary-container">
+"Throughout my career, I have gone beyond the basics, mastering advanced features such as custom theme and plugin development, multisite environments, ACF, Headless WordPress solutions, WordPress and external APIs, and more. My mission is to transform ideas into effective and functional digital solutions."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Command Center -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="skills">
+<div class="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="mb-16 space-y-4 text-center">
+<span class="font-label text-primary tracking-[0.3em] text-sm uppercase">Infrastructure.v3</span>
+<h2 class="text-5xl md:text-6xl font-extrabold font-headline tracking-tighter">Technical <span class="text-primary">Command</span> Center</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body">My core architectural stack, optimized for scalability, performance, and enterprise-grade automation.</p>
+</div>
+<!-- Interactive Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="px-6 py-2 rounded-full border border-primary/20 text-sm font-label uppercase tracking-widest filter-btn-active transition-all">All</button>
+<button class="px-6 py-2 rounded-full border border-primary/20 text-sm font-label uppercase tracking-widest text-outline hover:text-primary hover:bg-primary/5 transition-all">Core Stack</button>
+<button class="px-6 py-2 rounded-full border border-primary/20 text-sm font-label uppercase tracking-widest text-outline hover:text-primary hover:bg-primary/5 transition-all">Backend &amp; DB</button>
+<button class="px-6 py-2 rounded-full border border-primary/20 text-sm font-label uppercase tracking-widest text-outline hover:text-primary hover:bg-primary/5 transition-all">Automation &amp; Tools</button>
+</div>
+<!-- Unified Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+<!-- WordPress -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 animate-border-glow overflow-hidden">
+<div class="scanline opacity-0 group-hover:opacity-100"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">inventory_2</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-primary tracking-widest uppercase mb-1">Status: Active</div>
+<div class="px-2 py-0.5 rounded-sm bg-primary/10 text-primary text-[10px] font-label font-bold uppercase border border-primary/20">Master</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">WordPress</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Starting from custom themes and plugins development from scratch, to headless solutions and complex enterprise multisite networks, and more.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Custom WordPress Development
+</div>
+</div>
+<!-- Astro -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 animate-border-glow overflow-hidden">
+<div class="scanline opacity-0 group-hover:opacity-100"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">rocket_launch</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-primary tracking-widest uppercase mb-1">Status: Ready</div>
+<div class="px-2 py-0.5 rounded-sm bg-primary/10 text-primary text-[10px] font-label font-bold uppercase border border-primary/20">Expert</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Astro</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Leveraging island architecture for ultra-fast, content-driven modern web experiences. Using WordPress as Backend for amazing headless solutions.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> High-Perf Static Sites
+</div>
+</div>
+<!-- React -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 animate-border-glow overflow-hidden">
+<div class="scanline opacity-0 group-hover:opacity-100"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">view_in_ar</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-primary tracking-widest uppercase mb-1">Status: Online</div>
+<div class="px-2 py-0.5 rounded-sm bg-primary/10 text-primary text-[10px] font-label font-bold uppercase border border-primary/20">Expert</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">React</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Building dynamic user interfaces and complex state-driven single page applications. You need autonomy on content management? I can integrate it with WordPress has backend.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Component System Design
+                    </div>
+</div>
+<!-- PHP -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 border-primary/10 overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">data_object</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-tertiary tracking-widest uppercase mb-1">Protocol: PHP 8.x</div>
+<div class="px-2 py-0.5 rounded-sm bg-tertiary/10 text-tertiary text-[10px] font-label font-bold uppercase border border-tertiary/20">Master</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">PHP / OOP</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Developing custom WordPress solutions using OOP principles, creating scalable plugins and themes with advanced hooks architecture.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> WordPress OOP Development
+                    </div>
+</div>
+<!-- SQL -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 border-primary/10 overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">database</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-tertiary tracking-widest uppercase mb-1">Index: Optimized</div>
+<div class="px-2 py-0.5 rounded-sm bg-tertiary/10 text-tertiary text-[10px] font-label font-bold uppercase border border-tertiary/20">Advanced</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">SQL Optimization</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Engineering efficient database schemas and complex query optimizations for large datasets. Specialized in WordPress database optimization, custom tables, and WP_Query performance tuning.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Complex Query Tuning
+                    </div>
+</div>
+<!-- n8n -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 border-primary/10 overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">hub</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-primary-container tracking-widest uppercase mb-1">Link: Persistent</div>
+<div class="px-2 py-0.5 rounded-sm bg-primary-container/20 text-primary-container text-[10px] font-label font-bold uppercase border border-primary-container/20">Expert</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">n8n Automation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Designing sophisticated low-code/no-code workflows bridging third-party services.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Workflow Architecture
+                    </div>
+</div>
+<!-- TS/JS -->
+<div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 border-primary/10 overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined !text-4xl">terminal</span>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-label text-primary-container tracking-widest uppercase mb-1">Runtime: Node/Deno</div>
+<div class="px-2 py-0.5 rounded-sm bg-primary-container/20 text-primary-container text-[10px] font-label font-bold uppercase border border-primary-container/20">Master</div>
+</div>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">TS / JS</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Writing type-safe, maintainable code for both client and server environments.</p>
+<div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Full-Stack Engine
+                    </div>
+</div>
+</div>
+<div class="flex justify-center">
+<button aria-label="View Full Architecture" class="group relative px-10 py-4 bg-surface-container-high border border-primary/20 rounded-lg overflow-hidden transition-all hover:border-primary/60 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] active:scale-95" id="view-architecture-btn">
+<span class="relative z-10 flex items-center gap-3 font-label font-bold uppercase tracking-[0.2em] text-primary">
+                        Initialize Expansion 
+                        <span class="material-symbols-outlined text-xl transition-transform group-hover:rotate-180">expand_more</span>
+</span>
+<div class="scanline opacity-0 group-hover:opacity-40"></div>
+</button>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-24 bg-surface-container-lowest" id="projects">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="space-y-4">
+<span class="font-label text-primary tracking-widest text-sm uppercase">Selected Works</span>
+<h2 class="text-5xl font-extrabold font-headline tracking-tighter">Recent Benchmarks</h2>
+</div>
+<p class="text-outline-variant font-label max-w-xs">A selection of systems where performance meets functional elegance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" id="projects-grid">
+<!-- Project 1 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Data Security Interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo9Kvr1pqcejuFLVA9WH-5sHtI_n2ruQW7z0cNuP7U4SaZeNW4xNYvlqxNaTGdz043lWTGuscBzlc1ihYWpBQWohd7HDu-iKSkJticM5FnUD0f1_5VIMN8ipCj7nRuOHwBLPq0wKuslKhIcgh-cptFBSSxK0vYxNSipGPsmZ1zxqQ6OhDvNxcEJNl8SU_K0in5WYOrZ-mFGZwPvobLJlhloy71dlt_mMhASP7Nvj35nmb_5ZAju28LK7QxJ6XpUK9WDjGeaervW0M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">n8n Automation</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">React</span>
+</div>
+<h3 class="text-2xl font-bold font-headline group-hover:text-primary transition-colors">Neural Flow Dashboard</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 leading-relaxed">Enterprise-grade automation hub managing 10k+ daily transactions with integrated n8n workflows.</p>
+<a class="inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest group/link" href="#">
+                            View Blueprint 
+                            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Tech Analytics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1MRbOpcpeuwAg9evNztCrjTVPjqt_CuofBEtUA6LzXW6EuCLRg2rDZcNgAgYwFlnGfyzCUw0k5s9X4AD1tCSgMfK63f7pBFPOsXeZh84LAvIMXHNZP-qX8VPxFOJu_mMEmgCDrRrgCPicmjLsLmn14GXXUfLiljswsZ8CPDHY-NRn1iF3PzBYjapezZeuEjK89BQtfv0ZSkA3a5xiazAl6j9V76alAPnDCkej4DAS-jDWS2uSl3dpEOUU2osqEMTz_-JfT4LiazI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">WordPress</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">Astro</span>
+</div>
+<h3 class="text-2xl font-bold font-headline group-hover:text-primary transition-colors">Headless Commerce</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 leading-relaxed">High-performance headless WordPress build using Astro for sub-500ms load times.</p>
+<a class="inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest group/link" href="#">
+                            View Blueprint 
+                            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-500">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Server Infrastructure" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjyZAD0XsmX0vCk3HlJeKGkEnawTsDC8NKzMnt7JOSpQHgBeJ0139aRUV6tPWe8b0hLINJyHS5z7_z9SwpCqUXGftT6xFTRnSMEEvTvC7i2VmMgV73eM6A64bJ276EJbNMCWMmqj-YlDclWP6qfZbJEG0Y6mRiwYcwXUKznv0b6Pv2UONAuGwJaJmPFfmSuqhN_qkysd5to_keXVIeIfoNc9sDCfMb-0nl7QZWr91jpO4maG1TnFYFJ5k5IPi_PLvfNVCdNhsd12g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">SQL</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">PHP</span>
+</div>
+<h3 class="text-2xl font-bold font-headline group-hover:text-primary transition-colors">Data Matrix Core</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2 leading-relaxed">Complex SQL optimization for a massive legacy system, improving query speed by 240%.</p>
+<a class="inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest group/link" href="#">
+                            View Blueprint 
+                            <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-24 bg-surface relative overflow-hidden" id="experience">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4 space-y-6">
+<h2 class="text-5xl font-extrabold font-headline tracking-tighter leading-none">Career <br/> <span class="text-primary">Timeline</span></h2>
+<p class="text-on-surface-variant font-body">A vertical breakdown of architectural evolution and professional growth since 2016.</p>
+<div class="flex gap-4">
+<div class="text-center">
+<div class="text-4xl font-bold text-primary font-headline">7+</div>
+<div class="text-xs uppercase tracking-widest font-label text-outline">Years</div>
+</div>
+<div class="w-px h-12 bg-outline-variant/30"></div>
+<div class="text-center">
+<div class="text-4xl font-bold text-primary font-headline">124</div>
+<div class="text-xs uppercase tracking-widest font-label text-outline">Projects</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 relative">
+<div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-outline-variant/20 to-transparent transform -translate-x-1/2 hidden md:block"></div>
+<!-- Timeline Item 1 -->
+<div class="relative mb-16 md:flex md:justify-between items-center w-full">
+<div class="md:w-5/12 hidden md:block"></div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-surface shadow-[0_0_15px_rgba(173,198,255,0.6)] z-10 transform -translate-x-1/2"></div>
+<div class="md:w-5/12 glass-panel p-8 rounded-xl ml-8 md:ml-0">
+<span class="text-xs font-label text-primary tracking-widest uppercase">2022 — Present</span>
+<h4 class="text-xl font-bold font-headline mt-1 mb-2">MATH Group - Full Stack Developer</h4>
+<h5 class="text-sm font-semibold font-headline my-1 mb-2">Brazil (Remote - Contract)</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">I specialize in architecting advanced WordPress solutions and custom software. My core expertise includes developing 100% multisite-compatible themes from scratch and engineering bespoke plugins for complex data distribution and external platform synchronization (e.g., PopAgro).
+<br><br>Beyond the WordPress ecosystem, I actively collaborate within a structured development team, contributing to the development of React/NodeJS and PostgreSQL platforms. I am also gaining hands-on experience in maintaining AI agents within the Databricks (Genie) infrastructure. I manage the full development lifecycle using NPM, Swagger, and GitHub, focusing on efficient workflows and technical excellence under SCRUM methodology.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative mb-16 md:flex md:justify-between items-center w-full">
+<div class="md:w-5/12 glass-panel p-8 rounded-xl mr-8 md:mr-0 text-left md:text-right">
+<span class="text-xs font-label text-primary tracking-widest uppercase">2019 — 2022</span>
+<h4 class="text-xl font-bold font-headline mt-1 mb-2">Dejabu - Full Stack Developer</h4>
+<h5 class="text-sm font-semibold font-headline my-1 mb-2">Ecuador (Freelance)</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Since February 2019, I have worked as a freelance Full-Stack Developer for Dejabu, where I have been responsible for making code-level modifications to templates using child themes when necessary. My role includes implementing new features, making improvements, and maintaining projects, as well as collaborating on project estimations and functional requirements, identifying the best strategies for their implementation. During this time, I have worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver efficient and high-quality solutions.</p>
+</div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-outline border-4 border-surface z-10 transform -translate-x-1/2"></div>
+<div class="md:w-5/12 hidden md:block"></div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative md:flex md:justify-between items-center w-full">
+<div class="md:w-5/12 hidden md:block"></div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-outline-variant border-4 border-surface z-10 transform -translate-x-1/2"></div>
+<div class="md:w-5/12 glass-panel p-8 rounded-xl ml-8 md:ml-0">
+<span class="text-xs font-label text-primary tracking-widest uppercase">2016 - 2019</span>
+<h4 class="text-xl font-bold font-headline mt-1 mb-2">Socialh4ck - Full Stack Developer</h4>
+<h5 class="text-sm font-semibold font-headline my-1 mb-2">Spain (Freelance)</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">In January 2016, I worked as a Full-Stack Developer at Socialh4ck, where I was responsible for making code-level modifications to templates using child themes when necessary. My responsibilities included implementing new features, making improvements, and maintaining existing projects, as well as collaborating on project estimations and functional requirements for each development. During this time, I worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver effective and high-quality solutions.</p>
+</div>
+</div>
+</div>
+
+</div>
+<div class="text-center mt-7">
+    <p class="text-on-surface-variant text-lg leading-relaxed font-body">You can see everything about my work experience on <a href="https://www.linkedin.com/in/antonio-blanca/" target="_blank" class="text-primary font-bold">LinkedIn</a>.</p>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="certifications">
+<div class="container mx-auto px-6">
+<div class="mb-16 space-y-4">
+<span class="font-label text-primary tracking-widest text-sm uppercase">Verified Expertise</span>
+<h2 class="text-5xl font-extrabold font-headline tracking-tighter">Certifications &amp; <span class="text-primary">Accreditations</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Cert 1 -->
+<div class="glass-panel p-8 rounded-xl relative group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">Dec 2023</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Google Cloud Certified Professional</h4>
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider mb-4">Google Cloud Platform</p>
+<div class="pt-4 border-t border-outline-variant/20">
+<span class="text-[10px] font-label text-primary uppercase font-bold">Cloud Architecture</span>
+</div>
+</div>
+<!-- Cert 2 -->
+<div class="glass-panel p-8 rounded-xl relative group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">Oct 2023</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">Meta Front-End Developer</h4>
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider mb-4">Meta / Coursera</p>
+<div class="pt-4 border-t border-outline-variant/20">
+<span class="text-[10px] font-label text-primary uppercase font-bold">Advanced UI Design</span>
+</div>
+</div>
+<!-- Cert 3 -->
+<div class="glass-panel p-8 rounded-xl relative group hover:bg-surface-container-high transition-all">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">Jun 2023</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-2">WordPress Advanced Architecture</h4>
+<p class="text-on-surface-variant text-sm font-label uppercase tracking-wider mb-4">WPEngine Academy</p>
+<div class="pt-4 border-t border-outline-variant/20">
+<span class="text-[10px] font-label text-primary uppercase font-bold">Systems Design</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="contact">
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent"></div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-4xl mx-auto glass-panel rounded-2xl overflow-hidden shadow-2xl">
+<div class="grid md:grid-cols-2">
+<div class="p-12 bg-primary-container/20 space-y-8">
+<h2 class="text-4xl font-bold font-headline tracking-tight">Initiate <br/> Project</h2>
+<p class="text-on-surface-variant font-body leading-relaxed">Ready to engineer your next digital solution? Provide the project parameters and let's construct something extraordinary.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<span class="font-label text-sm tracking-wide"><a href="https://wa.me/+5595984009715?text=Contact%20from%20portfolio" target="_blank">+55 (95) 98400-9715</a></span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="font-label text-sm tracking-wide"><a href="mailto:solucwebs@gmail.com" target="_blank">solucwebs@gmail.com</a></span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="font-label text-sm tracking-wide">Based on Brazil. - Available for global remote work</span>
+</div>
+</div>
+</div>
+<div class="p-12 space-y-6">
+<form action="#" class="space-y-4">
+<div>
+<label class="block text-xs font-label text-outline uppercase tracking-widest mb-2">System.User_Name</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all outline-none" placeholder="Enter name" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-label text-outline uppercase tracking-widest mb-2">System.User_Email</label>
+<input class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all outline-none" placeholder="email@address.com" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-label text-outline uppercase tracking-widest mb-2">System.Project_Scope</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary transition-all outline-none h-32" placeholder="Brief project description..."></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-bold py-4 rounded-lg hover:shadow-[0_0_20px_rgba(173,198,255,0.4)] transition-all flex items-center justify-center gap-2" type="submit">
+                                Transmit Data
+                                <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-12 px-8 border-t border-slate-900">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto gap-6">
+<div class="text-blue-200 font-mono text-lg font-bold">ARCHIT_LOGIC</div>
+<div class="text-slate-500 font-['Space_Grotesk'] text-xs uppercase tracking-widest text-center md:text-left">
+            © 2024 SENIOR_WEB_ARCHITECT // SYSTEM_STABLE
+        </div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-['Space_Grotesk'] text-xs uppercase tracking-widest" href="#">Github</a>
+<a class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-['Space_Grotesk'] text-xs uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-['Space_Grotesk'] text-xs uppercase tracking-widest" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-['Space_Grotesk'] text-xs uppercase tracking-widest" href="#">Documentation</a>
+</div>
+</div>
+</footer>
+<script>
+    // Theme toggle logic
+    document.getElementById('theme-toggle')?.addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+    });
+
+    // Expand btn logic relocated to Skills section
+    document.getElementById('view-architecture-btn')?.addEventListener('click', function() {
+        const btnText = this.querySelector('span');
+        btnText.innerHTML = `
+            Connecting to Data Node...
+            <svg class="animate-spin h-5 w-5 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        `;
+    });
+</script>
+</body></html>
