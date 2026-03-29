@@ -10,7 +10,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  image: {
-    domains: ["antonio-blanca.netlify.app", "localhost:4321"]
-  }
 });

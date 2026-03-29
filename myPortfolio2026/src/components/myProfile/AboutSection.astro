@@ -1,5 +1,6 @@
 ---
 import { Picture } from "astro:assets";
+import profileImage from "@assets/img/img-antonio_blanca.jpg";
 
 // About Section Component - The Architect's Profile
 ---
@@ -17,7 +18,7 @@ import { Picture } from "astro:assets";
         <Picture 
           alt="Antonio Blanca" 
           class="rounded-lg shadow-2xl relative z-10 grayscale group-hover:grayscale-0 transition-all duration-700" 
-          src="/src/assets/img/img-antonio_blanca.jpg"
+          src={profileImage}
           width={512}
           height={512}
           formats={['avif', 'webp', 'jpg']} />

@@ -3,12 +3,28 @@ import { ProjectsDataSchema } from '@/types/index';
 import projectsData from '@assets/data/projects.json';
 import { Picture } from 'astro:assets';
 
+// Import all portfolio images dynamically
+const images = import.meta.glob('/src/assets/img/portfolio/*.{jpeg,jpg,png,gif,webp}', { eager: true });
+
 // Validate projects data
 const result = ProjectsDataSchema.safeParse(projectsData);
 if (!result.success) {
   console.error('Projects data validation failed:', result.error);
 }
 const projects = result.success ? result.data : [];
+
+// Map projects with their images
+const projectsWithImages = projects.map((project) => {
+  const imagePath = `/src/assets/img/portfolio/${project.image}`;
+  const imageModule = images[imagePath] as any;
+  
+  if (!imageModule) {
+    console.warn(`Image not found: ${imagePath}`);
+    return { ...project, imageData: null };
+  }
+  
+  return { ...project, imageData: imageModule.default };
+});
 ---
 
 <section class="py-24 bg-surface-container-lowest" id="projects">
@@ -26,20 +42,26 @@ const projects = result.success ? result.data : [];
 
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      {projects.map((project) => (
+      {projectsWithImages.map((project) => (
         <div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-500">
           <!-- Project Image -->
           <div class="aspect-video relative overflow-hidden">
-            <Picture 
-              alt={project.title}
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
-              src={`/src/assets/img/portfolio/${project.image}`}
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="450"
-              formats={['avif', 'webp', 'jpg']}
-            />
+            {project.imageData ? (
+              <Picture 
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                src={project.imageData}
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={450}
+                formats={['avif', 'webp', 'jpg']}
+              />
+            ) : (
+              <div class="w-full h-full bg-surface-container-high flex items-center justify-center">
+                <span class="text-outline">Image not found</span>
+              </div>
+            )}
             <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
           </div>
 
