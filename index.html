@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://antonio-blanca.netlify.app/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Antonio Blanca Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #081425 0%, #1f2a3c 100%);
+            color: #d8e3fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #adc6ff;
+        }
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: #c2c6d6;
+        }
+        a {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #adc6ff 0%, #4d8eff 100%);
+            color: #00285d;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        a:hover {
+            transform: translateY(-2px);
+        }
+        .spinner {
+            margin: 2rem auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(173, 198, 255, 0.2);
+            border-top-color: #adc6ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        // Redirect immediately
+        window.location.replace("https://antonio-blanca.netlify.app/");
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>A new portfolio version are available, you will be redirected...</h1>
+        <div class="spinner"></div>
+        <p>If you are not redirected automatically, click the link below:</p>
+        <a href="https://antonio-blanca.netlify.app/">Visit Portfolio</a>
+    </div>
+</body>
+</html>
