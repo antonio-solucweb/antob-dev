@@ -1,0 +1,86 @@
+---
+import { ProjectsDataSchema } from '@/types/index';
+import projectsData from '@assets/data/projects.json';
+import { Picture } from 'astro:assets';
+
+// Validate projects data
+const result = ProjectsDataSchema.safeParse(projectsData);
+if (!result.success) {
+  console.error('Projects data validation failed:', result.error);
+}
+const projects = result.success ? result.data : [];
+---
+
+<section class="py-24 bg-surface-container-lowest" id="projects">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="space-y-4">
+        <span class="font-label text-primary tracking-widest text-sm uppercase">Selected Works</span>
+        <h2 class="text-5xl font-extrabold font-headline tracking-tighter">Recent Benchmarks</h2>
+      </div>
+      <p class="text-outline-variant font-label max-w-xs">
+        A selection of systems where performance meets functional elegance.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {projects.map((project) => (
+        <div class="group relative bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-all duration-500">
+          <!-- Project Image -->
+          <div class="aspect-video relative overflow-hidden">
+            <Picture 
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              src={`/src/assets/img/portfolio/${project.image}`}
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+              formats={['avif', 'webp', 'jpg']}
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+          </div>
+
+          <!-- Project Content -->
+          <div class="p-8 space-y-4">
+            <!-- Tags -->
+            <div class="flex gap-2 flex-wrap">
+              {project.tags.map((tag) => (
+                <span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold font-headline group-hover:text-primary transition-colors">
+              {project.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-on-surface-variant text-sm line-clamp-2 leading-relaxed">
+              {project.description}
+            </p>
+
+            <!-- Link -->
+            {project.link && (
+              <a 
+                class="inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest group/link" 
+                href={project.link} 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.ctaText || "View Project"}
+                <span class="material-symbols-outlined transition-transform group-hover/link:translate-x-1">
+                  arrow_forward
+                </span>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

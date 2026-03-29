@@ -1,0 +1,55 @@
+---
+import { CertificationsDataSchema } from '@/types/index';
+import certificationsData from '@assets/data/certifications.json';
+
+// Validate certifications data
+const result = CertificationsDataSchema.safeParse(certificationsData);
+if (!result.success) {
+  console.error('Certifications data validation failed:', result.error);
+}
+const certifications = result.success ? result.data : [];
+---
+
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="certifications">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="mb-16 space-y-4">
+      <span class="font-label text-primary tracking-widest text-sm uppercase">Verified Expertise</span>
+      <h2 class="text-5xl font-extrabold font-headline tracking-tighter">
+        Certifications & <span class="text-primary">Accreditations</span>
+      </h2>
+    </div>
+
+    <!-- Certifications Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {certifications.map((cert) => (
+        <div class="glass-panel p-8 rounded-xl relative group hover:bg-surface-container-high transition-all">
+          <!-- Header: Icon & Date -->
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">{cert.icon || 'license'}</span>
+            </div>
+            <span class="text-[10px] font-label text-outline uppercase tracking-widest">
+              {cert.date}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h4 class="text-xl font-bold font-headline mb-2">{cert.title}</h4>
+
+          <!-- Issuer -->
+          <p class="text-on-surface-variant text-sm font-label uppercase tracking-wider mb-4">
+            {cert.issuer}
+          </p>
+
+          <!-- Category -->
+          <div class="pt-4 border-t border-outline-variant/20">
+            <span class="text-[10px] font-label text-primary uppercase font-bold">
+              {cert.category}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

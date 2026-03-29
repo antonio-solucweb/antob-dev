@@ -1,0 +1,110 @@
+---
+import AccessibilityToolbar from '@components/ui/accessibilityToolbar/AccessibilityToolbar.astro';
+import MainNavbar from '@components/ui/mainNavbar/MainNavbar.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/src/assets/img/icon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/assets/img/icon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/img/icon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/assets/img/icon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/assets/img/icon/site.webmanifest" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+    </noscript>
+    <!-- Material Symbols Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  
+  <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- Accessibility Toolbar -->
+    <AccessibilityToolbar />
+
+    <!-- Top Navigation -->
+    <MainNavbar />
+
+    <!-- Main Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 w-full py-12 px-8 border-t border-slate-900">
+      <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-2xl mx-auto gap-6">
+        <div class="text-blue-200 font-mono text-lg font-bold">ANTONIO BLANCA</div>
+        
+        <div class="text-slate-500 font-label text-xs uppercase tracking-widest text-center md:text-left">
+          © {new Date().getFullYear()} Senior WordPress Developer || All rights reserved.
+        </div>
+        
+        <div class="flex gap-6">
+          <a 
+            class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-label text-xs uppercase tracking-widest" 
+            href="https://github.com/antonio-solucweb" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
+          <a 
+            class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 font-label text-xs uppercase tracking-widest" 
+            href="https://www.linkedin.com/in/antonio-blanca/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Theme toggle logic
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle?.addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+      });
+
+      // Active navigation state with Intersection Observer
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove('text-blue-300', 'border-b-2', 'border-blue-400', 'pb-1');
+              link.classList.add('text-slate-400');
+              
+              if (link.getAttribute('href') === `#${entry.target.id}`) {
+                link.classList.remove('text-slate-400');
+                link.classList.add('text-blue-300', 'border-b-2', 'border-blue-400', 'pb-1');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      sections.forEach(section => observer.observe(section));
+    </script>
+  </body>
+</html>

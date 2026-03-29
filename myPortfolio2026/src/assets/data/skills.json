@@ -1,0 +1,335 @@
+[
+  {
+    "id": "cms",
+    "name": "CMS & Frameworks",
+    "skills": [
+      {
+        "id": 1,
+        "name": "WordPress",
+        "description": "Expert in custom theme and plugin development, multisite environments, ACF, Headless WordPress, REST API integration, and performance optimization.",
+        "command": "wp core install --url=example.com",
+        "status": "active",
+        "level": "initial",
+        "icon": "inventory_2"
+      },
+      {
+        "id": 2,
+        "name": "Astro",
+        "description": "Building ultra-fast static sites with island architecture, content collections, and seamless integration with modern frameworks.",
+        "command": "npm create astro@latest",
+        "status": "active",
+        "level": "expert",
+        "icon": "rocket_launch"
+      },
+      {
+        "id": 3,
+        "name": "React",
+        "description": "Developing dynamic user interfaces with hooks, context API, and state management solutions like Redux and Zustand.",
+        "command": "npx create-react-app my-app",
+        "status": "active",
+        "level": "expert",
+        "icon": "code"
+      },
+      {
+        "id": 4,
+        "name": "Next.js",
+        "description": "Server-side rendering, static site generation, API routes, and full-stack React applications with optimal performance.",
+        "command": "npx create-next-app@latest",
+        "status": "active",
+        "level": "expert",
+        "icon": "flash_on"
+      },
+      {
+        "id": 5,
+        "name": "Laravel",
+        "description": "Building robust backend systems with Eloquent ORM, authentication, API development, and queue management.",
+        "command": "composer create-project laravel/laravel",
+        "status": "active",
+        "level": "expert",
+        "icon": "settings"
+      },
+      {
+        "id": 6,
+        "name": "Vue.js",
+        "description": "Progressive framework for building user interfaces with composition API and reactive data binding.",
+        "command": "npm create vue@latest",
+        "status": "active",
+        "level": "expert",
+        "icon": "view_in_ar"
+      },
+      {
+        "id": 7,
+        "name": "Nuxt.js",
+        "description": "Vue-based framework for server-side rendering and static site generation with powerful routing.",
+        "command": "npx nuxi init my-app",
+        "status": "active",
+        "level": "expert",
+        "icon": "layers"
+      }
+    ]
+  },
+  {
+    "id": "languages",
+    "name": "Programming Languages",
+    "skills": [
+      {
+        "id": 8,
+        "name": "PHP / OOP",
+        "description": "Advanced object-oriented programming, design patterns, PSR standards, and WordPress custom development with hooks architecture.",
+        "command": "php artisan serve",
+        "status": "active",
+        "level": "expert",
+        "icon": "code_blocks"
+      },
+      {
+        "id": 9,
+        "name": "TypeScript",
+        "description": "Type-safe JavaScript development with interfaces, generics, and advanced type manipulation for scalable applications.",
+        "command": "tsc --init",
+        "status": "active",
+        "level": "expert",
+        "icon": "terminal"
+      },
+      {
+        "id": 10,
+        "name": "JavaScript",
+        "description": "ES6+ features, async/await, promises, DOM manipulation, and modern JavaScript patterns for web development.",
+        "command": "node --version",
+        "status": "active",
+        "level": "expert",
+        "icon": "javascript"
+      },
+      {
+        "id": 11,
+        "name": "Python",
+        "description": "Scripting, automation, data processing, and backend development with Django and Flask frameworks.",
+        "command": "python --version",
+        "status": "active",
+        "level": "expert",
+        "icon": "smart_toy"
+      },
+      {
+        "id": 12,
+        "name": "SQL",
+        "description": "Database design, complex queries, optimization, indexing, and performance tuning for MySQL and PostgreSQL.",
+        "command": "mysql -u root -p",
+        "status": "active",
+        "level": "expert",
+        "icon": "storage"
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "name": "Tools & Automation",
+    "skills": [
+      {
+        "id": 13,
+        "name": "n8n Automation",
+        "description": "Building complex workflow automations, API integrations, and data synchronization between multiple platforms.",
+        "command": "npx n8n start",
+        "status": "active",
+        "level": "expert",
+        "icon": "automation"
+      },
+      {
+        "id": 14,
+        "name": "Git & GitHub",
+        "description": "Version control, branching strategies, pull requests, code reviews, and CI/CD pipeline integration.",
+        "command": "git init",
+        "status": "active",
+        "level": "expert",
+        "icon": "source"
+      },
+      {
+        "id": 15,
+        "name": "Docker",
+        "description": "Containerization, Docker Compose, multi-stage builds, and orchestration for development and production environments.",
+        "command": "docker-compose up -d",
+        "status": "active",
+        "level": "expert",
+        "icon": "deployed_code"
+      },
+      {
+        "id": 16,
+        "name": "Webpack & Vite",
+        "description": "Module bundling, code splitting, hot module replacement, and build optimization for modern web applications.",
+        "command": "npm run build",
+        "status": "active",
+        "level": "expert",
+        "icon": "package_2"
+      },
+      {
+        "id": 17,
+        "name": "Postman",
+        "description": "API testing, documentation, automation, and collaboration for RESTful and GraphQL APIs.",
+        "command": "newman run collection.json",
+        "status": "active",
+        "level": "expert",
+        "icon": "api"
+      },
+      {
+        "id": 18,
+        "name": "Figma",
+        "description": "UI/UX design, prototyping, component systems, and design-to-code workflows for web applications.",
+        "command": "figma://open",
+        "status": "active",
+        "level": "expert",
+        "icon": "design_services"
+      }
+    ]
+  },
+  {
+    "id": "database",
+    "name": "Database & Backend",
+    "skills": [
+      {
+        "id": 19,
+        "name": "MySQL",
+        "description": "Relational database management, query optimization, stored procedures, and replication strategies.",
+        "command": "mysql -u root -p",
+        "status": "active",
+        "level": "expert",
+        "icon": "database"
+      },
+      {
+        "id": 20,
+        "name": "PostgreSQL",
+        "description": "Advanced SQL features, JSONB support, full-text search, and performance tuning for complex queries.",
+        "command": "psql -U postgres",
+        "status": "active",
+        "level": "expert",
+        "icon": "database"
+      },
+      {
+        "id": 21,
+        "name": "MongoDB",
+        "description": "NoSQL database design, aggregation pipelines, indexing strategies, and scalable document storage.",
+        "command": "mongosh",
+        "status": "active",
+        "level": "expert",
+        "icon": "database"
+      },
+      {
+        "id": 22,
+        "name": "Redis",
+        "description": "In-memory data structure store, caching strategies, pub/sub messaging, and session management.",
+        "command": "redis-cli",
+        "status": "active",
+        "level": "expert",
+        "icon": "memory"
+      },
+      {
+        "id": 23,
+        "name": "GraphQL",
+        "description": "API design, schema definition, resolvers, and efficient data fetching with Apollo Server.",
+        "command": "apollo service:push",
+        "status": "active",
+        "level": "expert",
+        "icon": "share"
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "name": "Frontend & Styling",
+    "skills": [
+      {
+        "id": 24,
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS framework, custom design systems, responsive design, and component styling.",
+        "command": "npx tailwindcss init",
+        "status": "active",
+        "level": "expert",
+        "icon": "palette"
+      },
+      {
+        "id": 25,
+        "name": "SASS/SCSS",
+        "description": "CSS preprocessing, variables, mixins, nesting, and modular stylesheet architecture.",
+        "command": "sass --watch style.scss:style.css",
+        "status": "active",
+        "level": "expert",
+        "icon": "style"
+      },
+      {
+        "id": 26,
+        "name": "Bootstrap",
+        "description": "Responsive grid system, pre-built components, and rapid prototyping for web applications.",
+        "command": "npm install bootstrap",
+        "status": "active",
+        "level": "expert",
+        "icon": "grid_view"
+      },
+      {
+        "id": 27,
+        "name": "Material UI",
+        "description": "React component library implementing Material Design with customizable themes and components.",
+        "command": "npm install @mui/material",
+        "status": "active",
+        "level": "expert",
+        "icon": "widgets"
+      },
+      {
+        "id": 28,
+        "name": "Framer Motion",
+        "description": "Animation library for React with gesture support, layout animations, and smooth transitions.",
+        "command": "npm install framer-motion",
+        "status": "active",
+        "level": "expert",
+        "icon": "animation"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "name": "DevOps & Cloud",
+    "skills": [
+      {
+        "id": 29,
+        "name": "AWS",
+        "description": "Cloud infrastructure, EC2, S3, Lambda, RDS, CloudFront, and serverless architecture deployment.",
+        "command": "aws s3 ls",
+        "status": "active",
+        "level": "expert",
+        "icon": "cloud"
+      },
+      {
+        "id": 30,
+        "name": "Netlify",
+        "description": "Continuous deployment, serverless functions, form handling, and edge network optimization.",
+        "command": "netlify deploy --prod",
+        "status": "active",
+        "level": "expert",
+        "icon": "cloud_upload"
+      },
+      {
+        "id": 31,
+        "name": "Vercel",
+        "description": "Frontend deployment, edge functions, analytics, and seamless integration with Next.js applications.",
+        "command": "vercel --prod",
+        "status": "active",
+        "level": "expert",
+        "icon": "rocket"
+      },
+      {
+        "id": 32,
+        "name": "GitHub Actions",
+        "description": "CI/CD pipelines, automated testing, deployment workflows, and release automation.",
+        "command": "gh workflow run deploy.yml",
+        "status": "active",
+        "level": "expert",
+        "icon": "play_circle"
+      },
+      {
+        "id": 33,
+        "name": "Nginx",
+        "description": "Web server configuration, reverse proxy, load balancing, and SSL/TLS certificate management.",
+        "command": "nginx -t",
+        "status": "active",
+        "level": "expert",
+        "icon": "dns"
+      }
+    ]
+  }
+]

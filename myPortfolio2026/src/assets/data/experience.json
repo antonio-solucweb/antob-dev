@@ -1,0 +1,36 @@
+{
+  "stats": {
+    "years": "7+",
+    "projects": "+30"
+  },
+  "timeline": [
+    {
+      "id": 1,
+      "period": "2022 — Present",
+      "position": "Full Stack Developer",
+      "company": "MATH Group",
+      "location": "Brazil (Remote - Contract)",
+      "description": "I specialize in architecting advanced WordPress solutions and custom software. My core expertise includes developing 100% multisite-compatible themes from scratch and engineering bespoke plugins for complex data distribution and external platform synchronization (e.g., PopAgro).\n\nBeyond the WordPress ecosystem, I actively collaborate within a structured development team, contributing to the development of React/NodeJS and PostgreSQL platforms. I am also gaining hands-on experience in maintaining AI agents within the Databricks (Genie) infrastructure. I manage the full development lifecycle using NPM, Swagger, and GitHub, focusing on efficient workflows and technical excellence under SCRUM methodology.",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "period": "2019 — 2022",
+      "position": "Full Stack Developer",
+      "company": "Dejabu",
+      "location": "Ecuador (Freelance)",
+      "description": "Since February 2019, I have worked as a freelance Full-Stack Developer for Dejabu, where I have been responsible for making code-level modifications to templates using child themes when necessary. My role includes implementing new features, making improvements, and maintaining projects, as well as collaborating on project estimations and functional requirements, identifying the best strategies for their implementation. During this time, I have worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver efficient and high-quality solutions.",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "period": "2016 — 2019",
+      "position": "Full Stack Developer",
+      "company": "Socialh4ck",
+      "location": "Spain (Freelance)",
+      "description": "In January 2016, I worked as a Full-Stack Developer at Socialh4ck, where I was responsible for making code-level modifications to templates using child themes when necessary. My responsibilities included implementing new features, making improvements, and maintaining existing projects, as well as collaborating on project estimations and functional requirements for each development. During this time, I worked under the SCRUM agile methodology and used tools such as HTML, CSS3, PHP, JavaScript, WordPress, MySQL, Bootstrap, and Elementor Pro to deliver effective and high-quality solutions.",
+      "isActive": false
+    }
+  ],
+  "linkedinUrl": "https://www.linkedin.com/in/antonio-blanca/"
+}

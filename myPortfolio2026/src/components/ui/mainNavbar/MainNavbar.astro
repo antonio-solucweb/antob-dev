@@ -1,0 +1,81 @@
+---
+// Main Navigation Bar Component
+---
+
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+  <nav class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <div class="text-xl font-bold tracking-tighter text-blue-100 uppercase font-headline">
+      ANTONIO BLANCA
+    </div>
+    
+    <div class="hidden md:flex gap-8 items-center">
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#home"
+      >
+        Home
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#about"
+      >
+        About
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#skills"
+      >
+        Tech Stack
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#projects"
+      >
+        Projects
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#experience"
+      >
+        Experience
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#certifications"
+      >
+        Certifications
+      </a>
+      <a 
+        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
+        href="#contact"
+      >
+        Contact
+      </a>
+      
+      <!-- Language Switcher -->
+      <div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30 ml-2">
+        <button 
+          aria-label="Switch to English" 
+          class="text-[10px] font-bold font-label text-primary hover:text-white transition-colors"
+        >
+          EN
+        </button>
+        <div class="w-px h-3 bg-outline-variant/50"></div>
+        <button 
+          aria-label="Cambiar a Español" 
+          class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors"
+        >
+          ES
+        </button>
+      </div>
+    </div>
+    
+    <button 
+      aria-label="Download Resume" 
+      class="bg-primary text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform hover:bg-primary-container"
+    >
+      Resume
+    </button>
+  </nav>
+</header>

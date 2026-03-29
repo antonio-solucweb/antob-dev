@@ -1,0 +1,242 @@
+---
+import { SkillsDataSchema } from '@/types/index';
+import skillsData from '@assets/data/skills.json';
+
+// Validate skills data
+const result = SkillsDataSchema.safeParse(skillsData);
+if (!result.success) {
+  console.error('Skills data validation failed:', result.error);
+}
+const categories = result.success ? result.data : [];
+---
+
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="skills">
+  <div class="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="mb-16 space-y-4 text-center">
+      <span class="font-label text-primary tracking-widest text-sm uppercase">Core Competencies</span>
+      <h2 class="text-5xl md:text-6xl font-extrabold font-headline tracking-tighter">
+        Technical <span class="text-primary">Command</span> Center
+      </h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">
+        A comprehensive arsenal of modern technologies and frameworks, organized by domain expertise.
+      </p>
+    </div>
+
+    <!-- Category Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-16">
+      {categories.map((category, index) => (
+        <button
+          class={`px-6 py-2 rounded-full border border-primary/20 text-sm font-label uppercase tracking-widest transition-all ${
+            index === 0 
+              ? 'filter-btn-active' 
+              : 'text-outline hover:text-primary hover:bg-primary/5'
+          }`}
+          data-category={category.id}
+          data-filter-btn
+        >
+          {category.name}
+        </button>
+      ))}
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" id="skills-grid">
+      {categories.map((category) => (
+        category.skills.slice(0, 6).map((skill, index) => (
+          <div
+            class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 animate-border-glow overflow-hidden skill-card"
+            data-category={category.id}
+            style={category.id !== categories[0].id ? 'display: none;' : ''}
+          >
+            <!-- Scanline Effect -->
+            <div class="scanline opacity-0 group-hover:opacity-100"></div>
+            
+            <!-- Icon & Status Badge -->
+            <div class="flex justify-between items-start mb-6">
+              <div class={`w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center ${index % 3 === 0 ? 'text-primary' : 'text-tertiary'} group-hover:scale-110 transition-transform`}>
+                <span class="material-symbols-outlined !text-4xl">{skill.icon || 'code'}</span>
+              </div>
+              <div class="text-right">
+                <div class={`text-[10px] font-label ${index % 3 === 0 ? 'text-primary' : 'text-tertiary'} tracking-widest uppercase mb-1`}>
+                  Status: {skill.status || 'N/D'}
+                </div>
+                <div class={`px-2 py-0.5 rounded-sm ${index % 3 === 0 ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'} text-[10px] font-label font-bold uppercase border`}>
+                  {skill.level || 'N/D'}
+                </div>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h4 class="text-xl font-bold font-headline mb-2">{skill.name}</h4>
+
+            <!-- Description -->
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+              {skill.description}
+            </p>
+
+            <!-- Category Tag -->
+            <div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+              <span class={`w-1.5 h-1.5 rounded-full ${index % 3 === 0 ? 'bg-primary' : 'bg-tertiary'}`}></span>
+              {category.name}
+            </div>
+          </div>
+        ))
+      ))}
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-12">
+      <button
+        class="px-8 py-4 bg-surface-container-high text-primary font-bold rounded-lg hover:bg-surface-container-highest transition-all flex items-center gap-2 mx-auto"
+        id="show-more-btn"
+        style="display: none;"
+      >
+        <span>Show More</span>
+        <span class="material-symbols-outlined">expand_more</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal for All Skills -->
+  <div
+    class="fixed inset-0 bg-surface/95 backdrop-blur-xl z-[200] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-300"
+    id="skills-modal"
+  >
+    <div class="glass-panel rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between p-6 border-b border-outline-variant/30">
+        <h3 class="text-2xl font-bold font-headline" id="modal-title">All Skills</h3>
+        <button
+          class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container-high transition-colors"
+          id="close-modal-btn"
+          aria-label="Close modal"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-6 overflow-y-auto flex-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="modal-skills-grid">
+          <!-- Skills will be injected here via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ categories }}>
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('[data-filter-btn]');
+  const skillCards = document.querySelectorAll('.skill-card');
+  const showMoreBtn = document.getElementById('show-more-btn');
+  const modal = document.getElementById('skills-modal');
+  const closeModalBtn = document.getElementById('close-modal-btn');
+  const modalTitle = document.getElementById('modal-title');
+  const modalSkillsGrid = document.getElementById('modal-skills-grid');
+
+  let activeCategory = categories[0].id;
+
+  // Update show more button visibility
+  function updateShowMoreButton(categoryId) {
+    const category = categories.find(cat => cat.id === categoryId);
+    if (category && category.skills.length > 6) {
+      showMoreBtn.style.display = 'flex';
+    } else {
+      showMoreBtn.style.display = 'none';
+    }
+  }
+
+  // Filter skills by category
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const categoryId = btn.dataset.category;
+      activeCategory = categoryId;
+
+      // Update active button
+      filterBtns.forEach(b => {
+        b.classList.remove('filter-btn-active');
+        b.classList.add('bg-surface-container-high', 'text-on-surface', 'hover:bg-surface-container-highest');
+      });
+      btn.classList.add('filter-btn-active');
+      btn.classList.remove('bg-surface-container-high', 'text-on-surface', 'hover:bg-surface-container-highest');
+
+      // Filter cards
+      skillCards.forEach(card => {
+        if (card.dataset.category === categoryId) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update show more button
+      updateShowMoreButton(categoryId);
+    });
+  });
+
+  // Show more button - open modal
+  showMoreBtn?.addEventListener('click', () => {
+    const category = categories.find(cat => cat.id === activeCategory);
+    if (!category) return;
+
+    // Update modal title
+    modalTitle.textContent = `All ${category.name} Skills`;
+
+    // Populate modal with all skills
+    modalSkillsGrid.innerHTML = category.skills.map((skill, idx) => `
+      <div class="glass-panel p-8 rounded-xl relative group transition-all duration-500 hover:bg-surface-container-high/60 animate-border-glow overflow-hidden">
+        <div class="scanline opacity-0 group-hover:opacity-100"></div>
+        <div class="flex justify-between items-start mb-6">
+          <div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center ${idx % 3 === 0 ? 'text-primary' : 'text-tertiary'} group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined !text-4xl">${skill.icon || 'code'}</span>
+          </div>
+          <div class="text-right">
+            <div class="text-[10px] font-label ${idx % 3 === 0 ? 'text-primary' : 'text-tertiary'} tracking-widest uppercase mb-1">
+              Status: ${skill.status || 'N/D'}
+            </div>
+            <div class="px-2 py-0.5 rounded-sm ${idx % 3 === 0 ? 'bg-primary/10 text-primary border-primary/20' : 'bg-tertiary/10 text-tertiary border-tertiary/20'} text-[10px] font-label font-bold uppercase border">
+              ${skill.level || 'N/D'}
+            </div>
+          </div>
+        </div>
+        <h4 class="text-xl font-bold font-headline mb-2">${skill.name}</h4>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+          ${skill.description}
+        </p>
+        <div class="flex items-center gap-2 text-[10px] font-label text-outline uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full ${idx % 3 === 0 ? 'bg-primary' : 'bg-tertiary'}"></span>
+          ${category.name}
+        </div>
+      </div>
+    `).join('');
+
+    // Show modal
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+  });
+
+  // Close modal
+  closeModalBtn?.addEventListener('click', () => {
+    modal.classList.add('opacity-0', 'pointer-events-none');
+  });
+
+  // Close modal on backdrop click
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+
+  // Close modal on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+
+  // Initialize show more button visibility
+  updateShowMoreButton(activeCategory);
+</script>

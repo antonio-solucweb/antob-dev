@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Coffee Shop",
+    "description": "Project developed as part of a Hedless CMS course with WordPress in Udemy.",
+    "image": "coffee-shop.jpg",
+    "tags": ["WordPress", "Astro", "Hedless CMS"],
+    "ctaText": "",
+    "link": "https://coffeeshopastro.netlify.app"
+  },
+  {
+    "id": 2,
+    "title": "Mall de los Andes",
+    "description": "This project have a mix of Elementor and custom development envolving a custom plugin development.",
+    "image": "mall-de-los-andes.jpg",
+    "tags": ["WordPress", "Elementor", "Plugin development"],
+    "ctaText": "",
+    "link": "https://malldelosandes.com"
+  },
+  {
+    "id": 3,
+    "title": "Multiplaza",
+    "description": "This project have a mix of Elementor and custom development envolving a custom plugin development.",
+    "image": "multiplaza.jpg",
+    "tags": ["WordPress", "Elementor", "Plugin development"],
+    "ctaText": "",
+    "link": "https://multiplaza.com.ec"
+  }
+]
