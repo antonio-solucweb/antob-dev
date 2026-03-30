@@ -35,8 +35,8 @@ const projectsWithImages = projects.map((project) => {
         <span class="font-label text-primary tracking-widest text-sm uppercase">Selected Works</span>
         <h2 class="text-5xl font-extrabold font-headline tracking-tighter">Recent Benchmarks</h2>
       </div>
-      <p class="text-outline-variant font-label max-w-xs">
-        A selection of systems where performance meets functional elegance.
+      <p class="text-on-surface-variant font-label max-w-xs">
+        I cannot display all my work due to privacy policy restrictions.
       </p>
     </div>
 
@@ -82,9 +82,22 @@ const projectsWithImages = projects.map((project) => {
             </h3>
 
             <!-- Description -->
-            <p class="text-on-surface-variant text-sm line-clamp-2 leading-relaxed">
-              {project.description}
-            </p>
+            <div class="text-on-surface-variant text-sm leading-relaxed">
+              <p class="inline">
+                {project.description.length > 150 
+                  ? project.description.slice(0, 150) + '...' 
+                  : project.description}
+              </p>
+              {project.description.length > 150 && (
+                <button 
+                  class="text-primary font-bold ml-1 hover:underline"
+                  data-project-id={project.id}
+                  onclick="openProjectModal(this)"
+                >
+                  [read more]
+                </button>
+              )}
+            </div>
 
             <!-- Link -->
             {project.link && (
@@ -105,4 +118,119 @@ const projectsWithImages = projects.map((project) => {
       ))}
     </div>
   </div>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="fixed inset-0 bg-surface/95 backdrop-blur-sm z-50 hidden flex items-center justify-center p-6">
+    <div class="bg-surface-container-high rounded-2xl max-w-6xl w-full max-h-[90vh] py-8 overflow-y-auto relative">
+      <!-- Close Button -->
+      <button 
+        class="absolute top-6 right-6 text-outline hover:text-primary transition-colors"
+        onclick="closeProjectModal()"
+      >
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="p-8 space-y-6">
+        <!-- Project Image -->
+        <div id="project-modal-image" class="aspect-video rounded-lg overflow-hidden bg-surface-container-highest"></div>
+
+        <!-- Project Title -->
+        <h3 id="project-modal-title" class="text-3xl font-bold font-headline text-primary"></h3>
+
+        <!-- Tags -->
+        <div id="project-modal-tags" class="flex gap-2 flex-wrap"></div>
+
+        <!-- Full Description -->
+        <div class="space-y-4">
+          <h4 class="text-lg font-bold font-headline text-on-surface">About this project</h4>
+          <p id="project-modal-description" class="text-on-surface-variant leading-relaxed"></p>
+        </div>
+
+        <!-- Project Link -->
+        <div id="project-modal-link-container" class="pt-4"></div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script define:vars={{ projectsWithImages }}>
+  // Make functions globally accessible
+  window.openProjectModal = function(button) {
+    const projectId = parseInt(button.dataset.projectId);
+    console.log('Project ID:', projectId);
+    console.log('All projects:', projectsWithImages);
+    const project = projectsWithImages.find(p => p.id === projectId);
+    console.log('Found project:', project);
+    
+    if (!project) {
+      console.error('Project not found!');
+      return;
+    }
+
+    // Set modal content
+    const titleElement = document.getElementById('project-modal-title');
+    const descElement = document.getElementById('project-modal-description');
+    
+    console.log('Title element:', titleElement);
+    console.log('Project title:', project.title);
+    
+    titleElement.textContent = project.title;
+    descElement.textContent = project.description;
+    
+    // Set tags
+    const tagsContainer = document.getElementById('project-modal-tags');
+    tagsContainer.innerHTML = project.tags.map(tag => 
+      `<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">${tag}</span>`
+    ).join('');
+
+    // Set image
+    const imageContainer = document.getElementById('project-modal-image');
+    if (project.imageData) {
+      imageContainer.innerHTML = `<img src="${project.imageData.src}" alt="${project.title}" class="w-full h-full object-cover" />`;
+    } else {
+      imageContainer.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-outline">Image not found</span></div>';
+    }
+
+    // Set link
+    const linkContainer = document.getElementById('project-modal-link-container');
+    if (project.link) {
+      linkContainer.innerHTML = `
+        <a 
+          class="inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest hover:gap-3 transition-all" 
+          href="${project.link}" 
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ${project.ctaText || 'View Project'}
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      `;
+    } else {
+      linkContainer.innerHTML = '';
+    }
+
+    // Show modal
+    document.getElementById('project-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeProjectModal = function() {
+    document.getElementById('project-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  };
+
+  // Close modal on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.closeProjectModal();
+    }
+  });
+
+  // Close modal on backdrop click
+  document.getElementById('project-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'project-modal') {
+      window.closeProjectModal();
+    }
+  });
+</script>

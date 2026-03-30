@@ -2,9 +2,9 @@
   {
     "id": 1,
     "title": "Coffee Shop",
-    "description": "Project developed as part of a Hedless CMS course with WordPress in Udemy.",
+    "description": "Project developed as part of a Headless CMS course with WordPress in Udemy using Astro as frontend technology.",
     "image": "coffee-shop.jpg",
-    "tags": ["WordPress", "Astro", "Hedless CMS"],
+    "tags": ["WordPress", "Astro", "Headless CMS"],
     "ctaText": "",
     "link": "https://coffeeshopastro.netlify.app"
   },
