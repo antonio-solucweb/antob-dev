@@ -8,12 +8,18 @@
   # Configure secrets scanner to allow public SMTP host
   SECRETS_SCAN_OMIT_KEYS = "BREVO_SMTP_HOST"
 
-# Redirect rules
+# Redirect rules - Exclude API routes from SPA redirect
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = false
+  conditions = {Role = ["!api"]}
 
 # Security headers
 [[headers]]
