@@ -169,6 +169,7 @@ const contactInfo = {
           btnText.textContent = 'Send Message';
           btnIcon.textContent = 'send';
           submitBtn.disabled = false;
+          formStatus.textContent = '';
         }, 2000);
       } else {
         throw new Error(result.error?.message || 'Failed to send message');
@@ -180,9 +181,12 @@ const contactInfo = {
       formStatus.classList.add('text-error');
       
       // Reset button
-      btnText.textContent = 'Send Message';
-      btnIcon.textContent = 'send';
-      submitBtn.disabled = false;
+      setTimeout(() => {
+        btnText.textContent = 'Send Message';
+        btnIcon.textContent = 'send';
+        submitBtn.disabled = false;
+        formStatus.textContent = '';
+      }, 5000);
     }
   });
 </script>
