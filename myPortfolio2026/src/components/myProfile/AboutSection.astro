@@ -21,7 +21,10 @@ import profileImage from "@assets/img/img-antonio_blanca.jpg";
           src={profileImage}
           width={512}
           height={512}
-          formats={['avif', 'webp', 'jpg']} />
+          widths={[512, 1024]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          formats={['avif', 'webp', 'jpg']}
+          loading="eager" />
       </div>
       
       <!-- Right Content - Text -->

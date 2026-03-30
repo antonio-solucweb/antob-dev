@@ -53,8 +53,10 @@ const projectsWithImages = projects.map((project) => {
                 src={project.imageData}
                 loading="lazy"
                 decoding="async"
-                width={800}
-                height={450}
+                width={496}
+                height={279}
+                widths={[496, 992]}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 formats={['avif', 'webp', 'jpg']}
               />
             ) : (
@@ -184,10 +186,29 @@ const projectsWithImages = projects.map((project) => {
       `<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase">${tag}</span>`
     ).join('');
 
-    // Set image
+    // Set image with optimized responsive image
     const imageContainer = document.getElementById('project-modal-image');
-    if (project.imageData) {
-      imageContainer.innerHTML = `<img src="${project.imageData.src}" alt="${project.title}" class="w-full h-full object-cover" />`;
+    if (project.imageData && project.imageData.src) {
+      // Extract base path and create optimized versions
+      const imgSrc = project.imageData.src;
+      const basePath = imgSrc.replace(/\.(jpg|jpeg|png|webp)$/i, '');
+      const ext = imgSrc.match(/\.(jpg|jpeg|png|webp)$/i)?.[0] || '.jpg';
+      
+      imageContainer.innerHTML = `
+        <picture>
+          <source type="image/avif" srcset="${basePath}.avif" />
+          <source type="image/webp" srcset="${basePath}.webp" />
+          <img 
+            src="${imgSrc}" 
+            alt="${project.title}" 
+            class="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+            width="1200"
+            height="675"
+          />
+        </picture>
+      `;
     } else {
       imageContainer.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-outline">Image not found</span></div>';
     }
