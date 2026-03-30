@@ -71,6 +71,18 @@ export const CertificationSchema = z.object({
 // Certifications Data Schema
 export const CertificationsDataSchema = z.array(CertificationSchema);
 
+
+export const ContactInfoSchema = z.object({
+  whatsapp: z.object({
+    number: z.string().regex(/^\+\d{10,15}$/, 'Invalid WhatsApp number format'),
+    message: z.string().min(1, 'WhatsApp message cannot be empty'),
+  }),
+  email: z.string().email('Invalid email address'),
+  location: z.string().min(1, 'Location cannot be empty'),
+});
+
+
+
 // Type Inference
 export type Skill = z.infer<typeof SkillSchema>;
 export type SkillCategory = z.infer<typeof SkillCategorySchema>;
@@ -81,3 +93,4 @@ export type Experience = z.infer<typeof ExperienceSchema>;
 export type ExperienceData = z.infer<typeof ExperienceDataSchema>;
 export type Certification = z.infer<typeof CertificationSchema>;
 export type CertificationsData = z.infer<typeof CertificationsDataSchema>;
+export type ContactInfo = z.infer<typeof ContactInfoSchema>;

@@ -1,6 +1,7 @@
 ---
 import AccessibilityToolbar from '@components/ui/accessibilityToolbar/AccessibilityToolbar.astro';
 import MainNavbar from '@components/ui/mainNavbar/MainNavbar.astro';
+import FloatWhatsapp from '@components/floatWhatsapp/FloatWhatsapp.astro';
 import '@styles/global.css';
 
 interface Props {
@@ -118,5 +119,8 @@ const { title } = Astro.props;
 
       sections.forEach(section => observer.observe(section));
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <FloatWhatsapp />
   </body>
 </html>

@@ -1,13 +1,9 @@
 ---
-// Public contact information
-const contactInfo = {
-  whatsapp: {
-    number: '+5595984009715',
-    link: 'https://wa.me/5595984009715?text=Contact%20from%20portfolio'
-  },
-  email: 'solucwebs@gmail.com',
-  location: 'Based on Brazil. - Available for global remote work'
-};
+import { getContactInfo, getWhatsAppLink } from '@/helpers/contactInfo';
+
+// Get contact information from centralized helper
+const contactInfo = getContactInfo();
+const whatsappLink = getWhatsAppLink();
 ---
 
 <section class="py-24 bg-surface-container-lowest relative overflow-hidden" id="contact">
@@ -33,7 +29,7 @@ const contactInfo = {
                 <span class="material-symbols-outlined">chat</span>
               </div>
               <span class="font-label text-sm tracking-wide">
-                <a href={contactInfo.whatsapp.link} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
                   {contactInfo.whatsapp.number}
                 </a>
               </span>
