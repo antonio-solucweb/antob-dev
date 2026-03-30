@@ -153,3 +153,9 @@ section {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
 }
+
+/* Cursor Pointer for Interactive Elements */
+button,
+a {
+  cursor: pointer;
+}
