@@ -115,7 +115,7 @@
         "command": "astro dev",
         "status": "active",
         "level": "intermediate",
-        "icon": "rocket"
+        "icon": "astro"
       },
       {
         "id": 12,
@@ -124,7 +124,7 @@
         "command": "npx create-react-app my-app",
         "status": "active",
         "level": "intermediate",
-        "icon": "hub"
+        "icon": "react"
       },
       {
         "id": 13,
