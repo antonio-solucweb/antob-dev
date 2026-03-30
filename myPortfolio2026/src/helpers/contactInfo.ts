@@ -6,7 +6,7 @@ import { ContactInfoSchema, type ContactInfo } from '@/types';
  */
 const contactData: ContactInfo = {
   whatsapp: {
-    number: '+55959840097150000',
+    number: '+5595984009715',
     message: 'Hi! I see your portfolio and I would like to talk with you.',
   },
   email: 'solucwebs@gmail.com',
