@@ -166,6 +166,21 @@ export class TextToSpeech {
   constructor() {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       this.synthesis = window.speechSynthesis;
+      
+      // Stop any ongoing speech on page load/reload
+      this.synthesis.cancel();
+      
+      // Stop speech on page unload
+      window.addEventListener('beforeunload', () => {
+        this.stop();
+      });
+      
+      // Stop speech on page visibility change (tab switch)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.stop();
+        }
+      });
     }
   }
 

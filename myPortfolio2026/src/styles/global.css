@@ -137,16 +137,6 @@ section {
   color: #00285d;
 }
 
-/* Accessibility Toolbar */
-.accessibility-toolbar {
-  transform: translateX(calc(100% - 48px));
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.accessibility-toolbar:hover,
-.accessibility-toolbar:focus-within {
-  transform: translateX(0);
-}
 
 /* Selection Colors */
 ::selection {

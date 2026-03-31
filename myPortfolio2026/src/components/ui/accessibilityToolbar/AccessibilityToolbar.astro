@@ -3,12 +3,12 @@
 ---
 
 <!-- Accessibility Toolbar -->
-<div class="fixed right-0 top-1/3 z-[100] flex items-center accessibility-toolbar group" id="a11y-toolbar">
+<div class="fixed right-0 top-1/3 z-[100] flex items-center accessibility-toolbar" id="a11y-toolbar">
   <!-- Toggle Button -->
   <div
     id="a11y-toggle"
     aria-label="Accessibility toolbar"
-    class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0 group-hover:bg-primary-container transition-colors"
+    class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0 cursor-pointer transform translate-x-full transition-transform duration-300"
   >
     <span class="material-symbols-outlined text-2xl">settings_accessibility</span>
   </div>
@@ -16,7 +16,7 @@
   <!-- Toolbar Panel -->
   <div 
     id="a11y-panel"
-    class="bg-surface-container-high border border-outline-variant/30 border-r-0 cursor-pointer shadow-2xl p-4 rounded-l-xl flex flex-col gap-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+    class="bg-surface-container-high border border-outline-variant/30 border-r-0 shadow-2xl p-4 rounded-l-xl flex flex-col gap-4 transform translate-x-full transition-transform duration-300"
   >
     <!-- Theme Toggle (Dark/Light Mode) -->
     <button 
@@ -96,6 +96,49 @@
 
   // Initialize Text-to-Speech
   const tts = new TextToSpeech();
+
+  // Panel toggle logic
+  const toggleBtn = document.getElementById('a11y-toggle');
+  const panel = document.getElementById('a11y-panel');
+  const toolbar = document.getElementById('a11y-toolbar');
+  let isPanelOpen = false;
+
+  // Toggle panel on button click
+  toggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isPanelOpen = !isPanelOpen;
+    
+    if (isPanelOpen) {
+      toggleBtn?.classList.remove('translate-x-full');
+      panel?.classList.remove('translate-x-full');
+      toggleBtn?.classList.add('translate-x-0');
+      panel?.classList.add('translate-x-0');
+    } else {
+      panel?.classList.remove('translate-x-0');
+      toggleBtn?.classList.remove('translate-x-0');
+      panel?.classList.add('translate-x-full');
+      toggleBtn?.classList.add('translate-x-full');
+    }
+  });
+
+  // Close panel when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    
+    // Check if click is outside toolbar
+    if (toolbar && !toolbar.contains(target) && isPanelOpen) {
+      isPanelOpen = false;
+      panel?.classList.remove('translate-x-0');
+      panel?.classList.add('translate-x-full');
+      toggleBtn?.classList.remove('translate-x-0');
+      toggleBtn?.classList.add('translate-x-full');
+    }
+  });
+
+  // Prevent panel clicks from closing it
+  panel?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
 
   // Font size controls
   document.getElementById('font-increase')?.addEventListener('click', () => {
