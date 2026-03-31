@@ -9,7 +9,8 @@
       ANTONIO BLANCA
     </div>
     
-    <div class="hidden md:flex gap-8 items-center">
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex gap-8 items-center">
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#home"
@@ -63,19 +64,192 @@
         </button>
         <div class="w-px h-3 bg-outline-variant/50"></div>
         <button 
-          aria-label="Cambiar a Español" 
+          aria-label="Switch to Spanish" 
           class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors"
         >
           ES
         </button>
+        <div class="w-px h-3 bg-outline-variant/50"></div>
+        <button 
+          aria-label="Switch to Portuguese" 
+          class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors"
+        >
+          PT
+        </button>
       </div>
     </div>
     
-    <button 
-      aria-label="Download Resume" 
-      class="bg-primary text-on-primary-container px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform hover:bg-primary-container"
-    >
-      Resume
+    <!-- Hamburger Button - Mobile Only -->
+    <button id="menu-toggle" aria-label="Toggle menu" class="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-80" >
+      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-1"></span>
+      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-2"></span>
+      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-3"></span>
     </button>
   </nav>
+
+  <!-- Mobile Sidebar Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] lg:hidden pointer-events-none">
+    <div id="menu-overlay" class="absolute inset-0 h-[100dvh] bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+    
+    <!-- Sidebar -->
+    <aside id="menu-sidebar" class="absolute top-0 left-0 h-[100dvh] w-80 bg-surface-container-low shadow-2xl transform -translate-x-full transition-transform duration-300 ease-out overflow-y-auto pointer-events-auto">
+      <!-- Sidebar Header -->
+      <div class="p-8 border-b border-outline-variant/20">
+        <h2 class="text-2xl font-bold text-primary font-headline tracking-tight">Menu</h2>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-6 space-y-2">
+        <a 
+          href="#home"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline">
+          <span class="material-symbols-outlined text-xl">home</span>
+          <span>Home</span>
+        </a>
+        <a 
+          href="#about"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+        >
+          <span class="material-symbols-outlined text-xl">person</span>
+          <span>About</span>
+        </a>
+        <a 
+          href="#skills"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+        >
+          <span class="material-symbols-outlined text-xl">code</span>
+          <span>Tech Stack</span>
+        </a>
+        <a 
+          href="#projects"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+        >
+          <span class="material-symbols-outlined text-xl">work</span>
+          <span>Projects</span>
+        </a>
+        <a 
+          href="#experience"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+        >
+          <span class="material-symbols-outlined text-xl">timeline</span>
+          <span>Experience</span>
+        </a>
+        <a 
+          href="#contact"
+          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+        >
+          <span class="material-symbols-outlined text-xl">mail</span>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Language Switcher - Mobile -->
+      <div class="p-6 border-t border-outline-variant/20">
+        <p class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-3">Language</p>
+        <div class="flex gap-3">
+          <button 
+            aria-label="Switch to English" 
+            class="flex-1 px-4 py-2 bg-primary text-on-primary rounded-lg font-bold font-label text-sm transition-all"
+          >
+            EN
+          </button>
+          <button 
+            aria-label="Switch to Spanish" 
+            class="flex-1 px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-bold font-label text-sm transition-all hover:bg-primary/10"
+          >
+            ES
+          </button>
+          <button 
+            aria-label="Switch to Portuguese" 
+            class="flex-1 px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-bold font-label text-sm transition-all hover:bg-primary/10"
+          >
+            PT
+          </button>
+        </div>
+      </div>
+
+      <!-- LinkedIn - Mobile -->
+      <div class="p-6 border-t border-outline-variant/20">
+        <a class="text-slate-500 hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/antonio-blanca/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-astro-cid-sckkx6r4=""> 
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" data-astro-cid-sckkx6r4=""> 
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" data-astro-cid-sckkx6r4=""></path> 
+          </svg> 
+        </a>
+      </div>
+    </aside>
+  </div>
 </header>
+
+<script>
+  // Mobile menu toggle functionality
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const menuSidebar = document.getElementById('menu-sidebar');
+  const hamburgerLine1 = document.getElementById('hamburger-line-1');
+  const hamburgerLine2 = document.getElementById('hamburger-line-2');
+  const hamburgerLine3 = document.getElementById('hamburger-line-3');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    
+    if (isMenuOpen) {
+      // Open menu
+      mobileMenu?.classList.remove('pointer-events-none');
+      mobileMenu?.classList.add('pointer-events-auto');
+      menuOverlay?.classList.remove('opacity-0', 'pointer-events-none');
+      menuOverlay?.classList.add('opacity-100', 'pointer-events-auto');
+      menuSidebar?.classList.remove('-translate-x-full');
+      menuSidebar?.classList.add('translate-x-0');
+      
+      // Animate hamburger to X
+      hamburgerLine1?.classList.add('rotate-45', 'translate-y-2');
+      hamburgerLine2?.classList.add('opacity-0');
+      hamburgerLine3?.classList.add('-rotate-45', '-translate-y-2');
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Close menu
+      mobileMenu?.classList.remove('pointer-events-auto');
+      mobileMenu?.classList.add('pointer-events-none');
+      menuOverlay?.classList.remove('opacity-100', 'pointer-events-auto');
+      menuOverlay?.classList.add('opacity-0', 'pointer-events-none');
+      menuSidebar?.classList.remove('translate-x-0');
+      menuSidebar?.classList.add('-translate-x-full');
+      
+      // Animate X back to hamburger
+      hamburgerLine1?.classList.remove('rotate-45', 'translate-y-2');
+      hamburgerLine2?.classList.remove('opacity-0');
+      hamburgerLine3?.classList.remove('-rotate-45', '-translate-y-2');
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Toggle menu on button click
+  menuToggle?.addEventListener('click', toggleMenu);
+
+  // Close menu on overlay click
+  menuOverlay?.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking navigation links
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+</script>
