@@ -3,37 +3,175 @@
 ---
 
 <!-- Accessibility Toolbar -->
-<div class="fixed right-0 top-1/3 z-[100] flex items-center accessibility-toolbar" id="a11y-toolbar">
-  <div class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0">
+<div class="fixed right-0 top-1/3 z-[100] flex items-center accessibility-toolbar group" id="a11y-toolbar">
+  <!-- Toggle Button -->
+  <div
+    id="a11y-toggle"
+    aria-label="Accessibility toolbar"
+    class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0 group-hover:bg-primary-container transition-colors"
+  >
     <span class="material-symbols-outlined text-2xl">settings_accessibility</span>
   </div>
-  <div class="bg-surface-container-high border border-outline-variant/30 border-r-0 shadow-2xl p-4 rounded-l-xl flex flex-col gap-4">
+
+  <!-- Toolbar Panel -->
+  <div 
+    id="a11y-panel"
+    class="bg-surface-container-high border border-outline-variant/30 border-r-0 cursor-pointer shadow-2xl p-4 rounded-l-xl flex flex-col gap-4 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+  >
+    <!-- Theme Toggle (Dark/Light Mode) -->
     <button 
-      aria-label="Toggle Dark and Light Mode" 
+      aria-label="Toggle dark and light mode" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
       id="theme-toggle"
+      title="Toggle Theme"
     >
-      <span class="material-symbols-outlined group-active:rotate-90 transition-transform">dark_mode</span>
+      <span class="material-symbols-outlined group-active:scale-110 transition-transform" id="theme-icon">light_mode</span>
     </button>
+
+    <!-- Text-to-Speech Toggle -->
     <button 
       aria-label="Listen to page content" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
       id="listen-toggle"
+      title="Read Aloud"
     >
-      <span class="material-symbols-outlined">text_to_speech</span>
+      <span class="material-symbols-outlined" id="listen-icon">volume_up</span>
     </button>
+
+    <!-- Text Spacing Toggle -->
+    <button 
+      aria-label="Toggle enhanced text spacing" 
+      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
+      id="spacing-toggle"
+      title="Text Spacing"
+    >
+      <span class="material-symbols-outlined group-active:scale-110 transition-transform">format_line_spacing</span>
+    </button>
+
     <div class="h-px bg-outline-variant/30 w-full"></div>
+
+    <!-- Font Size Controls -->
     <button 
       aria-label="Increase text size" 
-      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors"
+      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
+      id="font-increase"
+      title="Increase Font Size"
     >
-      <span class="material-symbols-outlined">text_increase</span>
+      <span class="material-symbols-outlined group-active:scale-125 transition-transform">text_increase</span>
     </button>
+
     <button 
       aria-label="Decrease text size" 
-      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors"
+      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
+      id="font-decrease"
+      title="Decrease Font Size"
     >
-      <span class="material-symbols-outlined">text_decrease</span>
+      <span class="material-symbols-outlined group-active:scale-125 transition-transform">text_decrease</span>
+    </button>
+
+    <button 
+      aria-label="Reset text size" 
+      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
+      id="font-reset"
+      title="Reset Font Size"
+    >
+      <span class="material-symbols-outlined group-active:rotate-180 transition-transform">refresh</span>
     </button>
   </div>
 </div>
+
+<script>
+  import { 
+    increaseFontSize, 
+    decreaseFontSize, 
+    resetFontSize,
+    toggleTheme,
+    toggleTextSpacing,
+    initAccessibility,
+    TextToSpeech 
+  } from '@/helpers/accessibility';
+
+  // Initialize accessibility on page load
+  initAccessibility();
+
+  // Initialize Text-to-Speech
+  const tts = new TextToSpeech();
+
+  // Font size controls
+  document.getElementById('font-increase')?.addEventListener('click', () => {
+    const newSize = increaseFontSize();
+    console.log('Font size increased to:', newSize);
+  });
+
+  document.getElementById('font-decrease')?.addEventListener('click', () => {
+    const newSize = decreaseFontSize();
+    console.log('Font size decreased to:', newSize);
+  });
+
+  document.getElementById('font-reset')?.addEventListener('click', () => {
+    resetFontSize();
+    console.log('Font size reset to 100%');
+  });
+
+  // Theme toggle (Dark/Light Mode)
+  const themeBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  
+  themeBtn?.addEventListener('click', () => {
+    const newTheme = toggleTheme();
+    
+    // Show opposite icon: if light mode is active, show dark_mode icon (to switch to dark)
+    if (newTheme === 'light') {
+      themeIcon!.textContent = 'dark_mode';
+      themeBtn.classList.add('bg-primary/20', 'text-primary');
+    } else {
+      themeIcon!.textContent = 'light_mode';
+      themeBtn.classList.remove('bg-primary/20', 'text-primary');
+    }
+  });
+
+  // Text spacing toggle
+  const spacingBtn = document.getElementById('spacing-toggle');
+  spacingBtn?.addEventListener('click', () => {
+    const isActive = toggleTextSpacing();
+    
+    if (isActive) {
+      spacingBtn.classList.add('bg-primary/20', 'text-primary');
+    } else {
+      spacingBtn.classList.remove('bg-primary/20', 'text-primary');
+    }
+  });
+
+  // Text-to-Speech toggle
+  const listenBtn = document.getElementById('listen-toggle');
+  const listenIcon = document.getElementById('listen-icon');
+  
+  listenBtn?.addEventListener('click', () => {
+    const isReading = tts.toggle();
+    
+    if (isReading) {
+      listenIcon!.textContent = 'stop_circle';
+      listenBtn.classList.add('bg-primary/20', 'text-primary');
+    } else {
+      listenIcon!.textContent = 'volume_up';
+      listenBtn.classList.remove('bg-primary/20', 'text-primary');
+    }
+  });
+
+  // Restore active states on page load
+  import { getAccessibilitySettings } from '@/helpers/accessibility';
+  
+  const settings = getAccessibilitySettings();
+  
+  // Show opposite icon: if light mode is active, show dark_mode icon (to switch to dark)
+  if (settings.theme === 'light') {
+    themeIcon!.textContent = 'dark_mode';
+    themeBtn?.classList.add('bg-primary/20', 'text-primary');
+  } else {
+    themeIcon!.textContent = 'light_mode';
+  }
+  
+  if (settings.textSpacing) {
+    spacingBtn?.classList.add('bg-primary/20', 'text-primary');
+  }
+</script>

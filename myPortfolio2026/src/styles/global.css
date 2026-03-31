@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors - Design System "Architectural Logic" */
+  /* Colors - Design System "Architectural Logic" - Dark Mode (Default) */
   --color-on-background: #d8e3fb;
   --color-surface-dim: #081425;
   --color-primary: #adc6ff;
@@ -158,4 +158,120 @@ section {
 button,
 a {
   cursor: pointer;
+}
+
+/* ========================================
+   ACCESSIBILITY STYLES
+   ======================================== */
+
+/* Light Mode - Blueprint Aesthetic */
+html.light-mode {
+  /* Surface Hierarchy */
+  --color-surface: #F7F9FB;
+  --color-surface-dim: #E0E3E5;
+  --color-surface-bright: #FFFFFF;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F2F4F6;
+  --color-surface-container: #EDF0F2;
+  --color-surface-container-high: #E7EAED;
+  --color-surface-container-highest: #E0E3E5;
+  
+  /* Primary Colors */
+  --color-primary: #3B82F6;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #2563EB;
+  --color-on-primary-container: #001A42;
+  --color-primary-fixed: #DBE1FF;
+  --color-primary-fixed-dim: #3B82F6;
+  --color-on-primary-fixed: #001A42;
+  --color-on-primary-fixed-variant: #004395;
+  --color-inverse-primary: #ADC6FF;
+  
+  /* Secondary Colors */
+  --color-secondary: #515F74;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #D3E4FE;
+  --color-on-secondary-container: #0B1C30;
+  --color-secondary-fixed: #D3E4FE;
+  --color-secondary-fixed-dim: #B7C8E1;
+  --color-on-secondary-fixed: #0B1C30;
+  --color-on-secondary-fixed-variant: #38485D;
+  
+  /* Tertiary Colors */
+  --color-tertiary: #943700;
+  --color-on-tertiary: #FFFFFF;
+  --color-tertiary-container: #FFDCC6;
+  --color-on-tertiary-container: #311400;
+  --color-tertiary-fixed: #FFDCC6;
+  --color-tertiary-fixed-dim: #FFB786;
+  --color-on-tertiary-fixed: #311400;
+  --color-on-tertiary-fixed-variant: #723600;
+  
+  /* Error Colors */
+  --color-error: #BA1A1A;
+  --color-on-error: #FFFFFF;
+  --color-error-container: #FFDAD6;
+  --color-on-error-container: #410002;
+  
+  /* Text & Variants */
+  --color-on-surface: #1A1C1E;
+  --color-on-surface-variant: #434655;
+  --color-surface-variant: #DFE2EB;
+  --color-on-background: #1A1C1E;
+  
+  /* Outline */
+  --color-outline: #C3C6D7;
+  --color-outline-variant: rgba(195, 198, 215, 0.2);
+  
+  /* Inverse */
+  --color-inverse-surface: #2F3033;
+  --color-inverse-on-surface: #F1F0F4;
+  
+  /* Surface Tint */
+  --color-surface-tint: #3B82F6;
+}
+
+/* Enhanced Text Spacing */
+html.enhanced-spacing {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+html.enhanced-spacing p,
+html.enhanced-spacing li,
+html.enhanced-spacing span {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+
+html.enhanced-spacing h1,
+html.enhanced-spacing h2,
+html.enhanced-spacing h3,
+html.enhanced-spacing h4,
+html.enhanced-spacing h5,
+html.enhanced-spacing h6 {
+  line-height: 1.6 !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
