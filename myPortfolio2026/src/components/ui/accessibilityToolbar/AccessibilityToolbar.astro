@@ -17,7 +17,7 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
   <div
     id="a11y-toggle"
     aria-label="Accessibility toolbar"
-    class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl flex flex-col items-center gap-4 border border-white/10 border-r-0 cursor-pointer transform translate-x-full transition-transform duration-300"
+    class="bg-primary text-on-primary px-3 py-6 rounded-l-xl shadow-2xl hidden lg:flex flex-col items-center gap-4 border border-white/10 border-r-0 cursor-pointer transform translate-x-full transition-transform duration-300"
   >
     <span class="material-symbols-outlined text-2xl">settings_accessibility</span>
   </div>
@@ -112,22 +112,36 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
   const toolbar = document.getElementById('a11y-toolbar');
   let isPanelOpen = false;
 
-  // Toggle panel on button click
+  function openPanel() {
+    isPanelOpen = true;
+    toggleBtn?.classList.remove('translate-x-full');
+    panel?.classList.remove('translate-x-full');
+    toggleBtn?.classList.add('translate-x-0');
+    panel?.classList.add('translate-x-0');
+  }
+
+  function closePanel() {
+    isPanelOpen = false;
+    panel?.classList.remove('translate-x-0');
+    toggleBtn?.classList.remove('translate-x-0');
+    panel?.classList.add('translate-x-full');
+    toggleBtn?.classList.add('translate-x-full');
+  }
+
+  function togglePanel() {
+    isPanelOpen ? closePanel() : openPanel();
+  }
+
+  // Toggle panel on desktop button click
   toggleBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    isPanelOpen = !isPanelOpen;
-    
-    if (isPanelOpen) {
-      toggleBtn?.classList.remove('translate-x-full');
-      panel?.classList.remove('translate-x-full');
-      toggleBtn?.classList.add('translate-x-0');
-      panel?.classList.add('translate-x-0');
-    } else {
-      panel?.classList.remove('translate-x-0');
-      toggleBtn?.classList.remove('translate-x-0');
-      panel?.classList.add('translate-x-full');
-      toggleBtn?.classList.add('translate-x-full');
-    }
+    togglePanel();
+  });
+
+  // Listen for mobile trigger event from navbar
+  window.addEventListener('a11y-panel-toggle', (e) => {
+    e.stopPropagation();
+    togglePanel();
   });
 
   // Close panel when clicking outside
@@ -136,11 +150,7 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
     
     // Check if click is outside toolbar
     if (toolbar && !toolbar.contains(target) && isPanelOpen) {
-      isPanelOpen = false;
-      panel?.classList.remove('translate-x-0');
-      panel?.classList.add('translate-x-full');
-      toggleBtn?.classList.remove('translate-x-0');
-      toggleBtn?.classList.add('translate-x-full');
+      closePanel();
     }
   });
 

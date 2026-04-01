@@ -61,7 +61,7 @@ const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
         <button 
           id="lang-en"
           aria-label="Switch to English" 
-          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          class="text-sm font-bold font-label transition-colors lang-btn"
           data-lang="en"
         >
           EN
@@ -70,7 +70,7 @@ const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
         <button 
           id="lang-es"
           aria-label="Switch to Spanish" 
-          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          class="text-sm font-bold font-label transition-colors lang-btn"
           data-lang="es"
         >
           ES
@@ -79,7 +79,7 @@ const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
         <button 
           id="lang-pt"
           aria-label="Switch to Portuguese" 
-          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          class="text-sm font-bold font-label transition-colors lang-btn"
           data-lang="pt"
         >
           PT
@@ -87,12 +87,24 @@ const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
       </div>
     </div>
     
-    <!-- Hamburger Button - Mobile Only -->
-    <button id="menu-toggle" aria-label="Toggle menu" class="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-80" >
-      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-1"></span>
-      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-2"></span>
-      <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-3"></span>
-    </button>
+    <!-- Mobile Controls -->
+    <div class="lg:hidden flex items-center gap-3">
+      <!-- Accessibility Trigger - Mobile Only -->
+      <button
+        id="a11y-trigger-mobile"
+        aria-label="Accessibility settings"
+        class="flex items-center justify-center w-8 h-8 text-primary"
+      >
+        <span class="material-symbols-outlined text-2xl">settings_accessibility</span>
+      </button>
+
+      <!-- Hamburger Button -->
+      <button id="menu-toggle" aria-label="Toggle menu" class="flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-80">
+        <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-1"></span>
+        <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-2"></span>
+        <span class="w-6 h-0.5 bg-primary transition-all duration-300 ease-in-out" id="hamburger-line-3"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Sidebar Menu -->
@@ -330,5 +342,11 @@ const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
       const newLang = btn.getAttribute('data-lang');
       if (newLang) switchLanguage(newLang);
     });
+  });
+
+  // Accessibility trigger - mobile
+  document.getElementById('a11y-trigger-mobile')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    window.dispatchEvent(new CustomEvent('a11y-panel-toggle'));
   });
 </script>
