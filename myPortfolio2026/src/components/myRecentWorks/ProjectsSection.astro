@@ -171,10 +171,7 @@ const projectsWithImages = projects.map((project) => {
   // Make functions globally accessible
   window.openProjectModal = function(button) {
     const projectId = parseInt(button.dataset.projectId);
-    console.log('Project ID:', projectId);
-    console.log('All projects:', projectsWithImages);
     const project = projectsWithImages.find(p => p.id === projectId);
-    console.log('Found project:', project);
     
     if (!project) {
       console.error('Project not found!');
@@ -184,10 +181,7 @@ const projectsWithImages = projects.map((project) => {
     // Set modal content
     const titleElement = document.getElementById('project-modal-title');
     const descElement = document.getElementById('project-modal-description');
-    
-    console.log('Title element:', titleElement);
-    console.log('Project title:', project.title);
-    
+
     titleElement.textContent = project.title;
     descElement.textContent = project.description;
     
