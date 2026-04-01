@@ -1,13 +1,13 @@
 window.translations = {
     "es": {
         //Bloque "Banner principal"
-        //"welcome_title": "Hola <span>,</span> soy Antonio Blanca.",
-        //"welcome_description": "Soy ingeniero en informática con más de 6 años de experiencia en desarrollo web, apasionado por el CMS WordPress y sus increíbles características",
-        //"description": "Este es un sitio web de ejemplo para mostrar mi trabajo.",
         "welcome_title": "Hola <span>,</span> una nueva versión de mi portfolio está disponible.",
         "welcome_description": "Haga clic en el botón de abajo para visitar la nueva versión.",
         "welcome_button": "Ir a la nueva versión",
-        
+        //"welcome_title": "Hola <span>,</span> soy Antonio Blanca.",
+        //"welcome_description": "Soy ingeniero en informática con más de 6 años de experiencia en desarrollo web, apasionado por el CMS WordPress y sus increíbles características",
+        //"description": "Este es un sitio web de ejemplo para mostrar mi trabajo.",
+
         //Bloque "About Me"
         "about_title": "Sobre mí",
         "about_welcome": "Apasionado por crear soluciones innovadoras y experiencias digitales únicas.",
@@ -66,12 +66,12 @@ window.translations = {
     },
     "pt": {
         //Bloque "Banner principal"
-        //"welcome_title": "Olá <span>,</span> eu sou Antonio Blanca.",
-        //"welcome_description": "Sou engenheiro de computação com mais de 6 anos de experiência em desenvolvimento web, e sou apaixonado por WordPress CMS e seus recursos incríveis",
-        //"description": "Este é um site de exemplo para mostrar meu trabalho.",
         "welcome_title": "Olá <span>,</span> uma nova versão do meu portfólio está disponível.",
         "welcome_description": "Clique no botão abaixo para visitar a nova versão.",
         "welcome_button": "Ir para a nova versão",
+        //"welcome_title": "Olá <span>,</span> eu sou Antonio Blanca.",
+        //"welcome_description": "Sou engenheiro de computação com mais de 6 anos de experiência em desenvolvimento web, e sou apaixonado por WordPress CMS e seus recursos incríveis",
+        //"description": "Este é um site de exemplo para mostrar meu trabalho.",
 
         //Bloque "About Me"
         "about_title": "Sobre mim",
