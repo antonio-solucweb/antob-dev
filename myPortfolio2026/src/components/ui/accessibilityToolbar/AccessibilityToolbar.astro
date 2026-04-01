@@ -80,7 +80,7 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
 
     <button 
       aria-label="Reset text size" 
-      class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
+      class="w-10 h-10 rounded-lg hidden items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
       id="font-reset"
       title={fontResetLabel}
     >
@@ -159,20 +159,34 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
     e.stopPropagation();
   });
 
+  const fontResetBtn = document.getElementById('font-reset');
+
+  function updateResetVisibility() {
+    const s = getAccessibilitySettings();
+    const isDirty = s.fontSize !== 100 || s.textSpacing;
+    fontResetBtn?.classList.toggle('hidden', !isDirty);
+    fontResetBtn?.classList.toggle('flex', isDirty);
+  }
+
   // Font size controls
   document.getElementById('font-increase')?.addEventListener('click', () => {
-    const newSize = increaseFontSize();
-    console.log('Font size increased to:', newSize);
+    increaseFontSize();
+    updateResetVisibility();
   });
 
   document.getElementById('font-decrease')?.addEventListener('click', () => {
-    const newSize = decreaseFontSize();
-    console.log('Font size decreased to:', newSize);
+    decreaseFontSize();
+    updateResetVisibility();
   });
 
-  document.getElementById('font-reset')?.addEventListener('click', () => {
+  fontResetBtn?.addEventListener('click', () => {
     resetFontSize();
-    console.log('Font size reset to 100%');
+    const s = getAccessibilitySettings();
+    if (s.textSpacing) {
+      toggleTextSpacing();
+      spacingBtn?.classList.remove('bg-primary/20', 'text-primary');
+    }
+    updateResetVisibility();
   });
 
   // Theme toggle (Dark/Light Mode)
@@ -202,6 +216,7 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
     } else {
       spacingBtn.classList.remove('bg-primary/20', 'text-primary');
     }
+    updateResetVisibility();
   });
 
   // Text-to-Speech toggle
@@ -236,4 +251,6 @@ const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLa
   if (settings.textSpacing) {
     spacingBtn?.classList.add('bg-primary/20', 'text-primary');
   }
+
+  updateResetVisibility();
 </script>
