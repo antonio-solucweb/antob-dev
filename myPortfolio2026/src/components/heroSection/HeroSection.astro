@@ -1,5 +1,14 @@
 ---
 // Hero Section Component - Engineer Profile
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
+
+// Static imports for build compatibility
+import heroDataEn from '@assets/data/en/hero.json';
+import heroDataEs from '@assets/data/es/hero.json';
+import heroDataPt from '@assets/data/pt/hero.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const heroData = lang === 'es' ? heroDataEs : lang === 'pt' ? heroDataPt : heroDataEn;
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
@@ -10,21 +19,23 @@
   
   <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
     <!-- Left Content -->
-    <div class="space-y-8">
+    <div class="space-y-8" data-i18n-section="hero">
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm tracking-widest uppercase">
         <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-        Senior WordPress Developer
+        <span data-i18n="hero.badge">{heroData.badge}</span>
       </div>
       
       <!-- Main Title -->
       <h1 class="text-6xl md:text-8xl font-extrabold font-headline leading-tight tracking-tighter text-glow">
-        Digital <br /> <span class="text-primary">Logic.</span> <br /> Engineered.
+        <span data-i18n="hero.title.line1">{heroData.title.line1}</span> <br /> 
+        <span class="text-primary" data-i18n="hero.title.line2">{heroData.title.line2}</span> <br /> 
+        <span data-i18n="hero.title.line3">{heroData.title.line3}</span>
       </h1>
       
       <!-- Description -->
-      <p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
-        Computer Engineer with 7+ years of expertise. I am passionate about creating innovative solutions and unique digital experiences.
+      <p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed" data-i18n="hero.description">
+        {heroData.description}
       </p>
       
       <!-- CTA Buttons -->
@@ -32,20 +43,22 @@
         <a 
           class="px-8 py-4 bg-primary text-on-primary font-bold rounded-lg hover:shadow-[0_0_30px_rgba(173,198,255,0.4)] transition-all" 
           href="#projects"
+          data-i18n="hero.cta.projects"
         >
-          Explore Projects
+          {heroData.cta.projects}
         </a>
         <a 
           class="px-8 py-4 glass-panel text-primary font-bold rounded-lg hover:bg-surface-container-high transition-all" 
           href="#contact"
+          data-i18n="hero.cta.contact"
         >
-          Get in Touch
+          {heroData.cta.contact}
         </a>
       </div>
     </div>
     
     <!-- Right Content - Code Block -->
-    <div class="hidden lg:block">
+    <div class="hidden lg:block" data-i18n-section="hero">
       <div class="relative">
         <!-- Glow Effect -->
         <div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-xl"></div>
@@ -57,20 +70,20 @@
             <div class="w-3 h-3 rounded-full bg-error"></div>
             <div class="w-3 h-3 rounded-full bg-tertiary"></div>
             <div class="w-3 h-3 rounded-full bg-primary"></div>
-            <span class="ml-4 font-label text-xs text-outline tracking-widest uppercase">Some_Details.tsx</span>
+            <span class="ml-4 font-label text-xs text-outline tracking-widest uppercase" data-i18n="hero.terminal.title">{heroData.terminal.title}</span>
           </div>
           
           <!-- Code Content -->
-          <pre class="font-label text-sm text-primary-fixed-dim/80 leading-relaxed" set:html={`<span class="text-tertiary">const</span> <span class="text-on-surface">Engineer</span> = {
+          <pre class="font-label text-sm text-primary-fixed-dim/80 leading-relaxed" set:html={`<span class="text-tertiary">const</span> <span class="text-on-surface">${heroData.terminal.codeConst}</span> = {
   yearsExperience: <span class="text-tertiary">7+</span>,
-  specialization: <span class="text-on-surface">"Senior WordPress Developer"</span>,
+  specialization: <span class="text-on-surface" data-i18n="hero.specialization">${heroData.terminal.specialization}</span>,
   mainStack: [<span class="text-on-surface">"WordPress"</span>, <span class="text-on-surface">"Astro"</span>, <span class="text-on-surface">"ReactJs"</span>, <span class="text-on-surface">"AI"</span>],
-  focus: <span class="text-on-surface">"Performance &amp; Scalability"</span>
+  focus: <span class="text-on-surface">${heroData.terminal.focus}</span>
 };
 
 <span class="text-tertiary">function</span> <span class="text-on-surface">DeployProject</span>(id) {
-  <span class="text-outline-variant">// Logic for architectural excellence</span>
-  <span class="text-tertiary">return</span> <span class="text-on-surface">\`Success\`</span>;
+  <span class="text-outline">${heroData.terminal.codeComment}</span>
+  <span class="text-tertiary">return</span> <span class="text-on-surface">\`${heroData.terminal.codeReturn}\`</span>;
 }`}></pre>
         </div>
       </div>

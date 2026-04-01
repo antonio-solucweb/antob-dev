@@ -2,21 +2,48 @@
 import AccessibilityToolbar from '@components/ui/accessibilityToolbar/AccessibilityToolbar.astro';
 import MainNavbar from '@components/ui/mainNavbar/MainNavbar.astro';
 import FloatWhatsapp from '@components/floatWhatsapp/FloatWhatsapp.astro';
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
+import { getWhatsAppLink } from '@/helpers/contactInfo';
+import { GlobalUiSchema, ContactDataSchema } from '@/types';
 import '@styles/global.css';
 
+import uiDataEn from '@assets/data/en/ui.json';
+import uiDataEs from '@assets/data/es/ui.json';
+import uiDataPt from '@assets/data/pt/ui.json';
+
+import contactDataEn from '@assets/data/en/contact.json';
+import contactDataEs from '@assets/data/es/contact.json';
+import contactDataPt from '@assets/data/pt/contact.json';
+
 interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
+const currentLang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+
+const rawUiData = currentLang === 'es' ? uiDataEs : currentLang === 'pt' ? uiDataPt : uiDataEn;
+const uiResult = GlobalUiSchema.safeParse(rawUiData);
+const ui = uiResult.success ? uiResult.data.interfaces : null;
+const a11y = uiResult.success ? uiResult.data.accessibility : null;
+
+const rawContactData = currentLang === 'es' ? contactDataEs : currentLang === 'pt' ? contactDataPt : contactDataEn;
+const contactResult = ContactDataSchema.safeParse(rawContactData);
+const whatsappMessage = contactResult.success ? contactResult.data.interfaces.whatsappMessage : '';
+const tooltipText = contactResult.success ? contactResult.data.interfaces.tooltipText : 'Talk with me on WhatsApp!';
+const whatsappLink = getWhatsAppLink(whatsappMessage);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang={currentLang} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <title>{ui?.pageTitle ?? title}</title>
+    <meta name="description" content={ui?.metaDescription} />
+    <meta property="og:title" content={ui?.pageTitle ?? title} />
+    <meta property="og:description" content={ui?.metaDescription} />
+    <meta property="og:type" content="website" />
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
@@ -46,7 +73,14 @@ const { title } = Astro.props;
   
   <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
     <!-- Accessibility Toolbar -->
-    <AccessibilityToolbar />
+    <AccessibilityToolbar
+      themeLabel={a11y?.theme ?? 'Toggle Theme'}
+      listenLabel={a11y?.listen ?? 'Read Aloud'}
+      spacingLabel={a11y?.spacing ?? 'Text Spacing'}
+      fontIncreaseLabel={a11y?.fontIncrease ?? 'Increase Font Size'}
+      fontDecreaseLabel={a11y?.fontDecrease ?? 'Decrease Font Size'}
+      fontResetLabel={a11y?.fontReset ?? 'Reset Font Size'}
+    />
 
     <!-- Top Navigation -->
     <MainNavbar />
@@ -62,7 +96,7 @@ const { title } = Astro.props;
         <div class="text-blue-200 font-mono text-lg font-bold">ANTONIO BLANCA</div>
         
         <div class="text-slate-500 font-label text-xs uppercase tracking-widest text-center md:text-left">
-          © {new Date().getFullYear()} Senior WordPress Developer || All rights reserved.
+          © {new Date().getFullYear()} {ui?.footerCopyright}
         </div>
         
         <div class="flex gap-6">
@@ -79,7 +113,7 @@ const { title } = Astro.props;
             href="https://www.linkedin.com/in/antonio-blanca/" 
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label={ui?.footerLinkedInAriaLabel ?? 'LinkedIn'}
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -99,18 +133,29 @@ const { title } = Astro.props;
 
       // Active navigation state with Intersection Observer
       const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      const desktopLinks = document.querySelectorAll('.nav-link');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            navLinks.forEach(link => {
+            const targetHref = `#${entry.target.id}`;
+
+            desktopLinks.forEach(link => {
               link.classList.remove('text-blue-300', 'border-b-2', 'border-blue-400', 'pb-1');
               link.classList.add('text-slate-400');
-              
-              if (link.getAttribute('href') === `#${entry.target.id}`) {
+              if (link.getAttribute('href') === targetHref) {
                 link.classList.remove('text-slate-400');
                 link.classList.add('text-blue-300', 'border-b-2', 'border-blue-400', 'pb-1');
+              }
+            });
+
+            mobileLinks.forEach(link => {
+              link.classList.remove('bg-primary/10', 'text-primary');
+              link.classList.add('text-on-surface');
+              if (link.getAttribute('href') === targetHref) {
+                link.classList.remove('text-on-surface');
+                link.classList.add('bg-primary/10', 'text-primary');
               }
             });
           }
@@ -121,6 +166,6 @@ const { title } = Astro.props;
     </script>
 
     <!-- Floating WhatsApp Button -->
-    <FloatWhatsapp />
+    <FloatWhatsapp whatsappLink={whatsappLink} tooltipText={tooltipText} />
   </body>
 </html>

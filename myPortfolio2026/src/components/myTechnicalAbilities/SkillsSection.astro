@@ -1,14 +1,23 @@
 ---
 import { SkillsDataSchema } from '@/types/index';
-import skillsData from '@assets/data/skills.json';
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
 import CustomIcon from '@components/ui/customIcons/CustomIcons.astro';
+
+// Static imports for build compatibility
+import skillsDataEn from '@assets/data/en/skills.json';
+import skillsDataEs from '@assets/data/es/skills.json';
+import skillsDataPt from '@assets/data/pt/skills.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const skillsData = lang === 'es' ? skillsDataEs : lang === 'pt' ? skillsDataPt : skillsDataEn;
 
 // Validate skills data
 const result = SkillsDataSchema.safeParse(skillsData);
 if (!result.success) {
   console.error('Skills data validation failed:', result.error);
 }
-const categories = result.success ? result.data : [];
+const categories = result.success ? result.data.categories : [];
+const interfaces = result.success ? result.data.interfaces : null;
 const customIcons = ['astro', 'react'];
 ---
 
@@ -17,15 +26,17 @@ const customIcons = ['astro', 'react'];
   
   <div class="container mx-auto px-6 relative z-10">
     <!-- Section Header -->
+    {interfaces && (
     <div class="mb-16 space-y-4 text-center">
-      <span class="font-label text-primary tracking-widest text-sm uppercase">Core Competencies</span>
+      <span class="font-label text-primary tracking-widest text-sm uppercase">{interfaces.label}</span>
       <h2 class="text-5xl md:text-6xl font-extrabold font-headline tracking-tighter">
-        Technical <span class="text-primary">Command</span> Center
+        {interfaces.title} <span class="text-primary">{interfaces.titleHighlight}</span> {interfaces.titleSuffix}
       </h2>
       <p class="text-on-surface-variant max-w-2xl mx-auto">
-        A comprehensive arsenal of modern technologies and frameworks, organized by domain expertise.
+        {interfaces.description}
       </p>
     </div>
+    )}
 
     <!-- Category Filter Buttons -->
     <div class="flex flex-wrap justify-center gap-4 mb-16">
@@ -96,8 +107,14 @@ const customIcons = ['astro', 'react'];
     <!-- Show More Button -->
     <div class="text-center mt-12">
       <button class="px-8 py-4 bg-surface-container-high text-primary font-bold rounded-lg hover:bg-surface-container-highest transition-all flex items-center gap-2 mx-auto" id="show-more-btn" style="display: none;">
-        <span>Show More</span>
-        <span class="material-symbols-outlined">expand_more</span>
+        {
+          interfaces && (
+            <>
+              <span>{interfaces.button}</span>
+              <span class="material-symbols-outlined">expand_more</span>
+            </>
+          )
+        }
       </button>
     </div>
   </div>

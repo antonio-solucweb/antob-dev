@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "accessibility": {
+    "theme": "Cambiar Tema",
+    "listen": "Leer en Voz Alta",
+    "spacing": "Espaciado de Texto",
+    "fontIncrease": "Aumentar Tamaño",
+    "fontDecrease": "Disminuir Tamaño",
+    "fontReset": "Restablecer Tamaño"
+  },
+  "interfaces": {
+    "pageTitle": "Antonio Blanca | Desarrollador WordPress Senior",
+    "metaDescription": "Desarrollador WordPress Senior especializado en ecosistemas WordPress modulares y escalables. Experto en temas personalizados, plugins, Headless WordPress y arquitectura web moderna.",
+    "footerCopyright": "Desarrollador WordPress Senior || Todos los derechos reservados.",
+    "footerLinkedInAriaLabel": "Perfil de LinkedIn"
+  }
+}

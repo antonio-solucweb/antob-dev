@@ -1,0 +1,13 @@
+{
+  "interfaces": {
+    "titleRegular": "The Engineer's",
+    "titleHighlight": "Profile",
+    "imageAlt": "Antonio Blanca - Web Developer",
+    "description": "With <strong>over 7 years of rigorous experience</strong> as a web developer, I have built a career on the principles of logic and efficiency. My transition from standard development to complex system architecture allows me to deliver <strong>WordPress ecosystems that are modular, scalable, and lightning-fast</strong>.",
+    "corePhilosophyLabel": "Core Philosophy",
+    "corePhilosophyValue": "Modular & Scalable",
+    "technicalNicheLabel": "Technical Niche",
+    "technicalNicheValue": "Modern WordPress Development",
+    "quote": "Throughout my career, I have gone beyond the basics, mastering advanced features such as custom theme and plugin development, multisite environments, ACF, Headless WordPress solutions, WordPress and external APIs, and more. My mission is to transform ideas into effective and functional digital solutions."
+  }
+}

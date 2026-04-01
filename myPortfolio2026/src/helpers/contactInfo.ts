@@ -5,12 +5,8 @@ import { ContactInfoSchema, type ContactInfo } from '@/types';
  * Single source of truth for all contact details
  */
 const contactData: ContactInfo = {
-  whatsapp: {
-    number: '+5595984009715',
-    message: 'Hi! I see your portfolio and I would like to talk with you.',
-  },
+  number: '+5595984009715',
   email: 'solucwebs@gmail.com',
-  location: 'Based on Brazil. - Available for global remote work.',
 };
 
 // Validate contact data
@@ -30,10 +26,10 @@ export const getContactInfo = (): ContactInfo => {
 /**
  * Get WhatsApp link with encoded message
  */
-export const getWhatsAppLink = (): string => {
-  const { whatsapp } = getContactInfo();
-  const cleanNumber = whatsapp.number.replace(/\+/g, '');
-  const encodedMessage = encodeURIComponent(whatsapp.message);
+export const getWhatsAppLink = (message: string): string => {
+  const { number } = getContactInfo();
+  const cleanNumber = number.replace(/\+/g, '');
+  const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
 };
 
@@ -50,6 +46,6 @@ export const getEmailLink = (subject?: string): string => {
  * Get formatted WhatsApp number for display
  */
 export const getFormattedWhatsAppNumber = (): string => {
-  const { whatsapp } = getContactInfo();
-  return whatsapp.number;
+  const { number } = getContactInfo();
+  return number;
 };

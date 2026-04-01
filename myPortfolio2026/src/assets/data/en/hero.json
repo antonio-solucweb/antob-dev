@@ -1,0 +1,21 @@
+{
+  "badge": "Senior WordPress Developer",
+  "title": {
+    "line1": "Digital",
+    "line2": "Logic.",
+    "line3": "Engineering."
+  },
+  "description": "Computer Engineer with 7+ years of expertise. I am passionate about creating innovative solutions and unique digital experiences.",
+  "terminal": {
+    "title": "Some_Details.tsx",
+    "specialization": "Senior WordPress Developer",
+    "codeConst": "Engineer",
+    "focus": "Performance & Scalability",
+    "codeComment": "// Logic for architectural excellence",
+    "codeReturn": "Success"
+  },
+  "cta": {
+    "projects": "Explore Projects",
+    "contact": "Get in Touch"
+  }
+}

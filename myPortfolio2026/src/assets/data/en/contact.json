@@ -1,0 +1,20 @@
+{
+  "interfaces": {
+    "titleLine1": "Initiate",
+    "titleLine2": "Project",
+    "subtitle": "Ready to engineer your next digital solution? Provide the project parameters and let's construct something extraordinary.",
+    "location": "Based in Brazil. Available for global remote work.",
+    "whatsappMessage": "Hi! I saw your portfolio and I would like to talk with you.",
+    "nameLabel": "System.Your_Name",
+    "namePlaceholder": "Enter name",
+    "emailLabel": "System.Your_Email",
+    "emailPlaceholder": "email@address.com",
+    "messageLabel": "System.Your_Message",
+    "messagePlaceholder": "Your message here...",
+    "submitButton": "Send Message",
+    "sendingText": "Sending...",
+    "successText": "✓ Message sent successfully!",
+    "errorText": "Failed to send message. Please try again.",
+    "tooltipText": "Talk with me on WhatsApp!"
+  }
+}

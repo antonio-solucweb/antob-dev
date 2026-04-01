@@ -1,0 +1,20 @@
+{
+  "interfaces": {
+    "titleLine1": "Iniciar",
+    "titleLine2": "Proyecto",
+    "subtitle": "¿Listo para construir tu próxima solución digital? Proporciona los parámetros del proyecto y construyamos algo extraordinario.",
+    "location": "Localizado en Brasil. Disponible para trabajo remoto global.",
+    "whatsappMessage": "¡Hola! Vi tu portafolio y me gustaría hablar contigo.",
+    "nameLabel": "Sistema.Tu_Nombre",
+    "namePlaceholder": "Ingresa tu nombre",
+    "emailLabel": "Sistema.Tu_Email",
+    "emailPlaceholder": "email@direccion.com",
+    "messageLabel": "Sistema.Tu_Mensaje",
+    "messagePlaceholder": "Tu mensaje aquí...",
+    "submitButton": "Enviar Mensaje",
+    "sendingText": "Enviando...",
+    "successText": "✓ ¡Mensaje enviado correctamente!",
+    "errorText": "Error al enviar el mensaje. Por favor inténtalo de nuevo.",
+    "tooltipText": "¡Habla conmigo por WhatsApp!"
+  }
+}

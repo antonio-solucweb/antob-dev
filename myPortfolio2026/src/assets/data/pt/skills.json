@@ -1,0 +1,279 @@
+{
+  "interfaces": {
+    "label": "Competências Principais",
+    "title": "Centro de",
+    "titleHighlight": "Comando",
+    "titleSuffix": "Técnico",
+    "description": "Um arsenal completo de tecnologias e frameworks modernos, organizados por domínio de especialização.",
+    "button": "Mostrar Mais"
+  },
+  "categories": [
+  {
+    "id": "cms",
+    "name": "WordPress Development",
+    "skills": [
+      {
+        "id": 1,
+        "name": "Custom Development",
+        "description": "Expert in custom theme and plugin development including compatibility with multisite environments and excellent performance optimizations.",
+        "command": "wp core install --url=example.com",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "code"
+      },
+      {
+        "id": 2,
+        "name": "Headless WordPress",
+        "description": "Building headless WordPress sites with custom REST API endpoints and modern frontend frameworks like ReactJS, Astro, or Next.js.",
+        "command": "wp core install --url=example.com",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "code"
+      },
+      {
+        "id": 3,
+        "name": "Custom Fields and Post Types",
+        "description": "Creating custom post types and fields to extend WordPress functionality and data structure.",
+        "command": "npx create-react-app my-app",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "code"
+      },
+      {
+        "id": 4,
+        "name": "Gutenberg blocks Development",
+        "description": "Creating custom Gutenberg blocks to extend WordPress functionality and enhance content creation.",
+        "command": "npx create-next-app@latest",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "tile_small"
+      },
+      {
+        "id": 5,
+        "name": "Multisite Management",
+        "description": "Managing and optimizing WordPress multisite networks for efficient multi-domain or multi-subdomain deployments.",
+        "command": "wp network create --base=/",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "network_node"
+      },
+      {
+        "id": 6,
+        "name": "WordPress security",
+        "description": "Implementing security best practices, hardening WordPress installations, and protecting against vulnerabilities.",
+        "command": "wp plugin update --security",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "shield"
+      },
+      {
+        "id": 7,
+        "name": "WooCommerce",
+        "description": "Building e-commerce solutions with WooCommerce and custom features if needed.",
+        "command": "npm create astro@latest",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "shopping_cart"
+      },
+      {
+        "id": 8,
+        "name": "Elementor and similar page builders",
+        "description": "If needed, I can work with Elementor or similar page builders to create custom layouts and designs.",
+        "command": "npx nuxi init my-app",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "layers"
+      }
+    ]
+  },
+  {
+    "id": "programming-languages",
+    "name": "Full-Stack Development",
+    "skills": [
+      {
+        "id": 9,
+        "name": "HTML5 & CSS3",
+        "description": "Semantic HTML5 structure and modern CSS3 features including Flexbox, Grid, animations, and responsive design.",
+        "command": "php artisan serve",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "code"
+      },
+      {
+        "id": 10,
+        "name": "JavaScript & TypeScript",
+        "description": "Modern JavaScript development with ES6+ features, async/await, promises, and TypeScript for type safety.",
+        "command": "tsc --init",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "javascript"
+      },
+      {
+        "id": 11,
+        "name": "PHP/OOP",
+        "description": "Object-oriented programming with PHP, design patterns, and WordPress custom development.",
+        "command": "php artisan serve",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "php"
+      },
+      {
+        "id": 12,
+        "name": "Astro",
+        "description": "Static site generation (SSG) and server-side rendering (SSR) with Astro framework, with WordPress integration has backend if needed.",
+        "command": "astro dev",
+        "status": "ativo",
+        "level": "intermediário",
+        "icon": "astro"
+      },
+      {
+        "id": 13,
+        "name": "ReactJS",
+        "description": "Building dynamic user interfaces with ReactJS, hooks, state management, and component-based architecture.",
+        "command": "npx create-react-app my-app",
+        "status": "ativo",
+        "level": "intermediário",
+        "icon": "react"
+      },
+      {
+        "id": 14,
+        "name": "Tailwind CSS, Bootstrap and similars",
+        "description": "Building responsive and modern user interfaces with Tailwind CSS, Bootstrap and similar utility-first frameworks.",
+        "command": "npx create-react-app my-app",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "css"
+      },
+      {
+        "id": 15,
+        "name": "MySQL",
+        "description": "Relational database management, query optimization, stored procedures, and replication strategies.",
+        "command": "mysql -u root -p",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "database"
+      },
+      {
+        "id": 16,
+        "name": "PostgreSQL",
+        "description": "Advanced SQL features, JSONB support, full-text search, and performance tuning for complex queries.",
+        "command": "psql -U postgres",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "database"
+      },
+      {
+        "id": 17,
+        "name": "LARAVEL",
+        "description": "Building robust backend applications with Laravel, RESTful APIs, and database management.",
+        "command": "php artisan serve",
+        "status": "ativo",
+        "level": "intermediário",
+        "icon": "code_blocks"
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "name": "Others skills",
+    "skills": [
+      {
+        "id": 18,
+        "name": "Git Version Control",
+        "description": "Version control, branching strategies, pull requests and code reviews.",
+        "command": "git init",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "merge"
+      },
+      {
+        "id": 19,
+        "name": "REST API Integrations",
+        "description": "Integrating with REST APIs, handling authentication, and managing API responses.",
+        "command": "git init",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "plug_connect"
+      },
+      {
+        "id": 20,
+        "name": "n8n",
+        "description": "Building workflow automations, API integrations, and data synchronization between multiple platforms, focusing on integrations with WordPress.",
+        "command": "npx n8n start",
+        "status": "ativo",
+        "level": "intermediário",
+        "icon": "flowchart"
+      },
+      {
+        "id": 21,
+        "name": "Performance Optimization",
+        "description": "Optimizing website performance, reducing load times, and improving user experience.",
+        "command": "npm run build",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "avg_time"
+      },
+      {
+        "id": 22,
+        "name": "SEO",
+        "description": "Implementing SEO best practices like: Caché, Google Search Console, Google Analytics, meta tags, meta description, meta keywords, etc. Optimizing website for search engines and AI platforms, and improving website visibility.",
+        "command": "newman run collection.json",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "show_chart"
+      },
+      {
+        "id": 23,
+        "name": "Figma",
+        "description": "UI/UX design, prototyping, component systems, and design-to-code workflows for web applications.",
+        "command": "figma://open",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "design_services"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "name": "DevOps & Cloud",
+    "skills": [
+      {
+        "id": 24,
+        "name": "Cpanel & Plesk",
+        "description": "Managing shared hosting environments, domain management, email configuration, and server administration.",
+        "command": "cpanel --version",
+        "status": "ativo",
+        "level": "avançado",
+        "icon": "host"
+      },
+      {
+        "id": 25,
+        "name": "Netlify",
+        "description": "Continuous deployment, serverless functions, form handling, and edge network optimization.",
+        "command": "netlify deploy --prod",
+        "status": "ativo",
+        "level": "básico",
+        "icon": "cloud_upload"
+      },
+      {
+        "id": 26,
+        "name": "Vercel",
+        "description": "Frontend deployment, edge functions, analytics, and seamless integration with Next.js applications.",
+        "command": "vercel --prod",
+        "status": "ativo",
+        "level": "básico",
+        "icon": "rocket"
+      },
+      {
+        "id": 27,
+        "name": "GitHub Actions",
+        "description": "CI/CD pipelines, automated testing, deployment workflows, and release automation.",
+        "command": "gh workflow run deploy.yml",
+        "status": "ativo",
+        "level": "básico",
+        "icon": "play_circle"
+      }
+    ]
+  }
+]
+}

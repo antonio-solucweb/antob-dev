@@ -1,6 +1,14 @@
 ---
 import { CertificationsDataSchema } from '@/types/index';
-import certificationsData from '@assets/data/certifications.json';
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
+
+// Static imports for build compatibility
+import certificationsDataEn from '@assets/data/en/certifications.json';
+import certificationsDataEs from '@assets/data/es/certifications.json';
+import certificationsDataPt from '@assets/data/pt/certifications.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const certificationsData = lang === 'es' ? certificationsDataEs : lang === 'pt' ? certificationsDataPt : certificationsDataEn;
 
 // Validate certifications data
 const result = CertificationsDataSchema.safeParse(certificationsData);

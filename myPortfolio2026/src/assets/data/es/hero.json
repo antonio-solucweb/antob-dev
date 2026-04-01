@@ -1,0 +1,21 @@
+{
+  "badge": "Desarrollador WordPress Senior",
+  "title": {
+    "line1": "Lógica",
+    "line2": "Digital.",
+    "line3": "Ingeniería."
+  },
+  "description": "Ingeniero en Computación con más de 7 años de experiencia. Me apasiona crear soluciones innovadoras y experiencias digitales únicas.",
+  "terminal": {
+    "title": "Algunos_Detalles.tsx",
+    "specialization": "Desarrollador WordPress Senior",
+    "codeConst": "Ingeniero",
+    "focus": "Performance y Escalabilidad",
+    "codeComment": "// Lógica para la excelencia arquitectónica",
+    "codeReturn": "Éxito"
+  },
+  "cta": {
+    "projects": "Explorar Proyectos",
+    "contact": "Contactar"
+  }
+}

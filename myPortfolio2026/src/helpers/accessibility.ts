@@ -196,8 +196,12 @@ export class TextToSpeech {
     // Stop any ongoing speech
     this.stop();
 
+    const langMap: Record<string, string> = { en: 'en-US', es: 'es-MX', pt: 'pt-BR' };
+    const cookieLang = document.cookie.match(/portfolio-language=([^;]+)/)?.[1] ?? 'en';
+    const speechLang = langMap[cookieLang] ?? 'en-US';
+
     this.utterance = new SpeechSynthesisUtterance(text);
-    this.utterance.lang = 'en-US';
+    this.utterance.lang = speechLang;
     this.utterance.rate = 1;
     this.utterance.pitch = 1;
     

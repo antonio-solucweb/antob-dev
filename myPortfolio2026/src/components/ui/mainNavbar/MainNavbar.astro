@@ -1,5 +1,14 @@
 ---
 // Main Navigation Bar Component
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
+
+// Static imports for build compatibility
+import uiDataEn from '@assets/data/en/ui.json';
+import uiDataEs from '@assets/data/es/ui.json';
+import uiDataPt from '@assets/data/pt/ui.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const uiData = lang === 'es' ? uiDataEs : lang === 'pt' ? uiDataPt : uiDataEn;
 ---
 
 <!-- Top Navigation -->
@@ -14,65 +23,64 @@
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#home"
+        data-i18n="nav.home"
       >
-        Home
-      </a>
-      <a 
-        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
-        href="#about"
-      >
-        About
+        {uiData.nav.home}
       </a>
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#skills"
+        data-i18n="nav.skills"
       >
-        Tech Stack
+        {uiData.nav.skills}
       </a>
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#projects"
+        data-i18n="nav.projects"
       >
-        Projects
+        {uiData.nav.projects}
       </a>
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#experience"
+        data-i18n="nav.experience"
       >
-        Experience
+        {uiData.nav.experience}
       </a>
-      <!-- <a 
-        class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
-        href="#certifications"
-      >
-        Certifications
-      </a> -->
       <a 
         class="text-slate-400 font-medium hover:text-blue-200 transition-colors font-headline tracking-tight nav-link" 
         href="#contact"
+        data-i18n="nav.contact"
       >
-        Contact
+        {uiData.nav.contact}
       </a>
       
       <!-- Language Switcher -->
       <div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full border border-outline-variant/30 ml-2">
         <button 
+          id="lang-en"
           aria-label="Switch to English" 
-          class="text-[10px] font-bold font-label text-primary hover:text-white transition-colors"
+          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          data-lang="en"
         >
           EN
         </button>
         <div class="w-px h-3 bg-outline-variant/50"></div>
         <button 
+          id="lang-es"
           aria-label="Switch to Spanish" 
-          class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors"
+          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          data-lang="es"
         >
           ES
         </button>
         <div class="w-px h-3 bg-outline-variant/50"></div>
         <button 
+          id="lang-pt"
           aria-label="Switch to Portuguese" 
-          class="text-[10px] font-bold font-label text-slate-500 hover:text-primary transition-colors"
+          class="text-[10px] font-bold font-label transition-colors lang-btn"
+          data-lang="pt"
         >
           PT
         </button>
@@ -102,44 +110,42 @@
       <nav class="p-6 space-y-2">
         <a 
           href="#home"
-          class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline">
-          <span class="material-symbols-outlined text-xl">home</span>
-          <span>Home</span>
-        </a>
-        <a 
-          href="#about"
           class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
-        >
-          <span class="material-symbols-outlined text-xl">person</span>
-          <span>About</span>
+          data-i18n="nav.home">
+          <span class="material-symbols-outlined text-xl">home</span>
+          <span>{uiData.nav.home}</span>
         </a>
         <a 
           href="#skills"
           class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+          data-i18n="nav.skills"
         >
           <span class="material-symbols-outlined text-xl">code</span>
-          <span>Tech Stack</span>
+          <span>{uiData.nav.skills}</span>
         </a>
         <a 
           href="#projects"
           class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+          data-i18n="nav.projects"
         >
           <span class="material-symbols-outlined text-xl">work</span>
-          <span>Projects</span>
+          <span>{uiData.nav.projects}</span>
         </a>
         <a 
           href="#experience"
           class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+          data-i18n="nav.experience"
         >
           <span class="material-symbols-outlined text-xl">timeline</span>
-          <span>Experience</span>
+          <span>{uiData.nav.experience}</span>
         </a>
         <a 
           href="#contact"
           class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface hover:bg-primary/10 hover:text-primary transition-all font-headline"
+          data-i18n="nav.contact"
         >
           <span class="material-symbols-outlined text-xl">mail</span>
-          <span>Contact</span>
+          <span>{uiData.nav.contact}</span>
         </a>
       </nav>
 
@@ -148,20 +154,26 @@
         <p class="text-xs text-on-surface-variant font-label uppercase tracking-wider mb-3">Language</p>
         <div class="flex gap-3">
           <button 
+            id="lang-en-mobile"
             aria-label="Switch to English" 
-            class="flex-1 px-4 py-2 bg-primary text-on-primary rounded-lg font-bold font-label text-sm transition-all"
+            class="flex-1 px-4 py-2 rounded-lg font-bold font-label text-sm transition-all lang-btn-mobile"
+            data-lang="en"
           >
             EN
           </button>
           <button 
+            id="lang-es-mobile"
             aria-label="Switch to Spanish" 
-            class="flex-1 px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-bold font-label text-sm transition-all hover:bg-primary/10"
+            class="flex-1 px-4 py-2 rounded-lg font-bold font-label text-sm transition-all lang-btn-mobile"
+            data-lang="es"
           >
             ES
           </button>
           <button 
+            id="lang-pt-mobile"
             aria-label="Switch to Portuguese" 
-            class="flex-1 px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-lg font-bold font-label text-sm transition-all hover:bg-primary/10"
+            class="flex-1 px-4 py-2 rounded-lg font-bold font-label text-sm transition-all lang-btn-mobile"
+            data-lang="pt"
           >
             PT
           </button>
@@ -251,5 +263,72 @@
     if (e.key === 'Escape' && isMenuOpen) {
       toggleMenu();
     }
+  });
+
+  // Language switcher functionality
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const langButtonsMobile = document.querySelectorAll('.lang-btn-mobile');
+
+  // Read language from cookie (SSR-consistent)
+  const getLangFromCookie = (): string => {
+    const match = document.cookie.match(/(^|;\s*)portfolio-language=([^;]+)/);
+    return match ? match[2] : 'en';
+  };
+  const currentLang = getLangFromCookie();
+  
+  // Set active language button on load (desktop)
+  const updateActiveLanguage = (lang: string) => {
+    langButtons.forEach(btn => {
+      const btnLang = btn.getAttribute('data-lang');
+      if (btnLang === lang) {
+        btn.classList.remove('text-slate-500');
+        btn.classList.add('text-primary');
+      } else {
+        btn.classList.remove('text-primary');
+        btn.classList.add('text-slate-500');
+      }
+    });
+  };
+  
+  // Set active language button on load (mobile)
+  const updateActiveLanguageMobile = (lang: string) => {
+    langButtonsMobile.forEach(btn => {
+      const btnLang = btn.getAttribute('data-lang');
+      if (btnLang === lang) {
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        btn.classList.add('bg-primary', 'text-on-primary');
+      } else {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      }
+    });
+  };
+  
+  // Initialize active language
+  updateActiveLanguage(currentLang);
+  updateActiveLanguageMobile(currentLang);
+  
+  const switchLanguage = (newLang: string) => {
+    if (newLang === 'en' || newLang === 'es' || newLang === 'pt') {
+      // Set cookie (readable server-side by Astro)
+      document.cookie = `portfolio-language=${newLang}; path=/; max-age=31536000; SameSite=Lax`;
+      window.location.reload();
+    }
+  };
+
+  // Handle language change (desktop)
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newLang = btn.getAttribute('data-lang');
+      if (newLang) switchLanguage(newLang);
+    });
+  });
+  
+  // Handle language change (mobile)
+  langButtonsMobile.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newLang = btn.getAttribute('data-lang');
+      if (newLang) switchLanguage(newLang);
+    });
   });
 </script>

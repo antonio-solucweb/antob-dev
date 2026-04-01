@@ -1,0 +1,279 @@
+{
+  "interfaces": {
+    "label": "Competencias Principales",
+    "title": "Centro de",
+    "titleHighlight": "Comando",
+    "titleSuffix": "Técnico",
+    "description": "Un arsenal completo de tecnologías y frameworks modernos, organizados por dominio de experiencia.",
+    "button": "Mostrar Más"
+  },
+  "categories": [
+  {
+    "id": "cms",
+    "name": "Desarrollo con WordPress",
+    "skills": [
+      {
+        "id": 1,
+        "name": "Desarrollo Personalizado",
+        "description": "Experto en desarrollo de temas y plugins personalizados, incluyendo compatibilidad con entornos multisitio y optimizaciones de rendimiento.",
+        "command": "wp core install --url=example.com",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "code"
+      },
+      {
+        "id": 2,
+        "name": "Headless WordPress",
+        "description": "Desarrollo de sitios headless con WordPress y su API REST, junto con frameworks frontend modernos como ReactJS, Astro o Next.js.",
+        "command": "wp core install --url=example.com",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "code"
+      },
+      {
+        "id": 3,
+        "name": "Custom Fields y Custom Post Types",
+        "description": "Creación de custom post types y custom fields para extender la funcionalidad y estructura de datos de WordPress.",
+        "command": "npx create-react-app my-app",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "code"
+      },
+      {
+        "id": 4,
+        "name": "Desarrollo de bloques para Gutenberg",
+        "description": "Creación de bloques personalizados para Gutenberg para extender la funcionalidad de WordPress y mejorar la creación de contenido.",
+        "command": "npx create-next-app@latest",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "tile_small"
+      },
+      {
+        "id": 5,
+        "name": "Gestión de redes multisite",
+        "description": "Gestión y optimización de redes multisitio de WordPress para despliegues eficientes multi-dominio o multi-subdominio.",
+        "command": "wp network create --base=/",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "network_node"
+      },
+      {
+        "id": 6,
+        "name": "Seguridad de WordPress",
+        "description": "Implementando mejores prácticas de seguridad, endureciendo instalaciones de WordPress y protegiendo contra vulnerabilidades.",
+        "command": "wp plugin update --security",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "shield"
+      },
+      {
+        "id": 7,
+        "name": "WooCommerce",
+        "description": "Creación de soluciones con WooCommerce y características personalizadas si es necesario.",
+        "command": "npm create astro@latest",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "shopping_cart"
+      },
+      {
+        "id": 8,
+        "name": "Elementor y page builders similares",
+        "description": "Si es necesario, puedo trabajar con Elementor o page builders similares para crear diseños y layouts personalizados.",
+        "command": "npx nuxi init my-app",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "layers"
+      }
+    ]
+  },
+  {
+    "id": "programming-languages",
+    "name": "Desarrollo Full-Stack",
+    "skills": [
+      {
+        "id": 9,
+        "name": "HTML5 y CSS3",
+        "description": "Estructura semántica HTML5 y características modernas de CSS3 incluyendo Flexbox, Grid, animaciones y diseño responsive.",
+        "command": "php artisan serve",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "code"
+      },
+      {
+        "id": 10,
+        "name": "JavaScript & TypeScript",
+        "description": "Desarrollo moderno de JavaScript con características ES6+, async/await, promises, y TypeScript para seguridad de tipos.",
+        "command": "tsc --init",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "javascript"
+      },
+      {
+        "id": 11,
+        "name": "PHP/OOP",
+        "description": "Programación orientada a objetos con PHP, patrones de diseño, y desarrollo personalizado para WordPress.",
+        "command": "php artisan serve",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "php"
+      },
+      {
+        "id": 12,
+        "name": "Astro",
+        "description": "Generación de sitios SSG (Static Site Generation) y SSR (Server-Side Rendering) con el framework Astro, con integración de WordPress como backend si es necesario.",
+        "command": "astro dev",
+        "status": "activo",
+        "level": "intermedio",
+        "icon": "astro"
+      },
+      {
+        "id": 13,
+        "name": "ReactJS",
+        "description": "Creación de interfaces de usuario dinámicas con ReactJS, hooks, gestión de estado y arquitectura basada en componentes.",
+        "command": "npx create-react-app my-app",
+        "status": "activo",
+        "level": "intermedio",
+        "icon": "react"
+      },
+      {
+        "id": 14,
+        "name": "Tailwind CSS, Bootstrap y similares",
+        "description": "Creación de interfaces responsivas y modernas con Tailwind CSS, Bootstrap y frameworks utility-first similares.",
+        "command": "npx create-react-app my-app",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "css"
+      },
+      {
+        "id": 15,
+        "name": "MySQL",
+        "description": "Gestión de bases de datos relacionales, optimización de consultas, procedimientos almacenados y estrategias de replicación.",
+        "command": "mysql -u root -p",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "database"
+      },
+      {
+        "id": 16,
+        "name": "PostgreSQL",
+        "description": "Gestión de bases de datos avanzadas, soporte JSONB, búsqueda full-text y optimización de consultas complejas.",
+        "command": "psql -U postgres",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "database"
+      },
+      {
+        "id": 17,
+        "name": "LARAVEL",
+        "description": "Creación de aplicaciones backend robustas con Laravel, APIs RESTful y gestión de bases de datos.",
+        "command": "php artisan serve",
+        "status": "activo",
+        "level": "intermedio",
+        "icon": "code_blocks"
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "name": "Otras skills",
+    "skills": [
+      {
+        "id": 18,
+        "name": "Control de Versiones con Git",
+        "description": "Control de versiones, estrategias de ramificación, pull requests y revisiones de código.",
+        "command": "git init",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "merge"
+      },
+      {
+        "id": 19,
+        "name": "Integraciones con REST API",
+        "description": "Integraciones con REST APIs, manejo de autenticación y gestión de respuestas de API.",
+        "command": "git init",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "plug_connect"
+      },
+      {
+        "id": 20,
+        "name": "n8n",
+        "description": "Creación de workflows automatizados, integraciones API y sincronización de datos entre múltiples plataformas, enfocándose en integraciones con WordPress.",
+        "command": "npx n8n start",
+        "status": "activo",
+        "level": "intermedio",
+        "icon": "flowchart"
+      },
+      {
+        "id": 21,
+        "name": "Optimización de performance",
+        "description": "Optimización del rendimiento del sitio web, reduciendo tiempos de carga y mejorando la experiencia del usuario.",
+        "command": "npm run build",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "avg_time"
+      },
+      {
+        "id": 22,
+        "name": "SEO",
+        "description": "Implementación de las mejores prácticas de SEO como: Caché, Google Search Console, Google Analytics, meta tags, meta description, meta keywords, etc. Optimizando el sitio web para motores de búsqueda y plataformas de IA, y mejorando la visibilidad del proyecto.",
+        "command": "newman run collection.json",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "show_chart"
+      },
+      {
+        "id": 23,
+        "name": "Figma",
+        "description": "Diseño UI/UX, prototipado, sistemas de componentes y flujos de trabajo de diseño a código para aplicaciones web.",
+        "command": "figma://open",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "design_services"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "name": "DevOps y Cloud",
+    "skills": [
+      {
+        "id": 24,
+        "name": "Cpanel y Plesk",
+        "description": "Gestión de entornos de hosting compartido, gestión de dominios, configuración de correo electrónico y administración de servidores.",
+        "command": "cpanel --version",
+        "status": "activo",
+        "level": "avanzado",
+        "icon": "host"
+      },
+      {
+        "id": 25,
+        "name": "Netlify",
+        "description": "Despliegue continuo, funciones serverless, manejo de formularios y optimización de red de bordes.",
+        "command": "netlify deploy --prod",
+        "status": "activo",
+        "level": "básico",
+        "icon": "cloud_upload"
+      },
+      {
+        "id": 28,
+        "name": "Vercel",
+        "description": "Despliegue frontend, funciones de borde, análisis y integración perfecta con aplicaciones Next.js.",
+        "command": "vercel --prod",
+        "status": "activo",
+        "level": "básico",
+        "icon": "rocket"
+      },
+      {
+        "id": 29,
+        "name": "GitHub Actions",
+        "description": "Pipelines CI/CD, pruebas automatizadas, flujos de trabajo de despliegue y automatización de versiones.",
+        "command": "gh workflow run deploy.yml",
+        "status": "activo",
+        "level": "básico",
+        "icon": "play_circle"
+      }
+    ]
+  }
+]
+}

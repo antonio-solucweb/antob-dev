@@ -1,0 +1,13 @@
+{
+  "interfaces": {
+    "titleRegular": "El Perfil del",
+    "titleHighlight": "Ingeniero",
+    "imageAlt": "Antonio Blanca - Desarrollador Web",
+    "description": "Con <strong>más de 7 años de experiencia rigurosa</strong> como desarrollador web, he construido una carrera sobre los principios de la lógica y la eficiencia. Mi transición del desarrollo estándar a la arquitectura de sistemas complejos me permite entregar <strong>ecosistemas WordPress modulares, escalables y de alto rendimiento</strong>.",
+    "corePhilosophyLabel": "Filosofía Central",
+    "corePhilosophyValue": "Modular y Escalable",
+    "technicalNicheLabel": "Nicho Técnico",
+    "technicalNicheValue": "Desarrollo WordPress Moderno",
+    "quote": "A lo largo de mi carrera, he ido más allá de lo básico, dominando características avanzadas como desarrollo de temas y plugins personalizados, entornos multisitio, ACF, soluciones Headless WordPress, WordPress con APIs externas y más. Mi misión es transformar ideas en soluciones digitales efectivas y funcionales."
+  }
+}

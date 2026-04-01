@@ -1,0 +1,39 @@
+{
+  "interfaces": {
+    "label": "Trabalhos Selecionados",
+    "title": "Projetos Recentes",
+    "disclaimer": "Não posso exibir todo o meu trabalho devido a restrições de política de privacidade."
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Coffee Shop",
+      "description": "Projeto desenvolvido como parte de um curso de Headless CMS com WordPress na Udemy usando Astro como tecnologia frontend.",
+      "image": "coffee-shop.jpg",
+      "tags": ["WordPress", "Astro", "Headless CMS"],
+      "ctaText": "Ver projeto",
+      "readMore": "Seguir lendo",
+      "link": "https://coffeeshopastro.netlify.app"
+    },
+    {
+      "id": 2,
+      "title": "Mall de los Andes",
+      "description": "Este projeto tem uma combinação de Elementor e desenvolvimento personalizado envolvendo o desenvolvimento de um plugin personalizado.",
+      "image": "mall-de-los-andes.jpg",
+      "tags": ["WordPress", "Elementor", "Plugin development"],
+      "ctaText": "Ver projeto",
+      "readMore": "Seguir lendo",
+      "link": "https://malldelosandes.com"
+    },
+    {
+      "id": 3,
+      "title": "Multiplaza",
+      "description": "Este projeto tem uma combinação de Elementor e desenvolvimento personalizado envolvendo o desenvolvimento de um plugin personalizado.",
+      "image": "multiplaza.jpg",
+      "tags": ["WordPress", "Elementor", "Plugin development"],
+      "ctaText": "Ver projeto",
+      "readMore": "Seguir lendo",
+      "link": "https://multiplaza.com.ec"
+    }
+  ]
+}

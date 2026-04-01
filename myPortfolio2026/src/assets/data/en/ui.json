@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "accessibility": {
+    "theme": "Toggle Theme",
+    "listen": "Read Aloud",
+    "spacing": "Text Spacing",
+    "fontIncrease": "Increase Font Size",
+    "fontDecrease": "Decrease Font Size",
+    "fontReset": "Reset Font Size"
+  },
+  "interfaces": {
+    "pageTitle": "Antonio Blanca | Senior WordPress Developer",
+    "metaDescription": "Senior WordPress Developer specialized in modular, scalable WordPress ecosystems. Expert in custom themes, plugins, Headless WordPress, and modern web architecture.",
+    "footerCopyright": "Senior WordPress Developer || All rights reserved.",
+    "footerLinkedInAriaLabel": "LinkedIn Profile"
+  }
+}

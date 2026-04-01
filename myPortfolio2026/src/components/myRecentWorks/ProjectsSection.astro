@@ -1,7 +1,15 @@
 ---
 import { ProjectsDataSchema } from '@/types/index';
-import projectsData from '@assets/data/projects.json';
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
 import { Picture } from 'astro:assets';
+
+// Static imports for build compatibility
+import projectsDataEn from '@assets/data/en/projects.json';
+import projectsDataEs from '@assets/data/es/projects.json';
+import projectsDataPt from '@assets/data/pt/projects.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const projectsData = lang === 'es' ? projectsDataEs : lang === 'pt' ? projectsDataPt : projectsDataEn;
 
 // Import all portfolio images dynamically
 const images = import.meta.glob('/src/assets/img/portfolio/*.{jpeg,jpg,png,gif,webp}', { eager: true });
@@ -11,7 +19,8 @@ const result = ProjectsDataSchema.safeParse(projectsData);
 if (!result.success) {
   console.error('Projects data validation failed:', result.error);
 }
-const projects = result.success ? result.data : [];
+const projects = result.success ? result.data.projects : [];
+const interfaces = result.success ? result.data.interfaces : null;
 
 // Map projects with their images
 const projectsWithImages = projects.map((project) => {
@@ -30,15 +39,17 @@ const projectsWithImages = projects.map((project) => {
 <section class="py-24 bg-surface-container-lowest" id="projects">
   <div class="container mx-auto px-6">
     <!-- Section Header -->
+    {interfaces && (
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
       <div class="space-y-4">
-        <span class="font-label text-primary tracking-widest text-sm uppercase">Selected Works</span>
-        <h2 class="text-5xl font-extrabold font-headline tracking-tighter">Recent Benchmarks</h2>
+        <span class="font-label text-primary tracking-widest text-sm uppercase">{interfaces.label}</span>
+        <h2 class="text-5xl font-extrabold font-headline tracking-tighter">{interfaces.title}</h2>
       </div>
       <p class="text-on-surface-variant font-label max-w-xs">
-        I cannot display all my work due to privacy policy restrictions.
+        {interfaces.disclaimer}
       </p>
     </div>
+    )}
 
     <!-- Projects Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -96,7 +107,7 @@ const projectsWithImages = projects.map((project) => {
                   data-project-id={project.id}
                   onclick="openProjectModal(this)"
                 >
-                  [read more]
+                  [{project.readMore || "read more"}]
                 </button>
               )}
             </div>

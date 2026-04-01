@@ -1,4 +1,13 @@
-[
+{
+  "interfaces": {
+    "label": "Core Competencies",
+    "title": "Technical",
+    "titleHighlight": "Command",
+    "titleSuffix": "Center",
+    "description": "A comprehensive arsenal of modern technologies and frameworks, organized by domain expertise.",
+    "button": "Show More"
+  },
+  "categories": [
   {
     "id": "cms",
     "name": "WordPress Development",
@@ -51,7 +60,7 @@
       {
         "id": 6,
         "name": "WordPress security",
-        "description": "Implementing security best practices, hardening WordPress installations, and protecting against common vulnerabilities.",
+        "description": "Implementing security best practices, hardening WordPress installations, and protecting against vulnerabilities.",
         "command": "wp plugin update --security",
         "status": "active",
         "level": "advanced",
@@ -59,8 +68,8 @@
       },
       {
         "id": 7,
-        "name": "WooCommerce Integration",
-        "description": "Building e-commerce solutions with custom features if needed.",
+        "name": "WooCommerce",
+        "description": "Building e-commerce solutions with WooCommerce and custom features if needed.",
         "command": "npm create astro@latest",
         "status": "active",
         "level": "advanced",
@@ -91,7 +100,7 @@
         "icon": "code"
       },
       {
-        "id": 9,
+        "id": 10,
         "name": "JavaScript & TypeScript",
         "description": "Modern JavaScript development with ES6+ features, async/await, promises, and TypeScript for type safety.",
         "command": "tsc --init",
@@ -100,7 +109,7 @@
         "icon": "javascript"
       },
       {
-        "id": 10,
+        "id": 11,
         "name": "PHP/OOP",
         "description": "Object-oriented programming with PHP, design patterns, and WordPress custom development.",
         "command": "php artisan serve",
@@ -109,16 +118,16 @@
         "icon": "php"
       },
       {
-        "id": 11,
+        "id": 12,
         "name": "Astro",
-        "description": "Static site generation and server-side rendering with Astro framework, with WordPress integration has backend if needed.",
+        "description": "Static site generation (SSG) and server-side rendering (SSR) with Astro framework, with WordPress integration has backend if needed.",
         "command": "astro dev",
         "status": "active",
         "level": "intermediate",
         "icon": "astro"
       },
       {
-        "id": 12,
+        "id": 13,
         "name": "ReactJS",
         "description": "Building dynamic user interfaces with ReactJS, hooks, state management, and component-based architecture.",
         "command": "npx create-react-app my-app",
@@ -127,7 +136,7 @@
         "icon": "react"
       },
       {
-        "id": 13,
+        "id": 14,
         "name": "Tailwind CSS, Bootstrap and similars",
         "description": "Building responsive and modern user interfaces with Tailwind CSS, Bootstrap and similar utility-first frameworks.",
         "command": "npx create-react-app my-app",
@@ -136,7 +145,7 @@
         "icon": "css"
       },
       {
-        "id": 14,
+        "id": 15,
         "name": "MySQL",
         "description": "Relational database management, query optimization, stored procedures, and replication strategies.",
         "command": "mysql -u root -p",
@@ -145,7 +154,7 @@
         "icon": "database"
       },
       {
-        "id": 15,
+        "id": 16,
         "name": "PostgreSQL",
         "description": "Advanced SQL features, JSONB support, full-text search, and performance tuning for complex queries.",
         "command": "psql -U postgres",
@@ -171,7 +180,7 @@
       {
         "id": 18,
         "name": "Git Version Control",
-        "description": "Version control, branching strategies, pull requests, code reviews, and CI/CD pipeline integration.",
+        "description": "Version control, branching strategies, pull requests and code reviews.",
         "command": "git init",
         "status": "active",
         "level": "advanced",
@@ -206,15 +215,6 @@
       },
       {
         "id": 22,
-        "name": "Security Best Practices",
-        "description": "Implementing security measures, protecting against common vulnerabilities, and ensuring secure development practices.",
-        "command": "npm run build",
-        "status": "active",
-        "level": "expert",
-        "icon": "shield_lock"
-      },
-      {
-        "id": 23,
         "name": "SEO",
         "description": "Implementing SEO best practices like: Caché, Google Search Console, Google Analytics, meta tags, meta description, meta keywords, etc. Optimizing website for search engines and AI platforms, and improving website visibility.",
         "command": "newman run collection.json",
@@ -223,7 +223,7 @@
         "icon": "show_chart"
       },
       {
-        "id": 24,
+        "id": 23,
         "name": "Figma",
         "description": "UI/UX design, prototyping, component systems, and design-to-code workflows for web applications.",
         "command": "figma://open",
@@ -238,7 +238,7 @@
     "name": "DevOps & Cloud",
     "skills": [
       {
-        "id": 25,
+        "id": 24,
         "name": "Cpanel & Plesk",
         "description": "Managing shared hosting environments, domain management, email configuration, and server administration.",
         "command": "cpanel --version",
@@ -247,7 +247,7 @@
         "icon": "host"
       },
       {
-        "id": 26,
+        "id": 25,
         "name": "Netlify",
         "description": "Continuous deployment, serverless functions, form handling, and edge network optimization.",
         "command": "netlify deploy --prod",
@@ -256,7 +256,7 @@
         "icon": "cloud_upload"
       },
       {
-        "id": 27,
+        "id": 26,
         "name": "Vercel",
         "description": "Frontend deployment, edge functions, analytics, and seamless integration with Next.js applications.",
         "command": "vercel --prod",
@@ -265,7 +265,7 @@
         "icon": "rocket"
       },
       {
-        "id": 28,
+        "id": 27,
         "name": "GitHub Actions",
         "description": "CI/CD pipelines, automated testing, deployment workflows, and release automation.",
         "command": "gh workflow run deploy.yml",
@@ -276,3 +276,4 @@
     ]
   }
 ]
+}

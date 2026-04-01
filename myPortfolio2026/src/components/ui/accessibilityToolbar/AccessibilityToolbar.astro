@@ -1,5 +1,14 @@
 ---
-// Accessibility Toolbar Component
+interface Props {
+  themeLabel: string;
+  listenLabel: string;
+  spacingLabel: string;
+  fontIncreaseLabel: string;
+  fontDecreaseLabel: string;
+  fontResetLabel: string;
+}
+
+const { themeLabel, listenLabel, spacingLabel, fontIncreaseLabel, fontDecreaseLabel, fontResetLabel } = Astro.props;
 ---
 
 <!-- Accessibility Toolbar -->
@@ -23,7 +32,7 @@
       aria-label="Toggle dark and light mode" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
       id="theme-toggle"
-      title="Toggle Theme"
+      title={themeLabel}
     >
       <span class="material-symbols-outlined group-active:scale-110 transition-transform" id="theme-icon">light_mode</span>
     </button>
@@ -33,7 +42,7 @@
       aria-label="Listen to page content" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
       id="listen-toggle"
-      title="Read Aloud"
+      title={listenLabel}
     >
       <span class="material-symbols-outlined" id="listen-icon">volume_up</span>
     </button>
@@ -43,7 +52,7 @@
       aria-label="Toggle enhanced text spacing" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group" 
       id="spacing-toggle"
-      title="Text Spacing"
+      title={spacingLabel}
     >
       <span class="material-symbols-outlined group-active:scale-110 transition-transform">format_line_spacing</span>
     </button>
@@ -55,7 +64,7 @@
       aria-label="Increase text size" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
       id="font-increase"
-      title="Increase Font Size"
+      title={fontIncreaseLabel}
     >
       <span class="material-symbols-outlined group-active:scale-125 transition-transform">text_increase</span>
     </button>
@@ -64,7 +73,7 @@
       aria-label="Decrease text size" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
       id="font-decrease"
-      title="Decrease Font Size"
+      title={fontDecreaseLabel}
     >
       <span class="material-symbols-outlined group-active:scale-125 transition-transform">text_decrease</span>
     </button>
@@ -73,7 +82,7 @@
       aria-label="Reset text size" 
       class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-primary/10 text-on-surface transition-colors group"
       id="font-reset"
-      title="Reset Font Size"
+      title={fontResetLabel}
     >
       <span class="material-symbols-outlined group-active:rotate-180 transition-transform">refresh</span>
     </button>

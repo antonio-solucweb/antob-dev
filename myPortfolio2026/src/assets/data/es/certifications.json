@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Google Cloud Certified Professional",
+    "issuer": "Google Cloud Platform",
+    "date": "Dec 2023",
+    "icon": "",
+    "category": "Cloud Architecture"
+  },
+  {
+    "id": 2,
+    "title": "Meta Front-End Developer",
+    "issuer": "Meta / Coursera",
+    "date": "Oct 2023",
+    "icon": "code",
+    "category": "Advanced UI Design"
+  },
+  {
+    "id": 3,
+    "title": "WordPress Advanced Architecture",
+    "issuer": "WPEngine Academy",
+    "date": "Jun 2023",
+    "icon": "account_tree",
+    "category": "Systems Design"
+  }
+]

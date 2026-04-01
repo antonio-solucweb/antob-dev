@@ -1,40 +1,51 @@
 ---
 import { ExperienceDataSchema } from '@/types/index';
-import experienceData from '@assets/data/experience.json';
+import { getLanguageFromCookieValue } from '@/helpers/i18n';
+
+// Static imports for build compatibility
+import experienceDataEn from '@assets/data/en/experience.json';
+import experienceDataEs from '@assets/data/es/experience.json';
+import experienceDataPt from '@assets/data/pt/experience.json';
+
+const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
+const experienceData = lang === 'es' ? experienceDataEs : lang === 'pt' ? experienceDataPt : experienceDataEn;
 
 // Validate experience data
 const result = ExperienceDataSchema.safeParse(experienceData);
 if (!result.success) {
   console.error('Experience data validation failed:', result.error);
 }
-const data = result.success ? result.data : { stats: { years: '0', projects: '0' }, timeline: [], linkedinUrl: '' };
+const data = result.success ? result.data : { interface: { titleLine1: '', titleLine2: '', subtitle: '', yearsText: '', yearsNumber: 0, countriesText: '', countriesNumber: 0, linkedinText: '' }, timeline: [], linkedinUrl: '' };
 ---
 
 <section class="py-24 bg-surface relative overflow-hidden" id="experience">
   <div class="container mx-auto px-6">
     <div class="grid lg:grid-cols-12 gap-12">
       <!-- Left Column - Header & Stats -->
+
+      {data.interface && (
       <div class="lg:col-span-4 space-y-6">
         <h2 class="text-5xl font-extrabold font-headline tracking-tighter leading-none">
-          Career <br /> <span class="text-primary">Timeline</span>
+          {data.interface.titleLine1} <br /> <span class="text-primary">{data.interface.titleLine2}</span>
         </h2>
         <p class="text-on-surface-variant font-body">
-          A vertical breakdown of architectural evolution and professional growth since 2016.
+          {data.interface.subtitle}
         </p>
         
         <!-- Stats -->
         <div class="flex gap-4">
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary font-headline">{data.stats.years}</div>
-            <div class="text-xs uppercase tracking-widest font-label text-outline">Years</div>
+            <div class="text-4xl font-bold text-primary font-headline">+ {data.interface.yearsNumber}</div>
+            <div class="text-xs uppercase tracking-widest font-label text-outline">{data.interface.yearsText}</div>
           </div>
           <div class="w-px h-12 bg-outline-variant/30"></div>
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary font-headline">{data.stats.projects}</div>
-            <div class="text-xs uppercase tracking-widest font-label text-outline">Projects</div>
+            <div class="text-4xl font-bold text-primary font-headline">+ {data.interface.countriesNumber}</div>
+            <div class="text-xs uppercase tracking-widest font-label text-outline">{data.interface.countriesText}</div>
           </div>
         </div>
       </div>
+      )}
 
       <!-- Right Column - Timeline -->
       <div class="lg:col-span-8 relative">
@@ -84,10 +95,10 @@ const data = result.success ? result.data : { stats: { years: '0', projects: '0'
     </div>
 
     {/* LinkedIn Link */}
-    {data.linkedinUrl && (
+    {data.interface.linkedinText && data.linkedinUrl && (
       <div class="text-center mt-7">
         <p class="text-on-surface-variant text-lg leading-relaxed font-body">
-          You can see everything about my work experience on{' '}
+          {data.interface.linkedinText}{' '}
           <a 
             href={data.linkedinUrl} 
             target="_blank" 
