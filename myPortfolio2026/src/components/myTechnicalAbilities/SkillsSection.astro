@@ -203,7 +203,7 @@ const customIcons = ['astro', 'react'];
     if (!category) return;
 
     // Update modal title
-    modalTitle.textContent = `All ${category.name} Skills`;
+    modalTitle.textContent = `${category.name}`;
 
     // Populate modal with all skills
     modalSkillsGrid.innerHTML = category.skills.map((skill, idx) => `
