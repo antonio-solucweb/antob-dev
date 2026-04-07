@@ -10,12 +10,12 @@
   "categories": [
   {
     "id": "cms",
-    "name": "WordPress Development",
+    "name": "Desenvolvimento WordPress",
     "skills": [
       {
         "id": 1,
-        "name": "Custom Development",
-        "description": "Expert in custom theme and plugin development including compatibility with multisite environments and excellent performance optimizations.",
+        "name": "Desenvolvimento Personalizado",
+        "description": "Especialista em desenvolvimento de temas e plugins personalizados, incluindo compatibilidade com ambientes multisite e excelentes otimizações de performance.",
         "command": "wp core install --url=example.com",
         "status": "ativo",
         "level": "avançado",
@@ -24,7 +24,7 @@
       {
         "id": 2,
         "name": "Headless WordPress",
-        "description": "Building headless WordPress sites with custom REST API endpoints and modern frontend frameworks like ReactJS, Astro, or Next.js.",
+        "description": "Construção de sites WordPress headless com endpoints REST API personalizados e frameworks frontend modernos como ReactJS, Astro ou Next.js.",
         "command": "wp core install --url=example.com",
         "status": "ativo",
         "level": "avançado",
@@ -32,8 +32,8 @@
       },
       {
         "id": 3,
-        "name": "Custom Fields and Post Types",
-        "description": "Creating custom post types and fields to extend WordPress functionality and data structure.",
+        "name": "Campos Personalizados e Tipos de Post",
+        "description": "Criação de tipos de post (CPTs) e campos personalizados para estender a funcionalidade e a estrutura de dados do WordPress.",
         "command": "npx create-react-app my-app",
         "status": "ativo",
         "level": "avançado",
@@ -41,8 +41,8 @@
       },
       {
         "id": 4,
-        "name": "Gutenberg blocks Development",
-        "description": "Creating custom Gutenberg blocks to extend WordPress functionality and enhance content creation.",
+        "name": "Desenvolvimento de Blocos Gutenberg",
+        "description": "Criação de blocos Gutenberg personalizados para estender a funcionalidade do WordPress e aprimorar a criação de conteúdo.",
         "command": "npx create-next-app@latest",
         "status": "ativo",
         "level": "avançado",
@@ -51,7 +51,7 @@
       {
         "id": 5,
         "name": "Multisite Management",
-        "description": "Managing and optimizing WordPress multisite networks for efficient multi-domain or multi-subdomain deployments.",
+        "description": "Gerenciamento e otimização de redes WordPress multisite para implantações eficientes em múltiplos domínios ou subdomínios.",
         "command": "wp network create --base=/",
         "status": "ativo",
         "level": "avançado",
@@ -60,7 +60,7 @@
       {
         "id": 6,
         "name": "WordPress security",
-        "description": "Implementing security best practices, hardening WordPress installations, and protecting against vulnerabilities.",
+        "description": "Implementação de boas práticas de segurança, fortalecimento de instalações WordPress e proteção contra vulnerabilidades.",
         "command": "wp plugin update --security",
         "status": "ativo",
         "level": "avançado",
@@ -69,7 +69,7 @@
       {
         "id": 7,
         "name": "WooCommerce",
-        "description": "Building e-commerce solutions with WooCommerce and custom features if needed.",
+        "description": "Desenvolvimento de soluções de e-commerce com WooCommerce e recursos personalizados conforme necessário.",
         "command": "npm create astro@latest",
         "status": "ativo",
         "level": "avançado",
@@ -78,7 +78,7 @@
       {
         "id": 8,
         "name": "Elementor and similar page builders",
-        "description": "If needed, I can work with Elementor or similar page builders to create custom layouts and designs.",
+        "description": "Se necessário, posso trabalhar com Elementor ou construtores de páginas similares para criar layouts e designs personalizados.",
         "command": "npx nuxi init my-app",
         "status": "ativo",
         "level": "avançado",
@@ -93,7 +93,7 @@
       {
         "id": 9,
         "name": "HTML5 & CSS3",
-        "description": "Semantic HTML5 structure and modern CSS3 features including Flexbox, Grid, animations, and responsive design.",
+        "description": "Estrutura semântica em HTML5 e recursos modernos de CSS3, incluindo Flexbox, Grid, animações e design responsivo.",
         "command": "php artisan serve",
         "status": "ativo",
         "level": "avançado",
@@ -102,7 +102,7 @@
       {
         "id": 10,
         "name": "JavaScript & TypeScript",
-        "description": "Modern JavaScript development with ES6+ features, async/await, promises, and TypeScript for type safety.",
+        "description": "Desenvolvimento moderno em JavaScript com recursos ES6+, async/await, promises e TypeScript para tipagem segura.",
         "command": "tsc --init",
         "status": "ativo",
         "level": "avançado",
@@ -111,7 +111,7 @@
       {
         "id": 11,
         "name": "PHP/OOP",
-        "description": "Object-oriented programming with PHP, design patterns, and WordPress custom development.",
+        "description": "Programação orientada a objetos com PHP, padrões de design e desenvolvimento personalizado.",
         "command": "php artisan serve",
         "status": "ativo",
         "level": "avançado",
@@ -120,7 +120,7 @@
       {
         "id": 12,
         "name": "Astro",
-        "description": "Static site generation (SSG) and server-side rendering (SSR) with Astro framework, with WordPress integration has backend if needed.",
+        "description": "Geração de sites estáticos (SSG) e renderização no servidor (SSR) com o framework Astro, com integração WordPress como backend se necessário.",
         "command": "astro dev",
         "status": "ativo",
         "level": "intermediário",
@@ -129,7 +129,7 @@
       {
         "id": 13,
         "name": "ReactJS",
-        "description": "Building dynamic user interfaces with ReactJS, hooks, state management, and component-based architecture.",
+        "description": "Desenvolvimento de interfaces dinâmicas com ReactJS, hooks, gerenciamento de estado e arquitetura baseada em componentes.",
         "command": "npx create-react-app my-app",
         "status": "ativo",
         "level": "intermediário",
@@ -138,7 +138,7 @@
       {
         "id": 14,
         "name": "Tailwind CSS, Bootstrap and similars",
-        "description": "Building responsive and modern user interfaces with Tailwind CSS, Bootstrap and similar utility-first frameworks.",
+        "description": "Desenvolvimento de interfaces modernas e responsivas com Tailwind CSS, Bootstrap e frameworks utilitários similares.",
         "command": "npx create-react-app my-app",
         "status": "ativo",
         "level": "avançado",
@@ -147,7 +147,7 @@
       {
         "id": 15,
         "name": "MySQL",
-        "description": "Relational database management, query optimization, stored procedures, and replication strategies.",
+        "description": "Gerenciamento de banco de dados relacional, otimização de consultas, stored procedures e estratégias de replicação.",
         "command": "mysql -u root -p",
         "status": "ativo",
         "level": "avançado",
@@ -156,16 +156,16 @@
       {
         "id": 16,
         "name": "PostgreSQL",
-        "description": "Advanced SQL features, JSONB support, full-text search, and performance tuning for complex queries.",
+        "description": "Recursos de SQL, suporte a JSONB, busca de texto completo e otimização de performance para consultas.",
         "command": "psql -U postgres",
         "status": "ativo",
-        "level": "avançado",
+        "level": "básico",
         "icon": "database"
       },
       {
         "id": 17,
         "name": "LARAVEL",
-        "description": "Building robust backend applications with Laravel, RESTful APIs, and database management.",
+        "description": "Desenvolvimento de aplicações backend robustas com Laravel, APIs RESTful e gerenciamento de banco de dados.",
         "command": "php artisan serve",
         "status": "ativo",
         "level": "intermediário",
@@ -175,12 +175,12 @@
   },
   {
     "id": "tools",
-    "name": "Others skills",
+    "name": "Outras habilidades",
     "skills": [
       {
         "id": 18,
         "name": "Git Version Control",
-        "description": "Version control, branching strategies, pull requests and code reviews.",
+        "description": "Controle de versão, estratégias de branching, pull requests e revisão de código.",
         "command": "git init",
         "status": "ativo",
         "level": "avançado",
@@ -189,7 +189,7 @@
       {
         "id": 19,
         "name": "REST API Integrations",
-        "description": "Integrating with REST APIs, handling authentication, and managing API responses.",
+        "description": "Integração com APIs REST, gerenciamento de autenticação e tratamento de respostas de API.",
         "command": "git init",
         "status": "ativo",
         "level": "avançado",
@@ -198,7 +198,7 @@
       {
         "id": 20,
         "name": "n8n",
-        "description": "Building workflow automations, API integrations, and data synchronization between multiple platforms, focusing on integrations with WordPress.",
+        "description": "Desenvolvimento de automações de fluxo de trabalho, integrações de API e sincronização de dados entre múltiplas plataformas, com foco em integrações com WordPress.",
         "command": "npx n8n start",
         "status": "ativo",
         "level": "intermediário",
@@ -207,7 +207,7 @@
       {
         "id": 21,
         "name": "Performance Optimization",
-        "description": "Optimizing website performance, reducing load times, and improving user experience.",
+        "description": "Otimização de performance de sites, redução do tempo de carregamento e melhoria da experiência do usuário.",
         "command": "npm run build",
         "status": "ativo",
         "level": "avançado",
@@ -216,7 +216,7 @@
       {
         "id": 22,
         "name": "SEO",
-        "description": "Implementing SEO best practices like: Caché, Google Search Console, Google Analytics, meta tags, meta description, meta keywords, etc. Optimizing website for search engines and AI platforms, and improving website visibility.",
+        "description": "Implementação de boas práticas de SEO como: Cache, Google Search Console, Google Analytics, meta tags, meta description, meta keywords, etc. Otimização de sites para mecanismos de busca e plataformas de IA, e melhoria da visibilidade do site.",
         "command": "newman run collection.json",
         "status": "ativo",
         "level": "avançado",
@@ -225,7 +225,7 @@
       {
         "id": 23,
         "name": "Figma",
-        "description": "UI/UX design, prototyping, component systems, and design-to-code workflows for web applications.",
+        "description": "Design UI/UX, prototipagem, sistemas de componentes e fluxos de design para código em aplicações web.",
         "command": "figma://open",
         "status": "ativo",
         "level": "avançado",
@@ -240,7 +240,7 @@
       {
         "id": 24,
         "name": "Cpanel & Plesk",
-        "description": "Managing shared hosting environments, domain management, email configuration, and server administration.",
+        "description": "Gerenciamento de ambientes de hospedagem compartilhada, administração de domínios, configuração de e-mail e administração de servidores.",
         "command": "cpanel --version",
         "status": "ativo",
         "level": "avançado",
@@ -249,7 +249,7 @@
       {
         "id": 25,
         "name": "Netlify",
-        "description": "Continuous deployment, serverless functions, form handling, and edge network optimization.",
+        "description": "Deploy contínuo, funções serverless, processamento de formulários e otimização de rede edge.",
         "command": "netlify deploy --prod",
         "status": "ativo",
         "level": "básico",
@@ -258,7 +258,7 @@
       {
         "id": 26,
         "name": "Vercel",
-        "description": "Frontend deployment, edge functions, analytics, and seamless integration with Next.js applications.",
+        "description": "Deploy de frontend, funções edge, analytics e integração nativa com aplicações Next.js.",
         "command": "vercel --prod",
         "status": "ativo",
         "level": "básico",
@@ -267,7 +267,7 @@
       {
         "id": 27,
         "name": "GitHub Actions",
-        "description": "CI/CD pipelines, automated testing, deployment workflows, and release automation.",
+        "description": "Pipelines CI/CD, testes automatizados, fluxos de deploy e automação de releases.",
         "command": "gh workflow run deploy.yml",
         "status": "ativo",
         "level": "básico",

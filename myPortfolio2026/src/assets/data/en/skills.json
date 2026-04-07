@@ -111,7 +111,7 @@
       {
         "id": 11,
         "name": "PHP/OOP",
-        "description": "Object-oriented programming with PHP, design patterns, and WordPress custom development.",
+        "description": "Object-oriented programming with PHP, design patterns, and custom development.",
         "command": "php artisan serve",
         "status": "active",
         "level": "advanced",
@@ -156,10 +156,10 @@
       {
         "id": 16,
         "name": "PostgreSQL",
-        "description": "Advanced SQL features, JSONB support, full-text search, and performance tuning for complex queries.",
+        "description": "SQL features, JSONB support, full-text search, and performance tuning for queries.",
         "command": "psql -U postgres",
         "status": "active",
-        "level": "expert",
+        "level": "basic",
         "icon": "database"
       },
       {
