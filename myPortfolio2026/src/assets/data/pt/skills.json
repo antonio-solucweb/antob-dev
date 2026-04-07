@@ -23,7 +23,7 @@
       },
       {
         "id": 2,
-        "name": "Headless WordPress",
+        "name": "WordPress Headless",
         "description": "Construção de sites WordPress headless com endpoints REST API personalizados e frameworks frontend modernos como ReactJS, Astro ou Next.js.",
         "command": "wp core install --url=example.com",
         "status": "ativo",
@@ -32,7 +32,7 @@
       },
       {
         "id": 3,
-        "name": "Campos Personalizados e Tipos de Post",
+        "name": "Campos Personalizados e Tipos de Post (CPTs)",
         "description": "Criação de tipos de post (CPTs) e campos personalizados para estender a funcionalidade e a estrutura de dados do WordPress.",
         "command": "npx create-react-app my-app",
         "status": "ativo",
@@ -50,7 +50,7 @@
       },
       {
         "id": 5,
-        "name": "Multisite Management",
+        "name": "WordPress Multisite",
         "description": "Gerenciamento e otimização de redes WordPress multisite para implantações eficientes em múltiplos domínios ou subdomínios.",
         "command": "wp network create --base=/",
         "status": "ativo",
@@ -59,7 +59,7 @@
       },
       {
         "id": 6,
-        "name": "WordPress security",
+        "name": "Segurança no WordPress",
         "description": "Implementação de boas práticas de segurança, fortalecimento de instalações WordPress e proteção contra vulnerabilidades.",
         "command": "wp plugin update --security",
         "status": "ativo",
@@ -77,7 +77,7 @@
       },
       {
         "id": 8,
-        "name": "Elementor and similar page builders",
+        "name": "Elementor e construtores similares",
         "description": "Se necessário, posso trabalhar com Elementor ou construtores de páginas similares para criar layouts e designs personalizados.",
         "command": "npx nuxi init my-app",
         "status": "ativo",
@@ -88,11 +88,11 @@
   },
   {
     "id": "programming-languages",
-    "name": "Full-Stack Development",
+    "name": "Desenvolvimento Full-Stack",
     "skills": [
       {
         "id": 9,
-        "name": "HTML5 & CSS3",
+        "name": "HTML5 e CSS3",
         "description": "Estrutura semântica em HTML5 e recursos modernos de CSS3, incluindo Flexbox, Grid, animações e design responsivo.",
         "command": "php artisan serve",
         "status": "ativo",
@@ -101,7 +101,7 @@
       },
       {
         "id": 10,
-        "name": "JavaScript & TypeScript",
+        "name": "JavaScript e TypeScript",
         "description": "Desenvolvimento moderno em JavaScript com recursos ES6+, async/await, promises e TypeScript para tipagem segura.",
         "command": "tsc --init",
         "status": "ativo",
@@ -137,7 +137,7 @@
       },
       {
         "id": 14,
-        "name": "Tailwind CSS, Bootstrap and similars",
+        "name": "Tailwind CSS, Bootstrap e similares",
         "description": "Desenvolvimento de interfaces modernas e responsivas com Tailwind CSS, Bootstrap e frameworks utilitários similares.",
         "command": "npx create-react-app my-app",
         "status": "ativo",
@@ -179,7 +179,7 @@
     "skills": [
       {
         "id": 18,
-        "name": "Git Version Control",
+        "name": "Controle de Versão Git",
         "description": "Controle de versão, estratégias de branching, pull requests e revisão de código.",
         "command": "git init",
         "status": "ativo",
@@ -188,7 +188,7 @@
       },
       {
         "id": 19,
-        "name": "REST API Integrations",
+        "name": "Integrações REST API",
         "description": "Integração com APIs REST, gerenciamento de autenticação e tratamento de respostas de API.",
         "command": "git init",
         "status": "ativo",
@@ -206,7 +206,7 @@
       },
       {
         "id": 21,
-        "name": "Performance Optimization",
+        "name": "Otimização de Performance",
         "description": "Otimização de performance de sites, redução do tempo de carregamento e melhoria da experiência do usuário.",
         "command": "npm run build",
         "status": "ativo",
@@ -235,11 +235,11 @@
   },
   {
     "id": "devops",
-    "name": "DevOps & Cloud",
+    "name": "DevOps e Cloud",
     "skills": [
       {
         "id": 24,
-        "name": "Cpanel & Plesk",
+        "name": "Cpanel e Plesk",
         "description": "Gerenciamento de ambientes de hospedagem compartilhada, administração de domínios, configuração de e-mail e administração de servidores.",
         "command": "cpanel --version",
         "status": "ativo",
