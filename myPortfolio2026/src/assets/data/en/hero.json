@@ -10,6 +10,7 @@
     "title": "Some_Details.tsx",
     "specialization": "Senior WordPress Developer",
     "codeConst": "Engineer",
+    "spoken": ["Spanish", "English", "Portuguese"],
     "focus": "Performance & Scalability",
     "codeComment": "// Logic for architectural excellence",
     "codeReturn": "Success"

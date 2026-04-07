@@ -9,6 +9,10 @@ import heroDataPt from '@assets/data/pt/hero.json';
 
 const lang = getLanguageFromCookieValue(Astro.cookies.get('portfolio-language')?.value);
 const heroData = lang === 'es' ? heroDataEs : lang === 'pt' ? heroDataPt : heroDataEn;
+
+const spokenFormatted = Array.isArray(heroData.terminal.spoken)
+  ? heroData.terminal.spoken.map((item: string) => `<span class="text-on-surface">"${item}"</span>`).join(', ')
+  : `<span class="text-on-surface">"${heroData.terminal.spoken}"</span>`;
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="home">
@@ -78,7 +82,8 @@ const heroData = lang === 'es' ? heroDataEs : lang === 'pt' ? heroDataPt : heroD
   yearsExperience: <span class="text-tertiary">7+</span>,
   specialization: <span class="text-on-surface" data-i18n="hero.specialization">${heroData.terminal.specialization}</span>,
   mainStack: [<span class="text-on-surface">"WordPress"</span>, <span class="text-on-surface">"Astro"</span>, <span class="text-on-surface">"ReactJs"</span>, <span class="text-on-surface">"AI"</span>],
-  focus: <span class="text-on-surface">${heroData.terminal.focus}</span>
+  focus: <span class="text-on-surface">${heroData.terminal.focus}</span>,
+  spokenLanguages: [${spokenFormatted}]
 };
 
 <span class="text-tertiary">function</span> <span class="text-on-surface">DeployProject</span>(id) {
