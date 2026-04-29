@@ -15,6 +15,8 @@ import contactDataEn from '@assets/data/en/contact.json';
 import contactDataEs from '@assets/data/es/contact.json';
 import contactDataPt from '@assets/data/pt/contact.json';
 
+import ogImage from '@assets/img/img-antonio_blanca.jpg';
+
 interface Props {
   title?: string;
 }
@@ -32,6 +34,10 @@ const contactResult = ContactDataSchema.safeParse(rawContactData);
 const whatsappMessage = contactResult.success ? contactResult.data.interfaces.whatsappMessage : '';
 const tooltipText = contactResult.success ? contactResult.data.interfaces.tooltipText : 'Talk with me on WhatsApp!';
 const whatsappLink = getWhatsAppLink(whatsappMessage);
+
+// Construir URL absoluta para OG image
+const siteUrl = Astro.site?.toString() || Astro.url.origin;
+const ogImageUrl = new URL(ogImage.src, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -41,9 +47,24 @@ const whatsappLink = getWhatsAppLink(whatsappMessage);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{ui?.pageTitle ?? title}</title>
     <meta name="description" content={ui?.metaDescription} />
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.toString()} />
     <meta property="og:title" content={ui?.pageTitle ?? title} />
     <meta property="og:description" content={ui?.metaDescription} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Antonio Blanca - Senior WordPress Developer" />
+    <meta property="og:locale" content={currentLang === 'es' ? 'es_ES' : currentLang === 'pt' ? 'pt_BR' : 'en_US'} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url.toString()} />
+    <meta name="twitter:title" content={ui?.pageTitle ?? title} />
+    <meta name="twitter:description" content={ui?.metaDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content="Antonio Blanca - Senior WordPress Developer" />
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
